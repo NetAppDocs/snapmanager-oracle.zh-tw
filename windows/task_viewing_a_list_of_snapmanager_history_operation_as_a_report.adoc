@@ -1,0 +1,17 @@
+---
+permalink: windows/task_viewing_a_list_of_snapmanager_history_operation_as_a_report.html 
+sidebar: sidebar 
+keywords: view, history, specific, snapmanager, operation, report, base, retention, setting 
+summary: 您可以根據SnapManager 保留設定、以報告形式檢視特定或所有的還原作業歷史記錄。 
+---
+= 查看SnapManager 一份關於功能的清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以根據SnapManager 保留設定、以報告形式檢視特定或所有的還原作業歷史記錄。
+
+. 若要檢視SnapManager 完整的資訊記錄作業清單、請輸入下列命令：SMO history list -profile｛-name、profile名稱[profile名稱1、profile名稱2 ]|-all-reposite-login[-passworcrepo_password]-usernamerepo_username-dbnamerepo_dbname-stampo_host-portrepo_port_ports｝作業[操作名稱-query_op_op_operations][操作名稱][操作名稱][操作名稱][操作名稱][操作名稱]、操作名稱]、操作名稱]、操作名稱]、操作名稱]、操作名稱]、操作名稱]
+

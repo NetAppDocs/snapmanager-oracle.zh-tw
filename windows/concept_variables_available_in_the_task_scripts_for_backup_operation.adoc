@@ -1,0 +1,220 @@
+---
+permalink: windows/concept_variables_available_in_the_task_scripts_for_backup_operation.html 
+sidebar: sidebar 
+keywords: provide, context, information, form, environment, variable, relate, backup, perform 
+summary: 提供環境變數形式的內容資訊、這些環境變數與正在執行的備份作業有關。SnapManager例如、指令碼可以擷取原始主機的名稱、保留原則的名稱、以及備份的標籤。 
+---
+= 備份作業的工作指令碼中可用的變數
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+提供環境變數形式的內容資訊、這些環境變數與正在執行的備份作業有關。SnapManager例如、指令碼可以擷取原始主機的名稱、保留原則的名稱、以及備份的標籤。
+
+下表列出可在指令碼中使用的環境變數：
+
+|===
+
+
+| 變數 | 說明 | 格式 
+
+
+ a| 
+SM_operation_ID
+ a| 
+指定目前作業的ID
+ a| 
+字串
+
+
+
+ a| 
+SM_profile名稱
+ a| 
+指定所使用的設定檔名稱
+ a| 
+字串
+
+
+
+ a| 
+SM_SID
+ a| 
+指定資料庫的系統識別碼
+ a| 
+字串
+
+
+
+ a| 
+SM_host
+ a| 
+指定資料庫的主機名稱
+ a| 
+字串
+
+
+
+ a| 
+SM_OS_USER
+ a| 
+指定資料庫的作業系統（OS）擁有者
+ a| 
+字串
+
+
+
+ a| 
+SM_OS_group
+ a| 
+指定資料庫的OS群組
+ a| 
+字串
+
+
+
+ a| 
+SM_備用 類型
+ a| 
+指定備份類型（線上、離線或自動）
+ a| 
+字串
+
+
+
+ a| 
+SM_備用 標籤
+ a| 
+指定備份的標籤
+ a| 
+字串
+
+
+
+ a| 
+SM_backup_ID
+ a| 
+指定備份的ID
+ a| 
+字串
+
+
+
+ a| 
+SM_backup_retenture
+ a| 
+指定保留期間
+ a| 
+字串
+
+
+
+ a| 
+SM_backup_profile
+ a| 
+指定用於此備份的設定檔
+ a| 
+字串
+
+
+
+ a| 
+SM_allow_database_shutd
+ a| 
+指定是否要啟動或關閉資料庫。如有需要、您可以從命令列介面使用-force選項。
+ a| 
+布林值
+
+
+
+ a| 
+SM_備用 範圍
+ a| 
+指定備份範圍（完整或部分）
+ a| 
+字串
+
+
+
+ a| 
+SM_Target檔案管理器名稱
+ a| 
+指定目標儲存系統名稱*注意：*如果使用多個儲存系統、則儲存系統名稱必須以逗號分隔。
+ a| 
+字串
+
+
+
+ a| 
+SM_Target磁碟區名稱
+ a| 
+指定目標Volume名稱*注意：*目標Volume名稱必須以儲存設備名稱為前置位、例如SM_target檔案管理器名稱/SM_target Volume名稱。
+ a| 
+字串
+
+
+
+ a| 
+SM_host_file_system
+ a| 
+指定主機檔案系統
+ a| 
+字串
+
+
+
+ a| 
+SM_snapshot名稱
+ a| 
+指定Snapshot清單*注意：* Snapshot複本的名稱必須以儲存系統名稱和Volume名稱為前置位。Snapshot複本的名稱以逗號分隔。
+ a| 
+字串陣列
+
+
+
+ a| 
+SM_archive記錄檔目錄
+ a| 
+指定歸檔日誌目錄*注意：*如果歸檔日誌位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+ a| 
+字串陣列
+
+
+
+ a| 
+SM_REDO_LOGS目錄
+ a| 
+指定重作記錄目錄*注意：*如果重作記錄位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+ a| 
+字串陣列
+
+
+
+ a| 
+SM_control_fils_directory
+ a| 
+指定控制檔目錄*注意：*如果控制檔位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+ a| 
+字串陣列
+
+
+
+ a| 
+SM_data_fils_directory
+ a| 
+指定資料檔案目錄*注意：*如果資料檔案位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+ a| 
+字串陣列
+
+
+
+ a| 
+使用者定義
+ a| 
+指定使用者定義的其他參數。使用者定義的參數不適用於做為原則的外掛程式。
+ a| 
+使用者定義
+
+|===

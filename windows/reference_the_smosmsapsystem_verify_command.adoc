@@ -1,0 +1,53 @@
+---
+permalink: windows/reference_the_smosmsapsystem_verify_command.html 
+sidebar: sidebar 
+keywords: command, confirm, component, environment, run, snapmanager, smo 
+summary: 此命令可確認執行SnapManager 動作所需環境的所有元件均已正確設定。 
+---
+= 使用者可在電腦上執行SMO系統確認命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令可確認執行SnapManager 動作所需環境的所有元件均已正確設定。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo system verify
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 系統驗證命令範例
+
+下列範例使用了SMO系統驗證命令。
+
+[listing]
+----
+smo system verify
+SMO-13505 [INFO ]: Snapdrive verify passed.
+SMO-13037 [INFO ]: Successfully completed operation: System Verify
+SMO-13049 [INFO ]: Elapsed Time: 0:00:00.559
+Operation Id [N4f4e910004b36cfecee74c710de02e44] succeeded.
+----

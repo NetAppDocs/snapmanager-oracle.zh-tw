@@ -1,0 +1,21 @@
+---
+permalink: unix-installation-7mode/task_configuring_the_target_database.html 
+sidebar: sidebar 
+keywords: target, database, oracle, configure, standalone, real, application, cluster, rac, automatic, storage 
+summary: 目標資料庫是Oracle資料庫、可設定為獨立式、Real Application叢集（RAC）、自動儲存管理（ASM）或任何其他支援的組合。 
+---
+= 設定目標資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+目標資料庫是Oracle資料庫、可設定為獨立式、Real Application叢集（RAC）、自動儲存管理（ASM）或任何其他支援的組合。
+
+. 請參閱_TR-3633_來設定目標資料庫。
+
+
+*相關資訊*
+
+http://www.netapp.com/us/media/tr-3633.pdf["NetApp技術報告3633：NetApp儲存設備上Oracle資料庫的最佳實務做法"]

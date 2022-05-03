@@ -1,0 +1,22 @@
+---
+permalink: unix-administration/concept_restoring_protected_backups_from_secondary_storage.html 
+sidebar: sidebar 
+keywords: restore, protect, backup, secondary, storage 
+summary: 您可以從次要儲存設備還原受保護的備份。不過、如果主要儲存設備上也有備份、則無法從次要儲存設備還原備份。 
+---
+= 從二線儲存設備還原受保護的備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從次要儲存設備還原受保護的備份。不過、如果主要儲存設備上也有備份、則無法從次要儲存設備還原備份。
+
+*相關資訊*
+
+xref:reference_the_smosmsapbackup_restore_command.adoc[使用SMO備份還原命令]
+
+xref:task_restoring_backups_from_an_alternate_location.adoc[從替代位置還原備份]
+
+xref:task_creating_restore_specifications.adoc[建立還原規格]

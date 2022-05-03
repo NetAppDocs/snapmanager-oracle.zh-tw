@@ -1,0 +1,16 @@
+---
+permalink: windows/concept_installing_snapmanager_for_oracle.html 
+sidebar: sidebar 
+keywords: download, oracle, install, operation, database, backup, restore, cloning, clone 
+summary: 您可以在SnapManager 環境中下載及安裝適用於Oracle的功能、並執行資料庫備份、還原、還原及複製等作業。 
+---
+= 安裝SnapManager 適用於Oracle的支援
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在SnapManager 環境中下載及安裝適用於Oracle的功能、並執行資料庫備份、還原、還原及複製等作業。
+
+適用於Oracle的支援套件包括主機伺服器軟體和圖形使用者介面（GUI）用戶端軟體。SnapManager

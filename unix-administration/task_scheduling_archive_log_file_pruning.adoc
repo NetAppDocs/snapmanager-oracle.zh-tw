@@ -1,0 +1,69 @@
+---
+permalink: unix-administration/task_scheduling_archive_log_file_pruning.html 
+sidebar: sidebar 
+keywords: create, backup, schedule, pruning, archive, log, file, occur, specified, time, smo 
+summary: 建立備份時、您可以排定在指定時間剪除保存記錄檔。 
+---
+= 排程保存檔記錄檔剪除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立備份時、您可以排定在指定時間剪除保存記錄檔。
+
+利用此功能、您可以定期從作用中的檔案系統中剪除歸檔記錄檔。SnapManager
+
+. 輸入下列命令： 「mo schedule create -profile profile_name｛[-full｛-online |-offline |-auto｝[-sthourly |-ditly |-flely |-mourly |-moconly |-unonvimonalth][-data [-filesfiles]|[-tabl空間 記錄表空間[-tabl空間]｛-online |-offline |-offline |-offline |-aute-commenteding][-hourly -offer-sthourly ][每週數][、每週數][、每小時數][、每週數不限、每月數][、每週數不限、每月數][ -nosprotection][-backup-destpath1 [,[path2][-exclude -destpath1 [,path2]][-prunelogs {-all |-untilSCNuntilSCN |-therate {-dateyy-mm-dd hh：sss |-monhoursmonth sweeksweeks |-weeksweeksweeksweeksweeks |-destpath1 |-days -destprune tunsprunsprunh datastsprunh [、-tunyoursprune、-testunyoursunyoursunh、mind、mind按小時數]排程[、按小時、按小時、按小時、按分鐘、按小時、按小時、按小時、按分鐘、按小時、按分鐘、按分鐘、按分鐘、按分鐘、按分鐘、按分鐘、按分鐘、按
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+*排程保存記錄檔的剪除*
+ a| 
+指定下列選項：
+
+** -prunelogs來排程保存檔記錄檔的剪除
+** 從歸檔記錄目的地剪除歸檔記錄檔檔案的目的地
+
+
+
+
+ a| 
+*加入排程名稱*
+ a| 
+指定-schedule-name選項。
+
+
+
+ a| 
+*排程在特定時間間隔內剪除歸檔記錄檔*
+ a| 
+指定時間間隔選項、並指出是否應根據下列時間間隔類別來剪除歸檔記錄檔：
+
+** -每小時
+** 每日
+** 每週
+** 每月
+** 僅限一次
+
+
+
+
+ a| 
+*新增有關排程作業的留言*
+ a| 
+指定-schedule-comment選項、後面接著說明字串。
+
+
+
+ a| 
+*指定排程作業的開始時間*
+ a| 
+以yyyy-mm-dd hh：mm格式指定-start-tTime選項。
+
+|===
+

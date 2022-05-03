@@ -1,0 +1,94 @@
+---
+permalink: unix-administration/reference_the_smosmsap_operation_show_command.html 
+sidebar: sidebar 
+keywords: run, operation, show, command, list, summary, information, perform, specified, profile, smo, list 
+summary: 您可以執行operation show命令、列出針對指定設定檔所執行之所有作業的摘要資訊。輸出會列出用戶端使用者（用戶端PC的使用者）和有效使用者（SnapManager 在選定主機上有效的使用者）。 
+---
+= 使用SMO operation show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行operation show命令、列出針對指定設定檔所執行之所有作業的摘要資訊。輸出會列出用戶端使用者（用戶端PC的使用者）和有效使用者（SnapManager 在選定主機上有效的使用者）。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo operation show
+-profile profile_name
+\[-label label \| -id id\]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔名稱*
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* *標籤標籤*
++
+指定作業的標籤。
+
+* *識別碼*
++
+指定作業的識別碼。
+
+* *-無聲*
++
+選用：僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+選用：在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列命令列顯示作業的詳細資訊：
+
+[listing]
+----
+# smo operation show -profile myprofile -id ff8080811295eb1c011295eb28230001
+----
+[listing]
+----
+Operation Attempted
+   Operation ID: ff8080811295eb1c011295eb28230001
+   Type:RestoreFor profile: myprofile
+   With Force: No
+   Performed on backup
+   Operation ID: ff8080811295eb1c011296eb23290001
+   Label: mylabel
+Operation Runtime Information
+   Status: SUCCESS
+   Start date: 2007-07-16 13:24:09 IST
+   End date: 2007-07-16 14:10:10 IST
+   Client user: amorrow
+   Effective user: amorrow
+Host
+   Host Run upon: Host3
+   Process ID: 3122
+   SnapManager version: 3.3
+Repository
+   Connection: user1@SMOREPO/hotspur:1521
+   Repository version: 3.3
+Resources in use
+   Volume:
+     ssys1:/vol/luke_ES0_0 (FlexClone)
+   Filesystems:
+     /opt/NetApp/smo/mnt/-mnt_ssys1_luke_ES0_smo_e_es0_f_c_1_8abc0112129b0f81580001_0
+----
+*相關資訊*
+
+xref:task_viewing_operation_details.adoc[檢視作業詳細資料]

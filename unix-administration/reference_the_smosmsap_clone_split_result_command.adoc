@@ -1,0 +1,56 @@
+---
+permalink: unix-administration/reference_the_smosmsap_clone_split_result_command.html 
+sidebar: sidebar 
+keywords: smo, clone, split-result, command 
+summary: 使用SMO Clone分割結果命令。 
+---
+= 使用SMO Clone分割結果命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 語法
+
+此命令可讓您檢視複本分割程序的結果。
+
+[listing]
+----
+
+        smo clone split-result
+-profile profile
+\[-host hostname\]
+\[-label split-label \| -id split-id\]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔*
++
+指定實體複本的設定檔名稱。
+
+* *主機名稱*
++
+指定複本所在的主機名稱。
+
+* *標籤分割標籤*
++
+指定由複製分割啟動程序所產生的標籤名稱。
+
+* -id分割id*
++
+指定由複製分割啟動程序所產生的唯一ID。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+

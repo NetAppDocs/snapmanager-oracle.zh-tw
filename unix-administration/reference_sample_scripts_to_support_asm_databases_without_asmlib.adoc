@@ -1,0 +1,95 @@
+---
+permalink: unix-administration/reference_sample_scripts_to_support_asm_databases_without_asmlib.html 
+sidebar: sidebar 
+keywords: sample, script, plugin, example, noasmlib, snapmanager, oracle, installation, directory, asm, asmlib 
+summary: 範例指令碼可在SnapManager Oracle安裝目錄的plugins/examples/nosmlib目錄中找到。 
+---
+= 範例指令碼、可支援不含ASMLib的ASM資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+範例指令碼可在SnapManager Oracle安裝目錄的plugins/examples/nosmlib目錄中找到。
+
+
+
+== asmmain.sh
+
+[listing]
+----
+#!/bin/bash
+griduser=grid
+gridgroup=oinstall
+
+# Run the script which takes the disklist from the asmcmd
+# use appropriate user , here grid user is being used to run
+# asmcmd command.
+su -c "plugins/noasmlib/asmdiskquery.sh" -s /bin/sh grid
+cat /home/grid/disklist
+
+# Construct the final file as .bak file with propre inputs
+awk -v guser=$griduser -v ggroup=$gridgroup '/^\/dev\/mapper/ { print "chown -R "guser":"ggroup" "$1; print "chmod 777 " $1; }' /home/grid/disklist > /etc/initasmdisks.bak
+
+# move the bak file to the actual file.
+mv /etc/initasmdisks.bak /etc/initasmdisks
+
+# Set full full permission for this file to be called while rebooting and restore
+chmod 777 /etc/initasmdisks
+
+# If the /etc/initasmdisks needs to be updated in all the RAC nodes
+# or /etc/initasmdisks script has to be executed in the RAC nodes, then the following
+# section needs to be uncommented and used.
+#
+# Note: To do scp or running scripts in remote RAC node via ssh, it needs password less login
+# for root user with ssh keys shared between the two nodes.
+#
+# The following 2 lines are used for updating the file in the RAC nodes:
+# scp /etc/initasmdisks root@racnode1:/etc/initasmdisks
+# scp /etc/initasmdisks root@racnode2:/etc/initasmdisks
+#
+# In order to execute the /etc/initasmdisks in other RAC nodes
+# The following must be added to the master RAC node /etc/initasmdisks file
+# from the asmmain.sh script itself. The above scp transfer will make sure
+# the permissions and mode for the disk list contents are transferred to the other RAC nodes
+# so now appending any command in the /etc/initasmsdisks will be retained only in the master RAC node.
+# The following lines will add entries to the /etc/initasmsdisks file in master RAC node only. When this script is executed
+#  master RAC node, /etc/initasmdisks in all the RAC nodes will be executed.
+# echo 'ssh racnode1 /etc/initasmdisks' >> /etc/initasmdisks
+# echo 'ssh racnode2 /etc/initasmdisks' >> /etc/initasmdisks
+----
+
+
+== asmquerydisk.sh
+
+[listing]
+----
+#!/bin/bash
+export  ORACLE_BASE=/u01/app/oracle
+export ORACLE_HOME=/u01/app/grid/product/11.2.0.3/grid
+export ORACLE_SID=+ASM
+export  PATH=$ORACLE_HOME/bin:$PATH
+
+# Get the Disk List and save this in a file called dglist.
+asmcmd lsdsk  > /home/grid/disklist
+
+# In oracle 10g the above used command 'asmcmd' is not available so use SQL
+# query can be used to take the disk list. Need to uncomment the following
+# line and comment the above incase oracle 10g is being in use.
+# The disk_list.sql script is availbe in this noasmlib examples folder itself
+# which can be modified as per customer needs.
+# sqlplus "/as sysdba" @/home/grid/disk_list.sql > /home/grid/disklist
+----
+
+
+== disk_list.sql
+
+[listing]
+----
+# su - oracle
+-bash-4.1$ cat disk_list.sql
+select path from v$asm_disk;
+exit
+-bash-4.1$
+----

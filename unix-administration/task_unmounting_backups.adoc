@@ -1,0 +1,31 @@
+---
+permalink: unix-administration/task_unmounting_backups.html 
+sidebar: sidebar 
+keywords: snapmanager, automatic, unmount, backup, unavailable, host, server, asm, smo 
+summary: 自動卸載備份、讓主機伺服器無法使用備份。SnapManager如果您使用外部工具（例如Oracle Recovery Manager \（RMAN））來存取備份中的檔案、並變更備份狀態以移除存取權、則可使用此功能來卸載。SnapManager 
+---
+= 卸載備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+自動卸載備份、讓主機伺服器無法使用備份。SnapManager如果您使用外部工具（例如Oracle Recovery Manager（RMAN））來存取備份中的檔案、並變更備份狀態以移除存取、則可使用此功能來卸載。SnapManager
+
+如果您要從遠端主機卸載資料庫備份、則必須確保兩個主機上的自動儲存管理（ASM）認證資訊相同。
+
+您可以選擇在成功或失敗的卸載備份作業之後收集傾印檔案。
+
+卸載作業可能會在掛載點忙碌時失敗、並顯示錯誤訊息、例如：-[error] flow -11019：中斷連線失敗：SD-10046：您無法卸載備份、因為掛載點使用下列掛載路徑和PID's：/opp/netapp/mnt/mnt-NeUS_nfsvrdb_arch-2020120539898。
+
+您必須識別導致卸載作業失敗的工作階段PID。執行下列命令停止工作階段：「killpid」
+
+然後您可以成功執行卸載作業。
+
+. 輸入下列命令：「mo備份unmount -profile profile_name｛labelLabel [data |-archivelogs]|-ido｝[-quiet |-verbose]-dump強制verbose]
+
+
+*相關資訊*
+
+xref:reference_the_smosmsapbackup_unmount_command.adoc[使用SMO備份卸載命令]

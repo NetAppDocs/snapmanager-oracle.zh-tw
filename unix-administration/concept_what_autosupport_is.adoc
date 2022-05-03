@@ -1,0 +1,34 @@
+---
+permalink: unix-administration/concept_what_autosupport_is.html 
+sidebar: sidebar 
+keywords: autosupport, snapmanager, autosupport, storage, system, backup, operation, complete, enable, disable 
+summary: 利用此功能、當備份作業完成後、支援服務器將不完整的資訊傳送到儲存系統。AutoSupport SnapManager AutoSupport 
+---
+= 什麼是呢AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、當備份作業完成後、支援服務器將不完整的資訊傳送到儲存系統。AutoSupport SnapManager AutoSupport
+
+
+NOTE: 僅針對成功的備份作業傳送不必要訊息。SnapManager AutoSupport
+
+您可以AutoSupport 將下列值指派給SMo.config組態檔中的auto_support.on組態參數、以啟用或停用此功能：
+
+* 是-實現AutoSupport 功能不全
+* 否-停用AutoSupport 功能不實
+
+
+
+NOTE: 根據預設AutoSupport 、在SnapManager 支援的功能中啟用了功能。
+
+*相關資訊*
+
+xref:task_adding_storage_systems_to_the_snapmanager_server_host.adoc[將以叢集Data ONTAP 式功能運作的儲存系統新增至SnapManager 支援叢集的伺服器主機]
+
+xref:task_enabling_autosupport_in_snapmanager.adoc[啟用AutoSupport 支援功能SnapManager]
+
+xref:task_disabling_autosupport_in_snapmanager.adoc[停用AutoSupport 功能不SnapManager 只是功能]

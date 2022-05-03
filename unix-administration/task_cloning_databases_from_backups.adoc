@@ -1,0 +1,62 @@
+---
+permalink: unix-administration/task_cloning_databases_from_backups.html 
+sidebar: sidebar 
+keywords: clone, database, backup, using, clone, create, command, sid, snapmanager 
+summary: 您可以使用Clone create命令、從備份複製資料庫。 
+---
+= 從備份複製資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Clone create命令、從備份複製資料庫。
+
+您必須先為資料庫建立複製規格檔案。根據此規格檔案中的資訊建立實體複本。SnapManager
+
+您必須為複本指定新的Oracle系統識別碼（SID）。您無法在同一部主機上同時執行兩個具有相同SID的資料庫。您可以在使用相同SID的不同主機上擁有複本。若要指定實體複本的唯一名稱、請使用-label。如果您不使用此選項、SnapManager 則會為包含該SID、日期和時間的實體建立唯一名稱。
+
+複製資料庫之後、您可能會想要使用新的複製資料庫連線資訊來更新用戶端機器上的tnsnames.ora檔案。tnssnames.ora檔案用於連線至Oracle執行個體、而不需指定完整的資料庫資訊。無法更新tnssnames.ora檔案。SnapManager
+
+如果您使用以-include-with online備份建立的設定檔、則使用時一律會建立包括歸檔記錄檔在內的備份。SnapManager支援使用者僅複製完整的資料庫備份。SnapManager
+
+使用支援（3.2或更新版本）、您可以複製包含資料檔案和歸檔記錄檔的備份。SnapManager
+
+如果歸檔記錄可從外部位置取得、您可以在複製期間指定外部位置、以便將複製的資料庫恢復為一致狀態。您必須確保Oracle可以存取外部位置。不支援僅複製歸檔記錄備份。
+
+雖然歸檔記錄備份是與線上部分備份一起建立、但您無法使用此備份來建立資料庫複本。
+
+您只能從獨立式資料庫的外部歸檔記錄檔位置複製資料庫備份。
+
+使用外部歸檔記錄檔檔案位置複製Real Application Clusters（RAC）資料庫的線上資料庫備份、因為還原失敗而失敗。這是因為Oracle資料庫在複製資料庫備份時、找不到並套用歸檔記錄檔、無法從外部歸檔記錄位置進行還原。
+
+您可以將-dump選項指定為選用參數、以便在成功或失敗的實體複本建立作業之後收集傾印檔案。
+
+*複製資料檔案備份而不備份歸檔記錄*
+
+當資料檔案備份不包含歸檔記錄備份時、SnapManager Oracle的for Oracle會根據備份期間記錄的系統變更編號（SCN）來複製資料庫。如果無法恢復複製的資料庫、則會顯示執行緒的歸檔記錄檔和完成恢復所需的變更（SCN>）錯誤訊息、即使SnapManager Oracle的Rs2繼續複製資料庫、最後成功建立複製。
+
+使用資料檔案備份進行複製時、若不包含歸檔記錄備份、SnapManager 則直到上次歸檔記錄SCN（在備份期間記錄）為止、恢復複製的資料庫。
+
+. 建立複製規格檔案。
+. 若要建立實體複本、請輸入下列命令：smo clone create -backup-labelbackup_name-newsidnew_sidnelclone_label-profileprofile_name-clonespecfull路徑to_clonespecfile [-taskspecspic][-recover-from位置] path1 [,<path2>...]-dump
+
+
+*相關資訊*
+
+xref:task_cloning_databases_in_the_current_state.adoc[正在複製目前狀態的資料庫]
+
+xref:concept_considerations_for_cloning_a_database_to_an_alternate_host.adoc[將資料庫複製到替代主機的考量事項]
+
+xref:task_creating_clone_specifications.adoc[建立複製規格]
+
+xref:reference_the_smosmsapclone_create_command.adoc[使用「建立複本」命令]
+
+xref:task_creating_pretask_post_task_and_policy_scripts.adoc[建立工作前、工作後及原則指令碼]
+
+xref:concept_variables_available_in_the_task_scripts_for_clone_operation.adoc[工作指令碼中可供用於複製作業的變數]
+
+xref:task_creating_task_scripts.adoc[建立工作指令碼]
+
+xref:task_storing_the_task_scripts.adoc[儲存工作指令碼]

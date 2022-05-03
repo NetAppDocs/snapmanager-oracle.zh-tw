@@ -1,0 +1,21 @@
+---
+permalink: windows/task_retaining_backups_forever.html 
+sidebar: sidebar 
+keywords: specify, backup, ineligible, deletion, retention, policy, indefinitely, retaining, forever 
+summary: 您可以指定備份不符合保留原則刪除的資格、以無限期保留備份。 
+---
+= 永久保留備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以指定備份不符合保留原則刪除的資格、以無限期保留備份。
+
+. 若要指定不受限制地保留備份、請輸入以下命令：mos備份更新-profileprofileprofile_name｛-labelLabel [data |-archivelogs]|-ided｝-rect -unimonal
+
+
+*相關資訊*
+
+xref:reference_the_smosmsapbackup_update_command.adoc[使用SMO備份更新命令]

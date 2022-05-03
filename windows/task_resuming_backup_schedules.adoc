@@ -1,0 +1,19 @@
+---
+permalink: windows/task_resuming_backup_schedules.html 
+sidebar: sidebar 
+keywords: administrator, resume, suspend, backup, schedule, resuming 
+summary: 系統管理員可選擇繼續暫停的備份排程。 
+---
+= 恢復備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+系統管理員可選擇繼續暫停的備份排程。
+
+如果您嘗試恢復使用中的排程、可能會遇到錯誤訊息：「無法恢復：排程<schedulename>已經處於恢復狀態」。
+
+. 若要恢復暫停的備份排程、請輸入下列命令：SMO排程恢復-profile profile_name-schedule-namesschedulName排程名稱[-quiet |-verbos]
+

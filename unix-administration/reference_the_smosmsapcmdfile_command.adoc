@@ -1,0 +1,70 @@
+---
+permalink: unix-administration/reference_the_smosmsapcmdfile_command.html 
+sidebar: sidebar 
+keywords: cmdfile, command, run, shell, host, limit, number, character, appear, line, smo 
+summary: 如果主機上的Shell限制了命令列上可顯示的字元數、您可以使用cmd檔案命令來執行任何命令。 
+---
+= 使用SMO cmd檔案命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果主機上的Shell限制了命令列上可顯示的字元數、您可以使用cmd檔案命令來執行任何命令。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo cmdfile
+-file file_name
+\[-quiet \| -verbose\]
+----
+您可以將命令包含在文字檔中、然後使用SMO cmd檔案命令來執行命令。您只能在文字檔中新增一個命令。您不得在命令語法中包含SMO。
+
+
+NOTE: 使用SMO cmd檔案命令取代了SMO pfile命令。SMO cmd檔案與SMO pfile命令不相容。
+
+
+
+== 參數
+
+* *檔案file_name*
++
+指定包含您要執行之命令的文字檔路徑。
+
+* *-無聲*
++
+指定主控台僅顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+指定錯誤、警告和資訊訊息會顯示在主控台中。
+
+
+
+
+
+== 範例
+
+此範例將設定檔create命令加入位於/tmp.的command.txt中、即可建立設定檔。然後您可以執行SMO cmd檔案命令。
+
+文字檔包含下列資訊：
+
+[listing]
+----
+profile create -profile SALES1 -repository -dbname SNAPMGRR
+-login -username server1_user -password ontap -port 1521 -host server1
+-database -dbname SMO -sid SMO -login -username sys -password oracle -port 1521
+-host Host2 -osaccount oracle -osgroup db2
+----
+您現在可以使用command.txt檔案執行SMO cmd檔案命令來建立設定檔：
+
+[listing]
+----
+smo cmdfile -file /tmp/command.txt
+----

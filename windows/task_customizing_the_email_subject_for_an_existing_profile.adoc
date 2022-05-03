@@ -1,0 +1,17 @@
+---
+permalink: windows/task_customizing_the_email_subject_for_an_existing_profile.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, customize, email, subject, pattern, existing, profile, customize, update, customizing 
+summary: 利用此功能、您可以更新現有設定檔、自訂電子郵件主旨模式。SnapManager此自訂的受試者模式僅適用於更新的設定檔。 
+---
+= 自訂現有設定檔的電子郵件主旨
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以更新現有設定檔、自訂電子郵件主旨模式。SnapManager此自訂的受試者模式僅適用於更新的設定檔。
+
+. 輸入下列命令：smo profile update -profileprofile [-profile-passworthprofile_password][-database-dbnamedb_dbname-host db_host [-iddb_sid][-login-usernamedb_username-password_port db_port][{-rMAN {-controlfile |{-login-usernam_deparameden-tepolicyour][-peepyour_noteepying_eneduneepyeedun][-peepy-peeparam_protectam_protective][-name_data1 [-noteepyour][-pyour][-noteeparam][-name_protectam][-noteepolicyour][-pyour][-pyour][-noteeparam_protectam][-protectam][-noteeparam_privacy_privacy-pyour][-pyepyour][-name[-name_privacy_privacy_privacy_pass][-
+

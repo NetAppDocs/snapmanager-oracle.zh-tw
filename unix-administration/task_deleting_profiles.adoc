@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task_deleting_profiles.html 
+sidebar: sidebar 
+keywords: delete, profile, anytime, contain, succesful, incomplete, backup, deleting, smo 
+summary: 只要設定檔不包含成功或不完整的備份、您就可以隨時刪除該設定檔。您可以刪除包含已釋出或刪除備份的設定檔。 
+---
+= 刪除設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+只要設定檔不包含成功或不完整的備份、您就可以隨時刪除該設定檔。您可以刪除包含已釋出或刪除備份的設定檔。
+
+. 若要刪除設定檔、請輸入以下命令：「mo profile delete -profile profile profile _name」
+
+
+*相關資訊*
+
+xref:reference_the_smosmsapprofile_delete_command.adoc[可使用SMO設定檔刪除命令]

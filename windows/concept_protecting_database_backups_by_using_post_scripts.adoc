@@ -1,0 +1,29 @@
+---
+permalink: windows/concept_protecting_database_backups_by_using_post_scripts.html 
+sidebar: sidebar 
+keywords: enable, protect, database, backup, postscript, snapmirror, snapvault, relationship, postscript, cli, gui 
+summary: 當主要與次要儲存系統之間建立SnapMirror或SnapMirror關係時、可使用指令碼來保護資料庫備份。SnapManager SnapVault您可以使用預設的後指令碼、從SnapManager CLI和GUI進行備份作業的後處理活動。 
+---
+= 使用指令碼保護資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當主要與次要儲存系統之間建立SnapMirror或SnapMirror關係時、可使用指令碼來保護資料庫備份。SnapManager SnapVault您可以使用預設的後指令碼、從SnapManager CLI和GUI進行備份作業的後處理活動。
+
+您可以使用預設的POST指令碼、網址為：預設安裝目錄\外掛程式\備份\建立\貼文：
+
+* SnapMirror、Mirror_the_backup.cmd（如果您使用Data ONTAP 以7-Mode運作的功能）
+* 如果您使用以7-Mode運作的功能、請使用SnapVault 支援支援的支援功能Data ONTAP
+* SnapMirror、Mirror_the_backup_cDOT.cmd（如果使用叢集Data ONTAP 式的）
+* 如果您使用叢集式的支援功能、請使用SnapVault 支援的支援功能Data ONTAP
+
+
+如需詳細資訊、請參閱readme.txt、網址為：default_install_ddirectory\plugins。
+
+僅針對複製作業提供前置處理或後置處理指令碼。SnapManager提供供備份與還原作業使用的前置處理與後置處理指令碼。SnapManager您可以使用這些指令碼在備份或還原作業之前或之後執行。
+
+
+NOTE: 這些指令碼僅供參考。這些產品已通過SnapDrive 適用於Windows或更新版本的NetApp 7.0測試、但可能無法在所有環境中運作。您應該根據次要保護需求自訂指令碼。指令碼無法搭配SnapDrive 6.2之前的版本使用。

@@ -1,0 +1,51 @@
+---
+permalink: unix-administration/reference_the_smosmsap_server_status_command.html 
+sidebar: sidebar 
+keywords: run, smo_server, status, command, view, snapmanager, host, server 
+summary: 您可以執行SMo_server STATUS命令來檢視SnapManager 指令集主機伺服器的狀態。 
+---
+= SMo_server狀態命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行SMo_server STATUS命令來檢視SnapManager 指令集主機伺服器的狀態。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo_server status
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *-無聲*
++
+指定主控台僅顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+指定錯誤、警告和資訊訊息會顯示在主控台中。
+
+
+
+
+
+== 範例
+
+下列範例顯示主機伺服器的狀態：
+
+[listing]
+----
+smo_server status
+SMO-17104: SnapManager Server version 3.3.1 is running on secure port 25204 with PID 11250
+  and has 0 operations in progress.
+----

@@ -1,0 +1,94 @@
+---
+permalink: windows/reference_sample_database_volume_layouts.html 
+sidebar: sidebar 
+keywords: refer, sample, database, volume, layout, configuring, configure 
+summary: 如需設定資料庫的說明、請參閱資料庫Volume配置範例。 
+---
+= 範例資料庫Volume配置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如需設定資料庫的說明、請參閱資料庫Volume配置範例。
+
+
+
+== 單一執行個體資料庫
+
+|===
+
+
+| 檔案類型 | Volume名稱 | 適用於檔案類型的專屬Volume | 自動Snapshot複本 
+
+
+ a| 
+Oracle二進位檔
+ a| 
+orabin_host名稱
+ a| 
+是的
+ a| 
+開啟
+
+
+
+ a| 
+資料檔案
+ a| 
+oradata_sID
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+暫用資料檔案
+ a| 
+oratemp_sid
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+控制檔
+ a| 
+oracntrl01_SID（多工）
+
+oracntrl02_sID（多工）
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+重作記錄
+ a| 
+orogic 01_SID（多工）
+
+oralog02_SID（多工）
+ a| 
+是的
+ a| 
+關
+
+
+
+ a| 
+歸檔記錄
+ a| 
+oraarm_SID
+ a| 
+是的
+ a| 
+關
+
+|===

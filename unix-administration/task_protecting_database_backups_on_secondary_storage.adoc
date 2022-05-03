@@ -1,0 +1,103 @@
+---
+permalink: unix-administration/task_protecting_database_backups_on_secondary_storage.html 
+sidebar: sidebar 
+keywords: snapmanager, protect, backup, copies, secondary, tertiary, storage, system, smo 
+summary: 您可以使用SnapManager 支援功能來保護二線或三線儲存系統上的備份複本。 
+---
+= 保護二線或三線儲存設備上的資料庫備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用SnapManager 支援功能來保護二線或三線儲存系統上的備份複本。
+
+. 輸入下列命令： 「mo Backup create -profile profile profile profile profile _name｛[-full｛-online |-offline |-auto｝[-sthourly |-ditly |-flely |-monthly |-minonly |-unimonalvid]|[-data [-filesfiles/files/]|[-tabl空間-表格空間[-tabledabellabell][-每週註解]｛-offer-hourly -ride-ride-sthourly -每週[-每週一次、每週一次、每週一次、每小時、每小時、每次、每次、每次、每次、每次、每次、每次、每次、 [-snapvaultlabelSnapVault標籤][-protected |-nosprotectnow][-backup-destpath1 [,[path2]][-exclexe-destpath1 [,path2]][-prunelogs {-all |-untilSCNuntaskscuntuntilsn |-date yd-mm-dd-dd:hd：hh前幾個月][-minutsendse-spec-minuts[-minutsours'-minuts'[-minuts[-minutsends'前2小時][-minutsends'[-minutsprun][前][前][前][前][前][前
++
+|===
+| 如果您想要... | 然後執行此動作... 
+
+
+ a| 
+*建立線上或離線資料庫的備份、而非SnapManager 讓支援部門管理線上或離線的資料庫*
+ a| 
+指定離線或線上選項、以建立離線資料庫或線上資料庫的備份。如果您使用-offline或-online選項、則無法使用-auto選項。
+
+
+
+ a| 
+* SnapManager 讓支援管理資料庫的備份、無論資料庫是在線上或離線*
+ a| 
+指定-auto選項。如果您使用-auto選項、則無法使用-offline或-online選項。
+
+
+
+ a| 
+*新增備份的相關註解*
+ a| 
+指定-comment選項、後面接著說明字串。
+
+
+
+ a| 
+*強制資料庫進入您指定的備份狀態、無論資料庫目前處於何種狀態*
+ a| 
+指定-force選項。
+
+
+
+ a| 
+*在建立時驗證備份*
+ a| 
+指定-VERIFY選項。
+
+
+
+ a| 
+*在二線儲存設備上建立備份*
+ a| 
+指定-Protect選項。
+
+** 如果您使用ONTAP 的是支援功能、想要立即保護備份到二線儲存設備、請指定-Protect選項。
++
+
+NOTE: -protectNOW選項不適用於叢集Data ONTAP 式的不適用。
+
+** 如果您使用Data ONTAP 以7-Mode運作的功能進行支援、並想要保護備份立即儲存至次要儲存設備、而忽略Protection Manager保護排程、請指定-protectNOW選項。
+** 若要防止備份到二線儲存設備、請指定-noProtect選項。如果您使用ONTAP 的是Sfault、而且在建立設定檔時選取了_SnapManager®cDOT_Vault_保護原則、則必須指定-snapvaultlabel選項。您必須提供SnapMirror原則規則中所指定的SnapMirror標籤、同時將SnapVault 「不確定性」設定為「值」。
+
+
+
+
+ a| 
+*指定保留類別值*
+ a| 
+指定-retate選項、並根據下列其中一個保留類別、指出是否應保留備份：
+
+** -每小時
+** 每日
+** 每週
+** 每月
+** 無限制如果您未指定保留類別、SnapManager 則根據預設、使用-Hourly。
+
+
+|===
+
+
+
+
+== 範例
+
+下列命令可保護資料庫備份：
+
+[listing]
+----
+smo backup create -profile PAYDB -protect -retain -daily -full auto -label full_bkup_sales
+----
+下列命令可立即保護資料庫備份：
+
+[listing]
+----
+smo backup create -profile PAYDB -protectnow -retain -daily -full auto -label full_bkup_sales
+----

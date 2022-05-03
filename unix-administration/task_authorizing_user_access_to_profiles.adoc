@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task_authorizing_user_access_to_profiles.html 
+sidebar: sidebar 
+keywords: addition, role-based, access, control, rbac, snapmanager, enable, password, profile, prevent, unauthorized, access 
+summary: 除了角色型存取控制（RBAC）之外、SnapManager 您也可利用此功能設定設定檔的密碼、以防止未獲授權的存取。 
+---
+= 授權存取設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+除了角色型存取控制（RBAC）之外、SnapManager 您也可以使用此功能設定設定檔的密碼、以防止未獲授權的存取。
+
+. 輸入下列命令：「mo認證集-profile -name profile_name [-password]」
+
+
+*相關資訊*
+
+xref:reference_the_smosmsapcredential_set_command.adoc[使用SMO認證集命令]

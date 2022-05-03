@@ -1,0 +1,39 @@
+---
+permalink: unix-administration/task_configuring_snapdrive_when_rbac_is_enabled.html 
+sidebar: sidebar 
+keywords: role-based, access, control, rbac, enable, configure, datafabric, manager, capabilities, manager, server, snapdrive 
+summary: 啟用角色型存取控制（RBAC）時、您必須設定DataFabric Manager伺服器以納入RBAC功能。您也必須登錄SnapDrive 在Data Fabric Manager伺服器中建立的支援功能、以及SnapDrive 在支援中儲存系統的root使用者。 
+---
+= 啟用RBAC時、設定DataFabric Manager伺服器和SnapDrive 功能不全
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+啟用角色型存取控制（RBAC）時、您必須設定DataFabric Manager伺服器以納入RBAC功能。您也必須登錄SnapDrive 在Data Fabric Manager伺服器中建立的支援功能、以及SnapDrive 在支援中儲存系統的root使用者。
+
+. 設定DataFabric Manager伺服器。
++
+.. 若要重新整理DataFabric Manager伺服器、以更新目標資料庫在儲存系統上直接所做的變更、請輸入下列命令：DFM host finsintress_system
+.. 在DataFabric Manager伺服器中建立新使用者、然後設定密碼。
+.. 若要將作業系統使用者新增至DataFabric Manager伺服器管理清單、請輸入下列命令：DFM使用者add SD-admin
+.. 若要在DataFabric Manager伺服器中建立新角色、請輸入下列命令：DFM角色create SD-admin-role
+.. 若要將Dfm.Core.AccessCheck全域功能新增至角色、請輸入下列命令：DFM role add SD-admin-role Dfm.Core.AccessCheck Global
+.. 若要將SD-admin-role新增至作業系統使用者、請輸入下列命令：DFM使用者角色集SD-adminsd-admin-role
+.. 若要在DataFabric Manager伺服器中為SnapDrive 支援該位使用者建立其他角色、請輸入下列命令：DFM角色create SD-Protect
+.. 若要將RBAC功能新增至SnapDrive 為Refsroot使用者或系統管理員所建立的角色、請輸入下列命令：DFM角色add SD-Protect SD.Config.Read Globaldfm角色add SD-Protect SD.Config.Write Globaldfm角色add SD-Protect SD-Protect SD-Protect SD.Storage.Read Globaldfm角色ADSD-Protect DataSD-Protect
+.. 若要將目標資料庫Oracle使用者新增至DataFabric Manager伺服器的系統管理員清單、並指派SD-protecty角色、請輸入下列命令：DFM使用者add -r SD-protecttardb_host1\Oracle
+.. 若要在DataFabric Manager伺服器中新增目標資料庫所使用的儲存系統、請輸入下列命令：DFM主機設定儲存系統主機hostLogin=Oracle hostPassword=password
+.. 若要在DataFabric Manager伺服器中的目標資料庫所使用的儲存系統中建立新角色、請輸入下列命令：DFM主機角色create -h database_system-c "API-*、login-*"儲存-RBAC角色
+.. 若要在儲存系統中建立新群組、並指派在DataFabric Manager伺服器中建立的新角色、請輸入下列命令：DFM主機使用者群組create -h storage儲存系統-r儲存設備-RBAC角色儲存設備-RBAC群組
+.. 若要在儲存系統中建立新使用者、並指派新角色和在DataFabric Manager伺服器中建立的群組、請輸入下列命令：DFM主機使用者create -h storage儲存系統-r儲存設備-RBAC角色-p password -g儲存設備-RBAC群組tardb_host1
+
+
+. 設定SnapDrive 功能
++
+.. 若要以Refuse-admin登錄SD-admin使用者的認證、SnapDrive 請輸入下列命令：SnapDrive config set -DFM SD-adhusing_host
+.. 若要使用SnapDrive VMware登錄儲存系統的root使用者或管理員、請輸入下列命令：SnapDrive config set tardb_host 1storage_system
+
+
+

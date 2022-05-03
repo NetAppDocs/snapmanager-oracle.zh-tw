@@ -1,0 +1,112 @@
+---
+permalink: unix-administration/reference_the_smosmsapbackup_show_command.html 
+sidebar: sidebar 
+keywords: backup, show, command, display, detail, information, backup, protection, status, retention, smo 
+summary: 您可以使用備份show命令來顯示有關備份的詳細資訊、包括其保護狀態、備份保留類別、以及一線與二線儲存設備上的備份。 
+---
+= 使用SMO備份show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用備份show命令來顯示有關備份的詳細資訊、包括其保護狀態、備份保留類別、以及一線與二線儲存設備上的備份。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo backup show
+-profile profile_name
+[-label label \[-data \| -archivelogs\] \| \[-id id\]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔名稱*
++
+指定要顯示備份的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *標籤標籤*
++
+指定備份的標籤。
+
+* *資料*
++
+指定資料檔案。
+
+* -archivelogs*
++
+指定歸檔記錄檔。
+
+* *識別碼*
++
+指定備份ID。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台中顯示錯誤、警告和資訊訊息、以及任何複製和驗證資訊。
+
+
+
+
+
+== 範例
+
+下列範例顯示有關備份的詳細資訊：
+
+[listing]
+----
+smo backup show -profile SALES1 -label BTNFS -verbose
+Backup id: 8abc013111a450480111a45066210001
+Backup status: SUCCESS
+Primary storage resources: EXISTS
+Protection sate: PROTECTED
+Retention class: DAILY
+Backup scope: FULL
+Backup mode: OFFLINE
+Mount status: NOT MOUNTED
+Backup label: BTNFS
+Backup comment:
+RMAN Tag: SMO_BTNFS_1175283108815
+Backup start time: 2007-03-30 15:26:30
+Backup end time: 2007-03-30 15:34:13
+Verification status: OK
+Backup Retention Policy: NORMAL
+Backup database: hsdb1
+Checkpoint: 2700620
+Tablespace: SYSAUX
+Datafile: /mnt/ssys1/data/hsdb/sysaux01.dbf [ONLINE]
+...
+Control Files:
+File: /mnt/ssys1/data/control03.ctl
+...
+Archive Logs:
+File: /mnt/ssys1/data/archive_logs/2_131_626174106.dbf
+...
+Host: Host1
+Filesystem: /mnt/ssys1/data
+File: /mnt/ssys1/data/hsdb/SMOBakCtl_1175283005231_0
+...
+Volume: hs_data
+Snapshot: SMO_HSDBR_hsdb1_F_C_1_
+8abc013111a450480111a45066210001_0
+File: /mnt/ssys1/data/hsdb/SMOBakCtl_1175283005231_0
+...
+Protected copies on Secondary Storage:
+  14448939 - manow
+  88309228 - graffe
+----
+*相關資訊*
+
+xref:task_viewing_backup_details.adoc[檢視備份詳細資料]

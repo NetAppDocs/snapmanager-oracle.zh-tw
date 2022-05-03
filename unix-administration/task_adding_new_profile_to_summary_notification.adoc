@@ -1,0 +1,23 @@
+---
+permalink: unix-administration/task_adding_new_profile_to_summary_notification.html 
+sidebar: sidebar 
+keywords: configure, summary, email, notification, repository, database, add, new, profile 
+summary: 為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用摘要通知命令、將新的設定檔新增至摘要通知。 
+---
+= 新增設定檔至摘要電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用摘要通知命令、將新的設定檔新增至摘要通知。
+
+. 輸入下列命令：mos profile create -profileprofileprofile_name [-profile-countword-password]-reposite-dbnamerepo_service_name-hovernpo_host-portrepo_log-usernamerepo_username-database-dbnamedb_db_name-hostdb_host [-siddb_siddb_sidstepolicy-policy-policy-pen_depn-topn[-edn-policy-policy-policy-policy-pen_user-pdn_sthy-policyn_sthy-policy-pen_depnsthyn_user-pdnstampuser-pdn_susernam_prox][-tream_notesnstampuser-pdnstampusernam_notification [-pdn][-tream_profile-profilen_notification [-policy-policy-policy-policy-policy-policy-pened][-py-policy-policy-policy-policy-policy-password
++
+此命令的其他選項如下：
+
++
+[力]
+
+

@@ -1,0 +1,35 @@
+---
+permalink: windows/concept_general_layout_and_configuration.html 
+sidebar: sidebar 
+keywords: general, layout, configuration, information, storage, disk, group 
+summary: 您可以找到建議的一般資料庫配置和儲存組態的相關資訊、以避免與磁碟群組、檔案類型和表格空間有關的問題。 
+---
+= 一般配置與組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以找到建議的一般資料庫配置和儲存組態的相關資訊、以避免與磁碟群組、檔案類型和表格空間有關的問題。
+
+* 請勿在資料庫中包含來自多種SAN檔案系統的檔案。
++
+組成資料庫的所有檔案都必須位於相同類型的檔案系統上。
+
+* 需要多個4K區塊大小。SnapManager
+* 如果您想要向SnapManager Oracle Recovery Manager（RMAN）登錄支援還原的備份、則必須建立啟用RMAN的設定檔。
+
+
+以下是一些Volume區隔準則：
+
+* 磁碟區中只能有一個資料庫的資料檔案。
+* 您必須針對下列每個檔案分類使用不同的磁碟區：資料庫二進位檔、資料檔案、線上重作記錄檔、歸檔的重作記錄檔和控制檔。
+* 您不需要為暫用資料庫檔案建立個別的Volume、因為SnapManager 無法備份暫用資料庫檔案。
+
+
+如需更多資訊、請參閱《SnapManager _關於Oracle最佳實務做法_》。
+
+*相關資訊*
+
+http://media.netapp.com/documents/tr-3761.pdf["Oracle最佳實務做法：SnapManager media.netapp.com/documents/tr-3761.pdf"]

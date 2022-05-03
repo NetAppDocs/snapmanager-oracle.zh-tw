@@ -1,0 +1,43 @@
+---
+permalink: windows/reference_the_smosmsapprofile_show_command.html 
+sidebar: sidebar 
+keywords: run, profile, show, command, display, smo 
+summary: 您可以執行profile show命令來顯示設定檔的相關資訊。 
+---
+= 使用SMO設定檔show命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行profile show命令來顯示設定檔的相關資訊。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo profile show
+-profile profile_name
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔名稱*
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+

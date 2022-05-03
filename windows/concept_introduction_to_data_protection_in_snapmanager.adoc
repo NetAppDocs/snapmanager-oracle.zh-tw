@@ -1,0 +1,16 @@
+---
+permalink: windows/concept_introduction_to_data_protection_in_snapmanager.html 
+sidebar: sidebar 
+keywords: data, protection, support, backup, secondary, tertiary, storage, system, snapmirror, snapvault 
+summary: 支援資料保護、可保護二線或三線儲存系統上的備份。SnapManager您必須在SnapVault 來源與目的地磁碟區之間設定SnapMirror和相依關係。 
+---
+= 介紹資料保護功能SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援資料保護、可保護二線或三線儲存系統上的備份。SnapManager您必須在SnapVault 來源與目的地磁碟區之間設定SnapMirror和相依關係。
+
+您可以使用命令列介面（CLI）和圖形使用者介面（GUI）的備份後指令碼、來保護主儲存系統上的備份。

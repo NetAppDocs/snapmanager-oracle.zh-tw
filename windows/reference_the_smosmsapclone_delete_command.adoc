@@ -1,0 +1,102 @@
+---
+permalink: windows/reference_the_smosmsapclone_delete_command.html 
+sidebar: sidebar 
+keywords: run, clone, delete, command, operation, smo 
+summary: 您可以執行Clone刪除命令來刪除實體複本。如果實體複本是由任何作業所使用、則無法刪除實體複本。 
+---
+= 使用SMO Clone DELETE命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行Clone刪除命令來刪除實體複本。如果實體複本是由任何作業所使用、則無法刪除實體複本。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo clone delete
+-profile profile_name
+\[-id guid \| -label clone_name\]
+[-login
+\[-username db_username -password db_password -port db_port\]
+ ]
+\[-syspassword syspassword\]
+-force
+\[-dump\]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔名稱*
++
+指定包含要刪除之實體複本的設定檔名稱。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *力*
++
+即使有資源與實體複本相關聯、也會刪除實體複本。
+
+* -id guid*
++
+指定要刪除之複本的GUID。當SnapManager 您建立複本時、會產生由實體所產生的GUID。您可以使用SMO Clone清單命令來顯示每個實體複本的GUID。
+
+* *標籤名稱*
++
+指定要刪除之實體複本的標籤。
+
+* -syspassWord syspassword*
++
+指定sys授權使用者的密碼。
+
++
+
+NOTE: 如果系統權限使用者所提供的資料庫認證資料不同、則必須提供系統權限使用者的密碼。
+
+* *登入*
++
+可讓您輸入資料庫登入詳細資料。
+
+* *使用者名稱db_username*
++
+指定存取資料庫所需的使用者名稱。
+
+* *密碼db_password*
++
+指定存取資料庫所需的密碼。
+
+* *連接埠db_port*
++
+指定用於存取設定檔所描述之資料庫的TCP連接埠號碼。
+
+* *傾印*
++
+指定在複製刪除作業之後收集傾印檔案。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+以下範例會刪除實體複本：
+
+[listing]
+----
+smo clone delete -profile SALES1 -label SALES_May
+Operation Id [8abc01ec0e79004b010e79006da60001] succeeded.
+----

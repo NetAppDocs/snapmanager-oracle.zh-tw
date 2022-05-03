@@ -1,0 +1,51 @@
+---
+permalink: unix-administration/task_performing_backup_restore_and_clone_operations_using_prescript_and_post_scripts.html 
+sidebar: sidebar 
+keywords: script, initiating, backup, restore, clone, operation, snapmanager, display, task-enabling, command-line 
+summary: 您可以在開始備份、還原或複製作業時、使用自己的指令碼。在「備份建立精靈」、「還原或還原精靈」或「Clone Create精靈」中顯示「工作啟用」頁面、您可以在其中選取指令碼、並為指令碼所需的任何參數提供值。SnapManager 
+---
+= 使用指令碼和指令碼後執行備份、還原和複製作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在開始備份、還原或複製作業時、使用自己的指令碼。在「備份建立精靈」、「還原或還原精靈」或「Clone Create精靈」中顯示「工作啟用」頁面、您可以在其中選取指令碼、並為指令碼所需的任何參數提供值。SnapManager
+
+* 將外掛程式指令碼安裝在正確SnapManager 的安裝位置。
+* 使用SMO外掛檢查命令、確認外掛程式已正確安裝。
+* 請確定您使用的是Bash Shell。
+
+
+在命令列介面（CLI）中、列出指令碼名稱、選取參數、然後設定值。
+
+. 若要驗證您是否正在使用Bash Shell、請在命令提示字元：bash中輸入下列命令
++
+或者、您也可以在提示字元輸入bash命令、然後使用命令輸出作為指令碼的開始參數。
+
++
+如果沒有看到錯誤、則表示Bash Shell運作正常。
+
+. 對於備份作業、請輸入-taskspec選項、並提供工作規格XML檔案的絕對路徑、以便在備份作業之前或之後執行預先處理或後處理活動： SMO備份建立設定檔設定檔名稱｛[-full｛-online |-offline |-auto｝[-hourly |[-ditly |-f筆|-mourly |-monthly |-unbonly |-unonvally_][-VERIFY data [-filesFIL]|[-datCommites/files/]|[-hourly -archive-archive-appointment ][每週一次、每週一次、每週一次、每週一次、每週一次、每小時、每次、每次、每次、每次、每次、每次不限、每次、每次、每次、每次、 [-protection|-nosprotection|-protectnow][-data-destpath1 [,[path2]][-exclude destpath1 [,path2]][-prunelogs {-all |-untilSCNuntilSC|-pruntuntilSC|-prune前面加上{-dateyy-mm-h-dh tasked:mm:ss| s |月份|-thise-funnestunnestunnestunnestunney][-date-destunnestprunnestunnestprunnestunney][-date-datase-destprunnestunnestunnestunney][備份的備份的備份[
++
+如果備份外掛程式作業失敗、則只會顯示外掛程式名稱和傳回代碼。外掛程式指令碼必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
+
+. 對於備份還原作業、 輸入-taskspecs選項、並提供工作規格XML檔案的絕對路徑、以便在還原作業之前或之後執行預先處理或後處理活動：smo備份還原-profileprofile_name｛-label<label>|-id<id>｝｛-files<file>|-tablec空間<tables>|-f完整|-controlfiles｝[-restore-alllogs]之前執行｛-recover<restore<restore<restore-es>之前的記錄 來源-次要[-temp-volume <temp_volume >][-copy - ido]][-taskspec<taskspec>][-verife][-force]備份還原-快速[需要|置換|後援|關閉][-preview ]-dump [-quide|-verbos]
++
+如果還原外掛程式作業失敗、則只會顯示外掛程式名稱和傳回代碼。外掛程式指令碼必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
+
+. 對於實體複本建立作業、請輸入-taskspec選項、並提供工作規格XML檔案的絕對路徑、以便在實體複本作業之前或之後執行預先處理或後處理活動： moso clone create -profileprofileprofile_name｛-backup-labelbackup_name |-backup-id<backup-id>|-current}-newidnewsnew_sid-clonespecent_path_to_clonespecfile [-reserve<yes、no、inherited>][-host<host<host>][-label<label<label>][-comment <備註<備份<備份<備份<備份<備份<備份<備份<備份<資訊>備份<資訊><資訊>備份<資訊>備份<資訊><資訊>[
++
+如果複製外掛程式作業失敗、則只會顯示外掛程式名稱和傳回代碼。外掛程式指令碼必須包含記錄訊息、並將訊息重新導向至使用者定義的記錄檔。
+
+
+
+
+
+== 使用工作規格XML檔案建立備份的範例
+
+[listing]
+----
+smo backup create -profile SALES1 -full -online -taskspec sales1_taskspec.xml -force -verify
+----

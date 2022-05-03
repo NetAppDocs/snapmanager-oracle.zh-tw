@@ -1,0 +1,16 @@
+---
+permalink: unix-installation-7mode/reference_deployment_workflow.html 
+sidebar: sidebar 
+keywords: create, backup, snapmanager, install, snapdrive, unix, oracle, deployment, workflow 
+summary: 在您建立SnapManager 使用支援還原的備份之前、您必須先安裝SnapDrive 適用於UNIX的支援功能、然後再安裝SnapManager 適用於Oracle的支援功能。 
+---
+= 部署工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在您建立SnapManager 使用支援還原的備份之前、您必須先安裝SnapDrive 適用於UNIX的支援功能、然後再安裝SnapManager 適用於Oracle的支援功能。
+
+image::../media/deployment_workflow_smo_7mode_c1.gif[下圖顯示SnapManager 7-Mode環境中的Oracle適用功能部署工作流程。]

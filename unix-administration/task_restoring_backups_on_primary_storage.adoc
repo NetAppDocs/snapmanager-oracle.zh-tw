@@ -1,0 +1,189 @@
+---
+permalink: unix-administration/task_restoring_backups_on_primary_storage.html 
+sidebar: sidebar 
+keywords: backup, restore, command, database, primary 
+summary: 您可以使用備份還原命令、在主要儲存設備上還原資料庫備份。 
+---
+= 還原主儲存設備上的備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用備份還原命令、在主要儲存設備上還原資料庫備份。
+
+根據預設、系統會嘗試執行Volume型快速還原、並提供資格檢查資訊。SnapManager如有需要、您可以覆寫某些資格檢查。如果您確定無法使用快速還原來執行備份、您可以停用快速還原資格檢查、並執行檔案型還原。
+
+您可以使用備份還原命令選項來指定SnapManager 是否要還原全部或部分備份。利用此功能、您也可以在單一使用者作業中、從備份中還原控制檔、以及資料檔案或表格空間。SnapManager您可以包含-controlFiles with -Complete來還原控制檔、以及表格空間和資料檔案。
+
+您可以選取下列其中一個選項來還原備份：
+
+|===
+| 如果您要還原... | 使用... 
+
+
+ a| 
+完整備份、包含所有表格空間和資料檔案
+ a| 
+完成
+
+
+
+ a| 
+特定資料表空間的清單
+ a| 
+表格空間
+
+
+
+ a| 
+特定資料檔案
+ a| 
+檔案
+
+
+
+ a| 
+僅控制檔
+ a| 
+controlFiles
+
+
+
+ a| 
+表格空間、資料檔案及控制檔
+ a| 
+-完整 控制檔
+
+|===
+您也可以指定-restorespec、從替代位置還原備份。
+
+如果包含-recover,您可以將資料庫還原至:
+
+* 資料庫中發生的最後一筆交易（所有記錄）
+* 特定日期與時間
+* 特定Oracle系統變更編號（SCN）
+* 備份時間（無記錄）
+* 僅還原
+
+
+
+NOTE: 日期和時間恢復和SCN恢復都是時間點恢復。
+
+利用歸檔記錄檔、即可自動恢復還原的資料庫備份（3.2或更新版本）SnapManager 。即使外部位置有歸檔記錄檔、如果您指定-recover-from位置選項、SnapManager 則會使用外部位置的歸檔記錄檔來恢復還原的資料庫備份。
+
+支援Oracle的外部位置。SnapManager但Oracle無法識別來自外部目的地的檔案。這種行為會在Flash恢復區域目的地和自動儲存管理（ASM）目的地中引起注意。這些都是Oracle的問題、因應措施是永遠在這類資料庫配置中備份歸檔記錄檔。
+
+如果提供任何不一致的SCN或日期、則恢復將在恢復的最後一個一致點停止、並顯示錯誤訊息「Recovery成功、但不足」。您必須手動將恢復作業恢復至一致的狀態。
+
+為了在沒有套用記錄的情況下恢復、SnapManager 直到上次在備份期間建立的歸檔記錄檔最後一次SCN為止、即可恢復。如果資料庫在此次SCN之前一致、則資料庫將成功開啟。如果此時資料庫不一致、SnapManager 則如果資料庫已經一致、則可能會嘗試開啟資料庫、而資料庫將成功開啟。
+
+
+NOTE: 不支援還原歸檔記錄專用備份。SnapManager
+
+如果將歸檔記錄檔移到NFS掛載點上、而非具備Snapshot功能的儲存設備、SnapManager 則可使用設定檔來恢復還原的資料庫備份。在不具備Snapshot功能的儲存設備上執行SnapManager 實體作業之前、您應該在SMo.config中新增archivedLogs.exclude目的地。
+
+在建立設定檔之前、您必須先設定exclude參數。只有在SnapManager 將exclude參數設定為包含在實體組態檔案中之後、設定檔才會成功建立。
+
+
+NOTE: 如果資料庫是ASM磁碟群組上的非Snapshot儲存設備、而且當資料庫被選取為歸檔記錄目的地時SnapManager 、則不支援使用設定檔還原備份。
+
+如果備份已經掛載、SnapManager 則不會再次掛載備份、並使用已掛載的備份。如果備份是由不同的使用者掛載、而且目前的使用者無法存取先前掛載的備份、則其他使用者必須提供權限。所有的歸檔記錄檔都具有群組擁有者的讀取權限；如果備份是由不同的使用者群組掛載、則目前的使用者可能無法取得權限。使用者可以手動授予已掛載歸檔記錄檔的權限、然後重試還原或還原。
+
+在真實應用程式叢集（RAC）環境中還原資料庫備份
+
+在RAC環境中還原資料庫備份期間、如果找不到所需的歸檔記錄檔、Oracle會要求歸檔記錄檔、並在RAC資料庫的不同執行緒與變更編號之間切換。Oracle的支援以最佳方式嘗試還原資料庫。SnapManager在RAC環境中成功恢復資料庫備份、取決於備份中的歸檔記錄檔是否可用。
+
+建議的RAC資料庫還原機制如下：
+
+* 請確定所有歸檔記錄檔都可在備份中使用、或是所有歸檔記錄檔都可在單一外部歸檔記錄目的地中使用。
+* 如果提供多個外部歸檔記錄目的地、您可以在指定所有執行緒的外部歸檔記錄目的地時、提供歸檔記錄檔的重疊。
++
+例如、外部歸檔記錄位置-我可以有1到100個歸檔記錄檔、外部歸檔記錄位置- II可以有98到200個歸檔記錄檔、而外部歸檔記錄位置- III可以有198到300個歸檔記錄檔。
+
+* 在剪除歸檔記錄檔時、您可以刪除直到SCN或日期為止的歸檔記錄檔、而非刪除所有歸檔記錄檔、如此一來備份就能擁有相同的歸檔記錄檔。
+
+
+您可以將-dump選項指定為選用參數、以便在還原作業成功或失敗後收集傾印檔案。
+
+. 輸入下列命令：SMO備份還原-profile profile_name-label label-f完整 恢復-alllogs [-recover-from locationpath [,path2]-dump - verbose
++
+SMO備份還原-profile目標db1_rof1 -label full _bkup_sales_nov_08 -完整-復原-alllogs -verbose
+
+. 若要還原不同案例的資料、請完成下列其中一項：
++
+|===
+| 如果您要還原... | 命令範例 
+
+
+ a| 
+*完整的資料庫、但不含控制檔、並恢復至特定的SCN編號（3794392）。在這種情況下、目前的控制檔存在、但所有的資料檔都已毀損或遺失。將資料庫從現有的完整線上備份還原並還原至SCN*之前的位置
+ a| 
+SMO備份還原-profile目標db1_rof1 -label full _bkup_sales_nov_08 -full -recov直到3794392 -詳細資訊
+
+
+
+ a| 
+*不需控制檔案就能完成資料庫、並可恢復至最新的時間*
+ a| 
+SMO備份還原-profile目標db1_rof1 -label full _bkup_sales_nov_08 -完整-恢復-直到2008年9月15日：15：29：23 -詳細資訊
+
+
+
+ a| 
+*不需控制檔案即可完成資料庫、並可恢復至資料與時間。在這種情況下、目前的控制檔存在、但所有的資料檔都已毀損或遺失、或是在特定時間之後發生邏輯錯誤。將資料庫從現有的完整線上備份還原至故障點之前的日期與時間。*
+ a| 
+SMO備份還原-profile目標db1_rof1 -label f完整_bkup_sales_nov_08 -完整復原-foup-直到「2008-09-15：15：29：23」-詳細資訊
+
+
+
+ a| 
+*部分資料庫（一或多個資料檔案）、不含控制檔、並使用所有可用的記錄進行還原。在這種情況下、目前的控制檔存在、但有一或多個資料檔已毀損或遺失。使用所有可用的記錄、還原這些資料檔案、並從現有的完整線上備份中恢復資料庫。*
+ a| 
+mosO備份還原-profile目標db1_rof1 -label full _bkup_sales_nov_08 -file /u02/oradata/sales02.dbf /u02/oradata/sales03.dbf /u02/oradata/sales04.dbf -recover-alllogs -verbose
+
+
+
+ a| 
+*部分資料庫（一或多個表格空間）、不含控制檔、並使用所有可用的記錄進行還原。在這種情況下、目前的控制檔存在、但會捨棄一或多個資料表空間、或是屬於資料表空間的多個資料檔之一毀損或遺失。使用所有可用的記錄檔、從現有的完整線上備份還原這些表格空間並還原資料庫。*
+ a| 
+SMO備份還原-profile目標db1_rof1 -label f完整_bkup_sales_nov_08 -表格空間使用者-復原-alllogs -詳細資訊
+
+
+
+ a| 
+*僅使用所有可用的記錄來控制檔案及恢復。在這種情況下、資料檔案存在、但所有控制檔都已毀損或遺失。只還原控制檔、並使用所有可用的記錄、從現有的完整線上備份中恢復資料庫。*
+ a| 
+SMO備份還原-profile目標db1_prop1 -label f完整_bkup_sales_nov_08 -controlfile -recover-alllogs -verbose
+
+
+
+ a| 
+*不需控制檔案就能完成資料庫、並使用備份控制檔和所有可用的記錄進行還原。在這種情況下、所有資料檔案都會毀損或遺失。只還原控制檔、並使用所有可用的記錄、從現有的完整線上備份中恢復資料庫。*
+ a| 
+SMO備份還原-profile目標db1_prop1 -label f完整_bkup_sales_nov_08 -full -use備份控制檔-recover-alllogs -verbose
+
+
+
+ a| 
+*使用外部歸檔記錄位置的歸檔記錄檔來還原還原的資料庫。*
+ a| 
+SMO備份還原-profile目標db1_rof1 -label f完整_bkup_sales_nov_08 -full -use-datase-controlfile -recover-alllogs -recover-stite-user1/archive -verbose
+
+|===
+. 檢閱快速還原資格檢查。
++
+輸入下列命令：SMO備份還原-profile目標db1_prop1 -label f完整_bkup_sales_nov_08 -full -recover-alllogs -recover-from位置/user1/archive -verbose
+
+. 如果資格檢查顯示沒有強制檢查失敗、而且可以覆寫特定條件、而且您想要繼續還原程序、請輸入下列命令：備份還原-快速置換
+. 使用-recover-location-選項指定外部歸檔記錄位置。
+
+
+*相關資訊*
+
+xref:task_restoring_backups_using_fast_restore.adoc[使用快速還原還原還原備份]
+
+xref:task_restoring_backups_from_an_alternate_location.adoc[從替代位置還原備份]
+
+xref:reference_the_smosmsapbackup_restore_command.adoc[使用SMO備份還原命令]

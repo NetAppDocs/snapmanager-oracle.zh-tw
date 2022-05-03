@@ -1,0 +1,23 @@
+---
+permalink: windows/task_adding_new_profile_to_summary_notification.html 
+sidebar: sidebar 
+keywords: configure, summary, email, notification, database, profile 
+summary: 為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用摘要通知命令、將新的設定檔新增至摘要通知。 
+---
+= 新增設定檔至摘要電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為儲存庫資料庫設定摘要電子郵件通知之後、您可以使用摘要通知命令、將新的設定檔新增至摘要通知。
+
+. 輸入下列命令：mos profile create -profileprofileprofile_name [-profile-passcountrofile_password]-reposite-dbnamerepo_service_name-hovernpo_host-portrepo_log-usernamedb_depamedb_dbname-hostdb_host [-siddb_siddb_siddb_sid][-dure-edstampusernamed][-tnoticktprobled][-tnotice-hour-tnotesktunnsthour-pour-pour-pure-notesnsthour] usernamed][-depamed][-depamed] user-noticktunnstamp_depamed][-depnotification [-depamedstamp_depnstampauser-notesktnotification [ ed][ ed] user-noteepnstepnstamp_depnstepnstepnstampauser-noteed][-pour-pour-pour] usernamed] user-notektreamed] user-
++
+此命令的其他選項如下：
+
++
+[力]
+
+

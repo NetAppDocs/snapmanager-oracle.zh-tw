@@ -1,0 +1,21 @@
+---
+permalink: windows/task_authorizing_user_access_to_profiles.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, password, profile, prevent, unauthorize, access 
+summary: 使用支援的支援功能、您可以設定設定檔的密碼、以防止未獲授權的存取。SnapManager 
+---
+= 授權存取設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用支援的支援功能、您可以設定設定檔的密碼、以防止未獲授權的存取。SnapManager
+
+. 輸入下列命令：SMO認證集-profile -name profile_name [-password]
+
+
+*相關資訊*
+
+xref:reference_the_smosmsapcredential_set_command.adoc[使用SMO認證集命令]

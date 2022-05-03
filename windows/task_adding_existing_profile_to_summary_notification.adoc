@@ -1,0 +1,17 @@
+---
+permalink: windows/task_adding_existing_profile_to_summary_notification.html 
+sidebar: sidebar 
+keywords: snapmanager, enable, exist, profile, summary, email, notification, updating 
+summary: 利用此功能、您可以在更新設定檔的同時、將現有的設定檔新增至摘要電子郵件通知。SnapManager 
+---
+= 新增現有設定檔至摘要電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+利用此功能、您可以在更新設定檔的同時、將現有的設定檔新增至摘要電子郵件通知。SnapManager
+
+. 輸入下列命令：mos profile update -profileprofileprofile_name [-profile-passcountrofile_password]-reposite-dbnamerepo_service_name-hovernpo_host-portrepo_log-usernamedb_depamedb_dbname-hostdb_host [-siddb_siddb_siddb_sid][-dure-edstampusernamed][-tnoticktreamed][-tnotice-hour-tnotice-hour-pour-tnotesktunnsthour][-depnstepnstamped][-depamed][-depamedstamped] user-notification [ ed] user-noticktunnstampauser-noticktnoticktreamed][-pour-pour][-pour-pour] user-notification [-depnstamp_depnstepnstepnstampausernamed] usernamed] user-noteed] usernam_depam_depnstampauser-not
+

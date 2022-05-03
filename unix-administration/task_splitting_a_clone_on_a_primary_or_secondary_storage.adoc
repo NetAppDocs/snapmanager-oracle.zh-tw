@@ -1,0 +1,41 @@
+---
+permalink: unix-administration/task_splitting_a_clone_on_a_primary_or_secondary_storage.html 
+sidebar: sidebar 
+keywords: clone, split, command, complete, metadata, repository, primary, secondary 
+summary: 您可以使用Clone分割命令來分割實體複本。完成複本分割之後、會從儲存庫資料庫移除複本中繼資料、並刪除或釋出與複本相關的備份。 
+---
+= 分割一線或二線儲存設備上的實體複本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Clone分割命令來分割實體複本。完成複本分割之後、會從儲存庫資料庫移除複本中繼資料、並刪除或釋出與複本相關的備份。
+
+成功分割操作之後建立的新設定檔、用於管理分割實體複本。新的設定檔就像SnapManager 其他任何現有的設定檔一樣。您可以使用此設定檔來執行備份、還原及複製作業。
+
+此外、您也可以設定新設定檔的電子郵件通知。如此一來、資料庫管理員就能得知使用設定檔執行的資料庫作業狀態。
+
+
+NOTE: 僅在FlexClone上執行時、支援分割作業。SnapManager
+
+如果分割作業失敗、則會顯示適當的錯誤訊息、並說明失敗原因。多個作業的狀態也會顯示在作業記錄中。例如：
+
+[listing]
+----
+--[ INFO] The following operations were completed:
+Clone Split : Success
+Profile Create : Failed
+Clone Detach : Success
+----
+您可以選擇在成功或失敗的實體複本分割作業之後收集傾印檔案。
+
+
+NOTE: 輸入Clone分割命令後、SnapManager 在複製分割作業開始之前、不應停止該伺服器。
+
+
+NOTE: 即使您未提供Oracle帳戶（osAccount和osgroup）的任何價值、也會產生設定檔。SnapManager
+
+. 輸入下列命令：mos clone clone分割-profileclon-profile-profile-profile-hoscountstname [-labelclone-label |-idclone-id]-sep-labelsort-operation-label-protection-techn_repo]-ream_depstampo[-user-hotlogin-top_sthour][-stampo_depstampo] user-pdn_stampo[-stampo] user-pdn-topamedstampo[-stampo_stampo][-useckend-pyour-pyour][-stampo] user-amedstampo][-stampo] user-database-loginedstampo[-stampusersk_stampo]-pyour-pyour-pow_stampo[-usersloggendamed][-stampo]-pyour] userslogin-top_stampo[-top_stampo
+

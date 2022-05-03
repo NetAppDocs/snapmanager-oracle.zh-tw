@@ -1,0 +1,17 @@
+---
+permalink: unix-administration/task_purging_history_of_snapmanager_operation.html 
+sidebar: sidebar 
+keywords: delete, history, snapmanager, operation, longer, require, detail, smo 
+summary: 如果不再需要歷程詳細資料、您可以刪除SnapManager 此動作的歷程記錄。 
+---
+= 刪除SnapManager 作業系統歷史記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果不再需要歷程詳細資料、您可以刪除SnapManager 此動作的歷程記錄。
+
+. 若要刪除SnapManager 此動作的歷程記錄、請輸入下列命令：「mo history Purge -profile｛-name、profile_name_name1、profile_name2」| all-repose-login[-passwordbrepo_password]-usernamerepo_username-dbnamerepo_dbname-dbname-stampo_host-portrepo_port_port}-operations}-｛-op_query_op_op_op_op_op_operations1、｛-op_operations1、｛-amy、-op_op_operations'、｛-
+

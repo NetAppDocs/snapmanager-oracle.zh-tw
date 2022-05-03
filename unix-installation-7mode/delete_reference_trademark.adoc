@@ -1,0 +1,13 @@
+---
+permalink: unix-installation-7mode/delete_reference_trademark.html 
+sidebar: sidebar 
+keywords: trademark 
+summary: 商標資訊 
+---
+= 商標資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+NetApp、NetApp標誌、Go further、faster、AltaVault ASUP、AutoSupport Sfor、Campaign Express、Cloud ONTAP Sfor、叢集Data ONTAP 式 Customer Fitness、Data ONTAP 產品資料、DataMotion、Fitness、Flash Accel 功能、 Flash Cache、Flash Pool、FlashRay、FlexArray FlexCache FlexClone、FlexPod 解決方案、FlexScale、FlexShare、FlexVol FPolicy、GetSuccessful、LockVault、Manage ONTAP 、Mars、 不包括：MetroCluster MultiStore NetApp Insight OnCommand ONTAP ONTAPI、RAID DP 不只是個、RAID-TEC SANtricity SecureShare 簡易性、模擬ONTAP 、Snap Creator、SnapCenter SnapCopy 包括：SnapDrive SnapLock SnapManager 不包括：SnapMover SnapProtect SnapRestore SnapValidator VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、VMware、SnapVault StorageGRID Tech OnTap WAFL所有其他品牌或產品均為其各自所有者的商標或註冊商標、因此應予以處理。如需最新的NetApp商標清單、請參閱網站： http://www.netapp.com/us/legal/netapptmlist.aspx[]。

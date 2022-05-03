@@ -1,0 +1,1565 @@
+---
+settings:
+  name: SnapManager Oracle
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-tw,us-en,ja-jp,zh-cn,ko-kr
+sidebar:
+  entries:
+  - title: 主頁
+    url: "/index.html"
+  - title: 版本資訊
+    url: "/releasenotes.html"
+  - title: UNIX安裝與設定、適用於叢集Data ONTAP 式的功能
+    url: "/unix-installation-cmode/index.html"
+    entries:
+    - title: 產品總覽
+      url: "/unix-installation-cmode/reference_product_overview.html"
+      entries:
+      - title: 架構SnapManager
+        url: "/unix-installation-cmode/reference_snapmanager_architecture.html"
+    - title: 部署工作流程
+      url: "/unix-installation-cmode/reference_deployment_workflow.html"
+    - title: 準備部署
+      url: "/unix-installation-cmode/task_preparing_for_deployment.html"
+      entries:
+      - title: 提供授權SnapManager
+        url: "/unix-installation-cmode/reference_snapmanager_licensing.html"
+      - title: 支援的組態
+        url: "/unix-installation-cmode/reference_supported_configurations.html"
+      - title: 支援的儲存類型
+        url: "/unix-installation-cmode/reference_supported_storage_types.html"
+      - title: UNIX主機需求
+        url: "/unix-installation-cmode/reference_host_requirements.html"
+    - title: 設定資料庫
+      url: "/unix-installation-cmode/task_configuring_databases.html"
+      entries:
+      - title: 設定目標資料庫
+        url: "/unix-installation-cmode/task_configuring_the_target_database.html"
+      - title: 為目標資料庫建立Oracle資料庫使用者
+        url: "/unix-installation-cmode/task_creating_an_oracle_user_for_the_target_database.html"
+      - title: 正在建立儲存庫資料庫執行個體
+        url: "/unix-installation-cmode/task_creating_the_repository_database_instance.html"
+      - title: 為儲存庫資料庫執行個體建立Oracle使用者
+        url: "/unix-installation-cmode/task_creating_an_oracle_user_for_the_repository_database_instance.html"
+      - title: 驗證Oracle接聽程式組態
+        url: "/unix-installation-cmode/task_verifying_the_oracle_listener_configuration.html"
+    - title: 安裝SnapManager
+      url: "/unix-installation-cmode/task_installing_snapmanager.html"
+    - title: 設定SnapManager 功能
+      url: "/unix-installation-cmode/task_setting_up_snapmanager.html"
+      entries:
+      - title: 啟動SnapManager 伺服器
+        url: "/unix-installation-cmode/task_starting_the_snapmanager_server.html"
+      - title: 存取SnapManager 功能不一樣的使用者介面
+        url: "/unix-installation-cmode/task_accessing_the_snapmanager_user_interface.html"
+      - title: 設定SnapManager 此功能
+        url: "/unix-installation-cmode/task_configuring_the_snapmanager_repository.html"
+    - title: 準備儲存系統以進行SnapMirror和SnapVault 資訊複寫
+      url: "/unix-installation-cmode/reference_preparing_storage_systems_for_snapmirror_and_snapvault_replication.html"
+      entries:
+      - title: 瞭解SnapMirror與SnapVault SnapMirror之間的差異
+        url: "/unix-installation-cmode/concept_understanding_the_differences_between_snapmirror_and_snapvault.html"
+      - title: 準備儲存系統以進行SnapMirror複寫
+        url: "/unix-installation-cmode/task_preparing_storage_systems_for_snapmirror_replication.html"
+      - title: 準備儲存系統SnapVault 以進行資訊複寫
+        url: "/unix-installation-cmode/task_preparing_storage_systems_for_snapvault_replication.html"
+    - title: 備份及驗證資料庫
+      url: "/unix-installation-cmode/concept_backing_up_and_verifying_your_databases.html"
+      entries:
+      - title: 支援概述SnapManager
+        url: "/unix-installation-cmode/concept_snapmanager_backup_overview.html"
+      - title: 定義備份策略
+        url: "/unix-installation-cmode/concept_defining_a_backup_strategy.html"
+      - title: 為資料庫建立設定檔
+        url: "/unix-installation-cmode/task_creating_a_profile_for_your_database.html"
+      - title: 備份資料庫
+        url: "/unix-installation-cmode/task_backing_up_your_database.html"
+      - title: 正在驗證資料庫備份
+        url: "/unix-installation-cmode/task_verifying_database_backups.html"
+      - title: 排程週期性備份
+        url: "/unix-installation-cmode/task_scheduling_recurring_backups.html"
+    - title: 下一步
+      url: "/unix-installation-cmode/reference_where_to_go_next.html"
+  - title: UNIX的安裝與設定Data ONTAP 、以7模式運作
+    url: "/unix-installation-7mode/index.html"
+    entries:
+    - title: 產品總覽
+      url: "/unix-installation-7mode/reference_product_overview.html"
+      entries:
+      - title: 架構SnapManager
+        url: "/unix-installation-7mode/reference_snapmanager_architecture.html"
+    - title: 部署工作流程
+      url: "/unix-installation-7mode/reference_deployment_workflow.html"
+    - title: 準備部署
+      url: "/unix-installation-7mode/task_preparing_for_deployment.html"
+      entries:
+      - title: 提供授權SnapManager
+        url: "/unix-installation-7mode/reference_snapmanager_licensing.html"
+      - title: 支援的組態
+        url: "/unix-installation-7mode/reference_supported_configurations.html"
+      - title: 支援的儲存類型
+        url: "/unix-installation-7mode/reference_supported_storage_types.html"
+      - title: UNIX主機需求
+        url: "/unix-installation-7mode/reference_host_requirements.html"
+    - title: 設定資料庫
+      url: "/unix-installation-7mode/task_configuring_databases.html"
+      entries:
+      - title: 設定目標資料庫
+        url: "/unix-installation-7mode/task_configuring_the_target_database.html"
+      - title: 為目標資料庫建立Oracle資料庫使用者
+        url: "/unix-installation-7mode/task_creating_an_oracle_user_for_the_target_database.html"
+      - title: 正在建立儲存庫資料庫執行個體
+        url: "/unix-installation-7mode/task_creating_the_repository_database_instance.html"
+      - title: 為儲存庫資料庫執行個體建立Oracle使用者
+        url: "/unix-installation-7mode/task_creating_an_oracle_user_for_the_repository_database_instance.html"
+      - title: 驗證Oracle接聽程式組態
+        url: "/unix-installation-7mode/task_verifying_the_oracle_listener_configuration.html"
+    - title: 安裝SnapManager
+      url: "/unix-installation-7mode/task_installing_snapmanager.html"
+    - title: 設定SnapManager 功能
+      url: "/unix-installation-7mode/task_setting_up_snapmanager.html"
+      entries:
+      - title: 啟動SnapManager 伺服器
+        url: "/unix-installation-7mode/task_starting_the_snapmanager_server.html"
+      - title: 存取SnapManager 功能不一樣的使用者介面
+        url: "/unix-installation-7mode/task_accessing_the_snapmanager_user_interface.html"
+      - title: 設定SnapManager 此功能
+        url: "/unix-installation-7mode/task_configuring_the_snapmanager_repository.html"
+    - title: 備份及驗證資料庫
+      url: "/unix-installation-7mode/concept_backing_up_and_verifying_your_databases.html"
+      entries:
+      - title: 支援概述SnapManager
+        url: "/unix-installation-7mode/concept_snapmanager_backup_overview.html"
+      - title: 定義備份策略
+        url: "/unix-installation-7mode/concept_defining_a_backup_strategy.html"
+      - title: 為資料庫建立設定檔
+        url: "/unix-installation-7mode/task_creating_a_profile_for_your_database.html"
+      - title: 備份資料庫
+        url: "/unix-installation-7mode/task_backing_up_your_database.html"
+      - title: 正在驗證資料庫備份
+        url: "/unix-installation-7mode/task_verifying_database_backups.html"
+      - title: 排程週期性備份
+        url: "/unix-installation-7mode/task_scheduling_recurring_backups.html"
+    - title: 下一步
+      url: "/unix-installation-7mode/reference_where_to_go_next.html"
+  - title: UNIX系統管理
+    url: "/unix-administration/index.html"
+    entries:
+    - title: 產品總覽
+      url: "/unix-administration/reference_product_overview.html"
+      entries:
+      - title: 使用Snapshot複本建立備份
+        url: "/unix-administration/concept_create_backups_using_snapshot_copies.html"
+      - title: 為何您應該剪下歸檔記錄檔
+        url: "/unix-administration/concept_why_you_should_prune_archive_log_files.html"
+      - title: 歸檔記錄整合
+        url: "/unix-administration/concept_archive_log_consolidation.html"
+      - title: 資料庫的完整或部分還原
+        url: "/unix-administration/concept_full_or_partial_restoration_of_the_database.html"
+      - title: 驗證備份狀態
+        url: "/unix-administration/concept_verify_backup_status.html"
+      - title: 資料庫備份複本
+        url: "/unix-administration/concept_clone_database_backups.html"
+      - title: 追蹤詳細資料並產生報告
+        url: "/unix-administration/concept_track_details_and_produce_reports.html"
+      - title: 什麼是儲存庫
+        url: "/unix-administration/concept_what_repositories_are.html"
+      - title: 什麼是設定檔
+        url: "/unix-administration/concept_what_profiles_are.html"
+      - title: 運作狀態為何SnapManager
+        url: "/unix-administration/concept_what_snapmanager_operation_states_are.html"
+      - title: 如何維護安全性SnapManager
+        url: "/unix-administration/concept_snapmanager_security.html"
+      - title: 存取及列印線上說明
+        url: "/unix-administration/task_accessing_and_printing_online_help.html"
+      - title: 建議的一般資料庫配置和儲存組態
+        url: "/unix-administration/concept_general_layout_and_configuration.html"
+        entries:
+        - title: 使用oratab檔案定義資料庫主目錄
+          url: "/unix-administration/task_defining_the_database_home_with_the_oratab_file.html"
+        - title: 搭配SnapManager 使用RAC資料庫的需求
+          url: "/unix-administration/concept_requirements_for_using_rac_databases_with_snapmanager.html"
+        - title: 搭配SnapManager 使用ASM資料庫的需求
+          url: "/unix-administration/concept_requirements_for_using_asm_databases_with_snapmanager.html"
+        - title: 支援的分割裝置
+          url: "/unix-administration/reference_supported_partition_devices.html"
+        - title: 支援ASMLib
+          url: "/unix-administration/concept_support_for_asmlib.html"
+        - title: 支援不含ASMLib的ASM資料庫
+          url: "/unix-administration/concept_support_for_asm_databases_without_asmlib.html"
+          entries:
+          - title: 支援的指令碼
+            url: "/unix-administration/concept_supported_scripts.html"
+          - title: 使用指令碼來支援不含ASMLib的ASM資料庫的限制
+            url: "/unix-administration/concept_limitations_of_using_scripts_to_support_asm_database_without_asmlib.html"
+          - title: 部署及執行指令碼
+            url: "/unix-administration/task_deploying_and_running_the_scripts.html"
+            entries:
+            - title: 支援不含ASMLib的Oracle RAC ASM資料庫
+              url: "/unix-administration/concept_support_for_oracle_rac_asm_databases.html"
+            - title: 支援不含ASMLib的Oracle 10g ASM資料庫
+              url: "/unix-administration/concept_support_for_oracle_10g_asm_databases.html"
+          - title: 範例指令碼、可支援不含ASMLib的ASM資料庫
+            url: "/unix-administration/reference_sample_scripts_to_support_asm_databases_without_asmlib.html"
+        - title: 資料庫搭配NFS和SnapManager 功能的使用需求
+          url: "/unix-administration/concept_requirements_for_using_databases_with_nfs_and_snapmanager.html"
+        - title: 範例資料庫Volume配置
+          url: "/unix-administration/reference_sample_database_volume_layouts.html"
+      - title: 使用SnapManager 不受限
+        url: "/unix-administration/concept_limitations.html"
+        entries:
+        - title: 叢集式的不受限SnapManager Data ONTAP
+          url: "/unix-administration/concept_snapmanger_limitations_for_clustered_data_ontap.html"
+        - title: Oracle資料庫的相關限制
+          url: "/unix-administration/concept_limitations_related_to_oracle_database.html"
+          entries:
+          - title: 已過時的Oracle資料庫版本
+            url: "/unix-administration/concept_deprecated_versions_of_oracle_database.html"
+        - title: Volume管理限制
+          url: "/unix-administration/concept_volume_management_restrictions.html"
+    - title: 使用Snapshot複本建立備份
+      url: "/unix-administration/concept_create_backups_using_snapshot_copies.html"
+    - title: 為何您應該剪下歸檔記錄檔
+      url: "/unix-administration/concept_why_you_should_prune_archive_log_files.html"
+    - title: 歸檔記錄整合
+      url: "/unix-administration/concept_archive_log_consolidation.html"
+    - title: 資料庫的完整或部分還原
+      url: "/unix-administration/concept_full_or_partial_restoration_of_the_database.html"
+    - title: 驗證備份狀態
+      url: "/unix-administration/concept_verify_backup_status.html"
+    - title: 資料庫備份複本
+      url: "/unix-administration/concept_clone_database_backups.html"
+    - title: 追蹤詳細資料並產生報告
+      url: "/unix-administration/concept_track_details_and_produce_reports.html"
+    - title: 什麼是儲存庫
+      url: "/unix-administration/concept_what_repositories_are.html"
+    - title: 什麼是設定檔
+      url: "/unix-administration/concept_what_profiles_are.html"
+    - title: 運作狀態為何SnapManager
+      url: "/unix-administration/concept_what_snapmanager_operation_states_are.html"
+    - title: 如何維護安全性SnapManager
+      url: "/unix-administration/concept_snapmanager_security.html"
+    - title: 存取及列印線上說明
+      url: "/unix-administration/task_accessing_and_printing_online_help.html"
+    - title: 建議的一般資料庫配置和儲存組態
+      url: "/unix-administration/concept_general_layout_and_configuration.html"
+      entries:
+      - title: 使用oratab檔案定義資料庫主目錄
+        url: "/unix-administration/task_defining_the_database_home_with_the_oratab_file.html"
+      - title: 搭配SnapManager 使用RAC資料庫的需求
+        url: "/unix-administration/concept_requirements_for_using_rac_databases_with_snapmanager.html"
+      - title: 搭配SnapManager 使用ASM資料庫的需求
+        url: "/unix-administration/concept_requirements_for_using_asm_databases_with_snapmanager.html"
+      - title: 支援的分割裝置
+        url: "/unix-administration/reference_supported_partition_devices.html"
+      - title: 支援ASMLib
+        url: "/unix-administration/concept_support_for_asmlib.html"
+      - title: 支援不含ASMLib的ASM資料庫
+        url: "/unix-administration/concept_support_for_asm_databases_without_asmlib.html"
+        entries:
+        - title: 支援的指令碼
+          url: "/unix-administration/concept_supported_scripts.html"
+        - title: 使用指令碼來支援不含ASMLib的ASM資料庫的限制
+          url: "/unix-administration/concept_limitations_of_using_scripts_to_support_asm_database_without_asmlib.html"
+        - title: 部署及執行指令碼
+          url: "/unix-administration/task_deploying_and_running_the_scripts.html"
+          entries:
+          - title: 支援不含ASMLib的Oracle RAC ASM資料庫
+            url: "/unix-administration/concept_support_for_oracle_rac_asm_databases.html"
+          - title: 支援不含ASMLib的Oracle 10g ASM資料庫
+            url: "/unix-administration/concept_support_for_oracle_10g_asm_databases.html"
+        - title: 範例指令碼、可支援不含ASMLib的ASM資料庫
+          url: "/unix-administration/reference_sample_scripts_to_support_asm_databases_without_asmlib.html"
+      - title: 資料庫搭配NFS和SnapManager 功能的使用需求
+        url: "/unix-administration/concept_requirements_for_using_databases_with_nfs_and_snapmanager.html"
+      - title: 範例資料庫Volume配置
+        url: "/unix-administration/reference_sample_database_volume_layouts.html"
+    - title: 使用SnapManager 不受限
+      url: "/unix-administration/concept_limitations.html"
+      entries:
+      - title: 叢集式的不受限SnapManager Data ONTAP
+        url: "/unix-administration/concept_snapmanger_limitations_for_clustered_data_ontap.html"
+      - title: Oracle資料庫的相關限制
+        url: "/unix-administration/concept_limitations_related_to_oracle_database.html"
+        entries:
+        - title: 已過時的Oracle資料庫版本
+          url: "/unix-administration/concept_deprecated_versions_of_oracle_database.html"
+      - title: Volume管理限制
+        url: "/unix-administration/concept_volume_management_restrictions.html"
+    - title: 升級SnapManager
+      url: "/unix-administration/concept_upgrading_snapmanager_for_oracle.html"
+      entries:
+      - title: 準備升級SnapManager
+        url: "/unix-administration/concept_preparing_to_upgrade_snapmanager_for_oracle.html"
+      - title: 升級SnapManager 功能
+        url: "/unix-administration/task_upgrading_snapmanager_for_oracle_hosts_c1.html"
+      - title: 升級後的工作
+        url: "/unix-administration/concept_post_upgrade_tasks.html"
+        entries:
+        - title: 正在更新現有儲存庫
+          url: "/unix-administration/task_updating_the_existing_repository.html"
+        - title: 修改備份保留類別
+          url: "/unix-administration/task_modifying_the_backup_retention_class.html"
+        - title: 還原程序類型
+          url: "/unix-administration/concept_restore_process_identification.html"
+      - title: 使用循環升級來升級SnapManager 功能
+        url: "/unix-administration/concept_upgrading_snapmanager_hosts_by_using_rolling_upgrade.html"
+        entries:
+        - title: 執行循環升級的先決條件
+          url: "/unix-administration/concept_prerequisites_for_performing_rolling_upgrade.html"
+        - title: 在單一主機或多部主機上執行循環升級
+          url: "/unix-administration/task_performing_rolling_upgrade_on_a_single_host_or_multiple_hosts.html"
+        - title: 什麼是復原
+          url: "/unix-administration/concept_what_a_rollback_is.html"
+          entries:
+          - title: 執行復原的限制
+            url: "/unix-administration/concept_limitations_for_performing_a_rollback.html"
+          - title: 執行復原的先決條件
+            url: "/unix-administration/concept_prerequisites_for_performing_a_rollback.html"
+          - title: 在單一主機或多個主機上執行復原
+            url: "/unix-administration/task_performing_a_rollback_on_a_single_host_or_multiple_hosts.html"
+          - title: 復原後工作
+            url: "/unix-administration/task_post_rollback_tasks.html"
+    - title: 設定SnapManager 功能
+      url: "/unix-administration/concept_configuring_snapmanager_for_oraclesap.html"
+      entries:
+      - title: 組態參數SnapManager
+        url: "/unix-administration/reference_snapmanager_configuration_parameters.html"
+        entries:
+        - title: 編輯組態參數
+          url: "/unix-administration/task_editing_the_configuration_parameters.html"
+      - title: 設定SnapDrive UNIX適用的功能、以用於作用中/作用中的Veritas SFRAC環境
+        url: "/unix-administration/task_configuring_snapdrive_in_an_active_active_unix_environment.html"
+      - title: 設定SnapManager 支援Veritas SFRAC環境的功能
+        url: "/unix-administration/task_configuring_snapmanager_for_oracle_with_veritas_file_system.html"
+      - title: 確保ASM發現匯入的磁碟
+        url: "/unix-administration/task_ensuring_that_asm_discovers_imported_disks.html"
+    - title: 安全性與認證管理
+      url: "/unix-administration/concept_managing_security_and_credentials.html"
+      entries:
+      - title: 什麼是使用者驗證
+        url: "/unix-administration/concept_what_user_authentication_is.html"
+      - title: 關於角色型存取控制
+        url: "/unix-administration/concept_about_role_based_access_control.html"
+        entries:
+        - title: 啟用角色型存取控制
+          url: "/unix-administration/task_enabling_role_based_access_control.html"
+        - title: 設定角色型存取控制功能和角色
+          url: "/unix-administration/task_setting_role-based_access_control_capabilities_and_roles.html"
+      - title: 儲存加密密碼以供自訂指令碼使用
+        url: "/unix-administration/task_storing_encrypted_passwords_for_custom_scripts.html"
+      - title: 授權存取儲存庫
+        url: "/unix-administration/task_authorizing_user_access_to_the_repository.html"
+      - title: 授權存取設定檔
+        url: "/unix-administration/task_authorizing_user_access_to_profiles.html"
+      - title: 檢視使用者認證資料
+        url: "/unix-administration/task_viewing_user_credentials.html"
+      - title: 清除所有主機、儲存庫和設定檔的使用者認證
+        url: "/unix-administration/task_clearing_user_credentials_for_all_hosts_repositories_and_profiles.html"
+        entries:
+        - title: 清除認證快取後設定認證資料
+          url: "/unix-administration/task_setting_credentials_after_clearing_credential_cache.html"
+      - title: 刪除個別資源的認證資料
+        url: "/unix-administration/task_deleting_credentials_for_individual_resources.html"
+        entries:
+        - title: 刪除儲存庫的使用者認證
+          url: "/unix-administration/task_deleting_user_credentials_for_repositories.html"
+        - title: 刪除主機的使用者認證
+          url: "/unix-administration/task_deleting_user_credentials_for_hosts.html"
+        - title: 刪除設定檔的使用者認證
+          url: "/unix-administration/task_deleting_user_credentials_for_profiles.html"
+    - title: 管理設定檔以有效備份
+      url: "/unix-administration/concept_managing_profiles_for_efficient_backups.html"
+      entries:
+      - title: 建立設定檔
+        url: "/unix-administration/task_creating_profiles.html"
+      - title: Snapshot複本命名
+        url: "/unix-administration/concept_snapshot_copy_naming.html"
+      - title: 重新命名設定檔
+        url: "/unix-administration/task_renaming_profiles.html"
+      - title: 變更設定檔密碼
+        url: "/unix-administration/task_changing_profile_passwords.html"
+      - title: 重設設定檔密碼
+        url: "/unix-administration/task_resetting_profile_password.html"
+      - title: 授權存取設定檔
+        url: "/unix-administration/task_authorizing_user_access_to_profiles.html"
+      - title: 正在驗證設定檔
+        url: "/unix-administration/task_verifying_profiles.html"
+      - title: 正在更新設定檔
+        url: "/unix-administration/task_updating_profiles.html"
+      - title: 刪除設定檔
+        url: "/unix-administration/task_deleting_profiles.html"
+    - title: 備份資料庫
+      url: "/unix-administration/concept_database_backup_management.html"
+      entries:
+      - title: 什麼是資料庫備份SnapManager
+        url: "/unix-administration/concept_what_snapmanager_database_backups_are.html"
+      - title: 什麼是完整備份和部分備份
+        url: "/unix-administration/concept_what_full_and_partial_backups_are.html"
+        entries:
+        - title: 備份類型與Snapshot複本數量
+          url: "/unix-administration/concept_backup_types_and_the_number_of_snapshot_copies.html"
+        - title: 完整的線上備份
+          url: "/unix-administration/concept_full_online_backups.html"
+        - title: 部分線上備份
+          url: "/unix-administration/concept_partial_online_backups.html"
+        - title: 備份、還原及還原作業的範例
+          url: "/unix-administration/reference_examples_of_backup_restore_and_recover_operations.html"
+      - title: 關於控制檔和歸檔記錄檔處理
+        url: "/unix-administration/concept_about_control_file_and_archive_log_file_handling.html"
+      - title: 什麼是資料庫備份排程
+        url: "/unix-administration/concept_what_database_backup_scheduling_is.html"
+      - title: 建立資料庫備份
+        url: "/unix-administration/task_creating_database_backups.html"
+        entries:
+        - title: 剪除歸檔記錄檔
+          url: "/unix-administration/task_pruning_archive_log_files.html"
+        - title: 整合歸檔記錄備份
+          url: "/unix-administration/task_consolidating_archive_log_backups.html"
+        - title: 排程保存檔記錄檔剪除
+          url: "/unix-administration/task_scheduling_archive_log_file_pruning.html"
+        - title: 保護歸檔記錄備份
+          url: "/unix-administration/task_protecting_archive_log_backups.html"
+      - title: 什麼是呢AutoSupport
+        url: "/unix-administration/concept_what_autosupport_is.html"
+        entries:
+        - title: 將以叢集Data ONTAP 式功能運作的儲存系統新增至SnapManager 支援叢集的伺服器主機
+          url: "/unix-administration/task_adding_storage_systems_to_the_snapmanager_server_host.html"
+        - title: 啟用AutoSupport 支援功能SnapManager
+          url: "/unix-administration/task_enabling_autosupport_in_snapmanager.html"
+        - title: 停用AutoSupport 功能不SnapManager 只是功能
+          url: "/unix-administration/task_disabling_autosupport_in_snapmanager.html"
+      - title: 正在驗證資料庫備份
+        url: "/unix-administration/task_verifying_database_backups.html"
+      - title: 變更備份保留原則
+        url: "/unix-administration/task_changing_the_backup_retention_policy.html"
+        entries:
+        - title: 永久保留備份
+          url: "/unix-administration/task_retaining_backups_forever.html"
+        - title: 指派具有特定保留類別的備份
+          url: "/unix-administration/task_assigning_backups_with_a_specific_retention_class.html"
+        - title: 變更保留原則預設行為
+          url: "/unix-administration/task_changing_the_retention_policy_default_behavior.html"
+        - title: 釋出或刪除保留原則豁免備份
+          url: "/unix-administration/task_freeing_or_deleting_retention_policy_exempt_backups.html"
+      - title: 檢視備份清單
+        url: "/unix-administration/task_viewing_a_list_of_backups.html"
+      - title: 檢視備份詳細資料
+        url: "/unix-administration/task_viewing_backup_details.html"
+      - title: 掛載備份
+        url: "/unix-administration/task_mounting_backups.html"
+      - title: 卸載備份
+        url: "/unix-administration/task_unmounting_backups.html"
+      - title: 釋放備份
+        url: "/unix-administration/task_freeing_backups.html"
+      - title: 刪除備份
+        url: "/unix-administration/task_deleting_backups.html"
+    - title: 排程資料庫備份
+      url: "/unix-administration/concept_scheduling_database_backups.html"
+      entries:
+      - title: 建立備份排程
+        url: "/unix-administration/task_creating_backup_schedules.html"
+      - title: 更新備份排程
+        url: "/unix-administration/task_updating_a_backup_schedule.html"
+      - title: 檢視排程作業清單
+        url: "/unix-administration/task_viewing_a_list_of_scheduled_operations.html"
+      - title: 暫停備份排程
+        url: "/unix-administration/task_suspending_backup_schedules.html"
+      - title: 恢復備份排程
+        url: "/unix-administration/task_resuming_backup_schedules.html"
+      - title: 刪除備份排程
+        url: "/unix-administration/task_deleting_backup_schedules.html"
+    - title: 還原資料庫備份
+      url: "/unix-administration/concept_restoring_database_backup.html"
+      entries:
+      - title: 什麼是資料庫還原
+        url: "/unix-administration/concept_what_database_restore_is.html"
+        entries:
+        - title: 快速還原的使用準則
+          url: "/unix-administration/concept_when_can_you_use_fast_restore.html"
+          entries:
+          - title: 使用快速還原的優缺點
+            url: "/unix-administration/concept_advantages_and_disadvantages_of_using_fast_restore.html"
+        - title: 快速還原資格檢查
+          url: "/unix-administration/concept_fast_restore_eligibility_checks.html"
+        - title: 備份還原
+          url: "/unix-administration/concept_backup_recovery.html"
+        - title: 還原程序所需的資料庫狀態
+          url: "/unix-administration/concept_database_state_needed_for_restore_process.html"
+        - title: 什麼是還原預覽計畫
+          url: "/unix-administration/concept_restore_preview_plans.html"
+      - title: 預覽備份還原資訊
+        url: "/unix-administration/task_previewing_backup_restore_information.html"
+      - title: 使用快速還原還原還原備份
+        url: "/unix-administration/task_restoring_backups_using_fast_restore.html"
+      - title: 使用單一檔案SnapRestore 還原備份
+        url: "/unix-administration/task_restoring_backup_using_single_file_snaprestore.html"
+      - title: 還原主儲存設備上的備份
+        url: "/unix-administration/task_restoring_backups_on_primary_storage.html"
+      - title: 使用Oracle Recovery Manager（RMAN）執行區塊層級還原
+        url: "/unix-administration/task_performing_block_level_recovery_with_rman.html"
+      - title: 從替代位置還原檔案
+        url: "/unix-administration/concept_restore_files_from_an_alternate_location.html"
+        entries:
+        - title: 從替代位置總覽還原備份
+          url: "/unix-administration/concept_restore_backups_from_an_alternate_location_overview.html"
+          entries:
+          - title: 從檔案還原資料
+            url: "/unix-administration/concept_restoration_of_the_data_from_files.html"
+          - title: 從檔案系統還原資料
+            url: "/unix-administration/concept_restoration_of_the_data_from_file_systems.html"
+          - title: 從原始裝置還原資料
+            url: "/unix-administration/concept_restoration_of_the_data_from_raw_devices.html"
+        - title: 建立還原規格
+          url: "/unix-administration/task_creating_restore_specifications.html"
+        - title: 從替代位置還原備份
+          url: "/unix-administration/task_restoring_backups_from_an_alternate_location.html"
+    - title: 複製資料庫備份
+      url: "/unix-administration/concept_cloning_database_backup.html"
+      entries:
+      - title: 何謂複製
+        url: "/unix-administration/concept_what_cloning_is.html"
+      - title: 複製方法
+        url: "/unix-administration/concept_cloning_methods.html"
+      - title: 建立複製規格
+        url: "/unix-administration/task_creating_clone_specifications.html"
+        entries:
+        - title: 複製資料庫並使用自訂外掛程式指令碼
+          url: "/unix-administration/task_cloning_databases_and_using_custom_plugin_scripts.html"
+      - title: 從備份複製資料庫
+        url: "/unix-administration/task_cloning_databases_from_backups.html"
+      - title: 正在複製目前狀態的資料庫
+        url: "/unix-administration/task_cloning_databases_in_the_current_state.html"
+      - title: 複製資料庫備份而不重新設檔
+        url: "/unix-administration/task_cloning_database_backups_without_resetlogs.html"
+      - title: 將資料庫複製到替代主機的考量事項
+        url: "/unix-administration/concept_considerations_for_cloning_a_database_to_an_alternate_host.html"
+        entries:
+        - title: 將資料庫複製到替代主機
+          url: "/unix-administration/task_cloning_a_database_to_an_alternate_host.html"
+      - title: 檢視複本清單
+        url: "/unix-administration/task_viewing_a_list_of_clones.html"
+      - title: 檢視詳細的實體複本資訊
+        url: "/unix-administration/task_viewing_detailed_clone_information.html"
+      - title: 刪除複本
+        url: "/unix-administration/task_deleting_clones.html"
+      - title: 分割實體複本
+        url: "/unix-administration/concept_splitting_a_clone.html"
+        entries:
+        - title: 檢視複本分割預估
+          url: "/unix-administration/task_viewing_clone_split_estimate.html"
+        - title: 分割一線或二線儲存設備上的實體複本
+          url: "/unix-administration/task_splitting_a_clone_on_a_primary_or_secondary_storage.html"
+        - title: 檢視複本分割程序的狀態
+          url: "/unix-administration/task_viewing_status_of_clone_split_process.html"
+        - title: 檢視複本分割程序的結果
+          url: "/unix-administration/task_viewing_the_result_of_the_clone_split_process.html"
+        - title: 停止實體複本分割程序
+          url: "/unix-administration/task_stopping_the_clone_split_process.html"
+        - title: 刪除設定檔
+          url: "/unix-administration/task_deleting_profile.html"
+        - title: 銷毀設定檔
+          url: "/unix-administration/task_destroying_split_clone_and_associated_profile.html"
+        - title: 從儲存庫資料庫刪除實體複本分割作業週期
+          url: "/unix-administration/task_deleting_a_clone_split_operation_cycle_from_a_repository_database.html"
+    - title: 介紹資料保護功能SnapManager
+      url: "/unix-administration/concept_introduction_to_data_protection_in_snapmanager.html"
+      entries:
+      - title: 什麼是保護原則
+        url: "/unix-administration/concept_what_protection_policies_are.html"
+      - title: 什麼是保護狀態
+        url: "/unix-administration/concept_what_protection_states_are.html"
+      - title: 什麼是資源集區
+        url: "/unix-administration/concept_what_resource_pools_are.html"
+      - title: 關於不同的保護原則
+        url: "/unix-administration/concept_about_different_protection_policies.html"
+      - title: 設定及啟用原則導向的資料保護
+        url: "/unix-administration/concept_configuring_and_enabling_policy_driven_data_protection.html"
+        entries:
+        - title: 啟用RBAC時、設定DataFabric Manager伺服器和SnapDrive 功能不全
+          url: "/unix-administration/task_configuring_snapdrive_when_rbac_is_enabled.html"
+        - title: 未啟用RBAC時設定SnapDrive 支援功能
+          url: "/unix-administration/task_configuring_snapdrive_when_rbac_is_not_enabled.html"
+        - title: 瞭解在設定檔中啟用或停用資料保護
+          url: "/unix-administration/concept_understanding_enabling_or_disabling_of_data_protection_in_profile.html"
+      - title: 如何在本機儲存設備上保留備份SnapManager
+        url: "/unix-administration/concept_how_snapmanager_retains_backups_on_the_local_storage.html"
+      - title: 執行資料保護的考量
+        url: "/unix-administration/concept_prerequisites_for_data_protection.html"
+        entries:
+        - title: 資料保護功能SnapManager 所需的授權
+          url: "/unix-administration/concept_licenses_required_for_data_protection.html"
+      - title: 保護二線或三線儲存設備上的資料庫備份
+        url: "/unix-administration/task_protecting_database_backups_on_secondary_storage.html"
+      - title: 從二線儲存設備還原受保護的備份
+        url: "/unix-administration/concept_restoring_protected_backups_from_secondary_storage.html"
+        entries:
+        - title: 還原受保護的備份總覽
+          url: "/unix-administration/concept_restores_of_protected_backups_overview.html"
+        - title: 從次要儲存設備還原備份
+          url: "/unix-administration/task_restoring_backups_from_secondary_storage.html"
+      - title: 複製受保護的備份
+        url: "/unix-administration/task_cloning_protected_backups.html"
+    - title: Oracle使用Protection Manager保護資料庫備份SnapManager
+      url: "/unix-administration/concept_snapmanager_for_oracle_uses_protection_manager_to_protect_a_database_backup.html"
+      entries:
+      - title: 目標資料庫的詳細資料
+        url: "/unix-administration/concept_details_of_the_target_database.html"
+      - title: 一線與二線儲存組態與拓撲
+        url: "/unix-administration/concept_primary_and_secondary_storage_configuration_and_topology.html"
+      - title: 備份排程與保留策略
+        url: "/unix-administration/concept_backup_schedule_and_retention_strategy.html"
+      - title: 本機和次要資料庫備份的工作流程摘要
+        url: "/unix-administration/concept_workflow_summary_for_local_and_secondary_database_backup.html"
+      - title: 受保護的備份組態與執行
+        url: "/unix-administration/task_protected_backup_configuration_and_execution.html"
+        entries:
+        - title: 使用SnapManager 支援Oracle的功能來建立本機備份的資料庫設定檔
+          url: "/unix-administration/task_using_snapmanager_for_oracle_to_create_the_database_profile_for_a_local_backup.html"
+        - title: 使用Protection Manager來設定次要資源池
+          url: "/unix-administration/task_using_protection_manager_to_configure_a_secondary_resource_pool.html"
+        - title: 使用Protection Manager設定次要備份排程
+          url: "/unix-administration/task_using_protection_manager_to_configure_secondary_backup_schedules.html"
+        - title: 使用Protection Manager來設定次要備份保護原則
+          url: "/unix-administration/task_using_protection_manager_to_configure_a_secondary_backup_protection_policy.html"
+        - title: 使用SnapManager 支援Oracle的支援功能來建立資料庫設定檔、並指派保護原則
+          url: "/unix-administration/task_using_snapmanager_for_oracle_to_create_the_database_profile_and_assign_a_protection_policy.html"
+        - title: 使用Protection Manager來配置新資料集
+          url: "/unix-administration/task_using_protection_manager_to_provision_the_new_dataset.html"
+        - title: 使用SnapManager 支援Oracle的支援功能來建立受保護的備份
+          url: "/unix-administration/task_using_snapmanager_for_oracle_to_create_a_protected_backup.html"
+        - title: 使用SnapManager 支援Oracle的支援功能來確認備份保護
+          url: "/unix-administration/task_using_snapmanager_for_oracle_to_confirm_backup_protection.html"
+      - title: 從備份還原資料庫
+        url: "/unix-administration/task_database_restoration_from_backup.html"
+        entries:
+        - title: 使用SnapManager 支援Oracle的功能、在主要儲存設備上還原本機備份
+          url: "/unix-administration/task_use_snapmanager_for_oracle_to_restore_a_local_backup_on_primary_storage.html"
+        - title: 使用SnapManager 支援Oracle的功能、從二線儲存設備還原備份
+          url: "/unix-administration/task_using_snapmanager_for_oracle_to_restore_backups_from_secondary_storage.html"
+    - title: 執行管理作業
+      url: "/unix-administration/concept_performing_management_operations.html"
+      entries:
+      - title: 檢視作業清單
+        url: "/unix-administration/task_viewing_a_list_of_operations.html"
+      - title: 檢視作業詳細資料
+        url: "/unix-administration/task_viewing_operation_details.html"
+      - title: 從備用主機發出命令
+        url: "/unix-administration/task_issuing_commands_from_an_alternate_host.html"
+      - title: 正在檢查SnapManager 更新的版本
+        url: "/unix-administration/task_checking_the_snapmanager_software_version.html"
+      - title: 停止SnapManager 支援伺服器
+        url: "/unix-administration/task_stopping_the_snapmanager_host_server.html"
+      - title: 重新啟動SnapManager UNIX主機伺服器
+        url: "/unix-administration/task_restarting_the_snapmanager_unix_host_server.html"
+      - title: 從UNIX主機解除安裝軟體
+        url: "/unix-administration/task_uninstalling_the_software_from_a_unix_host.html"
+    - title: 設定電子郵件通知
+      url: "/unix-administration/concept_configuring_e_mail_notification.html"
+      entries:
+      - title: 設定儲存庫的郵件伺服器
+        url: "/unix-administration/task_configuring_mail_server_for_a_repository.html"
+      - title: 設定新設定檔的電子郵件通知
+        url: "/unix-administration/task_configuring_e_mail_notification_for_a_new_profile.html"
+        entries:
+        - title: 自訂新設定檔的電子郵件主旨
+          url: "/unix-administration/task_customizing_e_mail_subject_for_a_new_profile.html"
+      - title: 設定現有設定檔的電子郵件通知
+        url: "/unix-administration/task_configuring_e_mail_notification_for_an_existing_profile.html"
+        entries:
+        - title: 自訂現有設定檔的電子郵件主旨
+          url: "/unix-administration/task_customizing_the_email_subject_for_an_existing_profile.html"
+      - title: 設定多個設定檔的摘要電子郵件通知
+        url: "/unix-administration/task_configuring_summary_e_mail_notification_for_multiple_profiles.html"
+      - title: 新增設定檔至摘要電子郵件通知
+        url: "/unix-administration/task_adding_new_profile_to_summary_notification.html"
+      - title: 新增現有設定檔至摘要電子郵件通知
+        url: "/unix-administration/task_adding_existing_profile_to_summary_notification.html"
+      - title: 停用多個設定檔的電子郵件通知
+        url: "/unix-administration/task_disabling_email_notification_for_multiple_profiles.html"
+    - title: 建立SnapManager 工作規格檔案和指令碼、以利執行各項作業
+      url: "/unix-administration/concept_creating_task_specification_file_and_scripts_for_snapmanager_operations.html"
+      entries:
+      - title: 建立工作前、工作後及原則指令碼
+        url: "/unix-administration/task_creating_pretask_post_task_and_policy_scripts.html"
+        entries:
+        - title: 工作指令碼中的作業
+          url: "/unix-administration/concept_operations_in_task_scripts.html"
+        - title: 備份作業的工作指令碼中可用的變數
+          url: "/unix-administration/concept_variables_available_in_the_task_scripts_for_backup_operation.html"
+        - title: 可在還原作業的工作指令碼中使用的變數
+          url: "/unix-administration/concept_variables_available_in_custom_script_for_restore_operation.html"
+        - title: 工作指令碼中可供用於複製作業的變數
+          url: "/unix-administration/concept_variables_available_in_the_task_scripts_for_clone_operation.html"
+        - title: 自訂指令碼中的錯誤處理
+          url: "/unix-administration/concept_error_handling_in_custom_scripts.html"
+      - title: 檢視範例外掛程式指令碼
+        url: "/unix-administration/task_viewing_sample_plugin_scripts.html"
+      - title: 建立工作指令碼
+        url: "/unix-administration/task_creating_task_scripts.html"
+      - title: 儲存工作指令碼
+        url: "/unix-administration/task_storing_the_task_scripts.html"
+      - title: 驗證外掛程式指令碼的安裝
+        url: "/unix-administration/task_verifying_installation_of_plugin_scripts.html"
+      - title: 建立工作規格檔案
+        url: "/unix-administration/task_creating_a_task_specification_file.html"
+      - title: 使用指令碼和指令碼後執行備份、還原和複製作業
+        url: "/unix-administration/task_performing_backup_restore_and_clone_operations_using_prescript_and_post_scripts.html"
+    - title: 更新與設定檔相關的儲存系統名稱和目標資料庫主機名稱
+      url: "/unix-administration/concept_updating_storage_controller_name_and_database_hostname_associated_with_a_profile.html"
+      entries:
+      - title: 更新與設定檔相關的儲存系統名稱
+        url: "/unix-administration/task_updating_storage_system_name_associated_with_a_profile.html"
+      - title: 檢視與設定檔相關的儲存系統清單
+        url: "/unix-administration/task_viewing_a_list_of_storage_controllers_associated_with_a_profile.html"
+      - title: 更新與設定檔相關聯的目標資料庫主機名稱
+        url: "/unix-administration/task_updating_target_database_hostname_associated_with_a_profile.html"
+    - title: 維持SnapManager 不中斷營運的歷史記錄
+      url: "/unix-administration/concept_maintaining_history_of_snapmanager_operations.html"
+      entries:
+      - title: 設定SnapManager 歷史記錄以利執行
+        url: "/unix-administration/task_configuring_history_for_backup_operation.html"
+      - title: 查看SnapManager 一份關於功能的清單
+        url: "/unix-administration/task_viewing_a_list_of_snapmanager_history_operation_as_a_report.html"
+      - title: 檢視與設定檔相關之特定作業的詳細記錄
+        url: "/unix-administration/task_viewing_the_detailed_history_of_a_specific_operation_associated_with_a_profile.html"
+      - title: 刪除SnapManager 作業系統歷史記錄
+        url: "/unix-administration/task_purging_history_of_snapmanager_operation.html"
+      - title: 移除與單一設定檔或多個設定檔相關的記錄設定
+        url: "/unix-administration/task_removing_history_configuration_associated_with_a_single_profile_or_multiple_profiles.html"
+      - title: 檢視SnapManager 完整的資料記錄組態詳細資料
+        url: "/unix-administration/task_viewing_snapmanger_history_operation_details.html"
+    - title: Oracle命令參考資料SnapManager
+      url: "/unix-administration/concept_snapmanager_for_oraclefor_sap_command_reference.html"
+      entries:
+      - title: SMo_server重新啟動命令
+        url: "/unix-administration/reference_the_smosmsap_server_restart_command.html"
+      - title: SMo_server start命令
+        url: "/unix-administration/reference_the_smosmsap_server_start_command.html"
+      - title: SMo_server狀態命令
+        url: "/unix-administration/reference_the_smosmsap_server_status_command.html"
+      - title: SMo_server stop命令
+        url: "/unix-administration/reference_the_smosmsap_server_stop_command.html"
+      - title: 使用SMO備份建立命令
+        url: "/unix-administration/reference_the_smosmsapbackup_create_command.html"
+      - title: 使用SMO備份刪除命令
+        url: "/unix-administration/reference_the_smosmsapbackup_delete_command.html"
+      - title: 使用免備份命令
+        url: "/unix-administration/reference_the_smosmsapbackup_free_command.html"
+      - title: 使用SMO備份清單命令
+        url: "/unix-administration/reference_the_smosmsapbackup_list_command.html"
+      - title: 使用SMO備份掛載命令
+        url: "/unix-administration/reference_the_smosmsapbackup_mount_command.html"
+      - title: 使用SMO備份還原命令
+        url: "/unix-administration/reference_the_smosmsapbackup_restore_command.html"
+      - title: 使用SMO備份show命令
+        url: "/unix-administration/reference_the_smosmsapbackup_show_command.html"
+      - title: 使用SMO備份卸載命令
+        url: "/unix-administration/reference_the_smosmsapbackup_unmount_command.html"
+      - title: 使用SMO備份更新命令
+        url: "/unix-administration/reference_the_smosmsapbackup_update_command.html"
+      - title: 使用SMO備份驗證命令
+        url: "/unix-administration/reference_the_smosmsapbackup_verify_command.html"
+      - title: 使用「建立複本」命令
+        url: "/unix-administration/reference_the_smosmsapclone_create_command.html"
+      - title: 使用SMO Clone DELETE命令
+        url: "/unix-administration/reference_the_smosmsapclone_delete_command.html"
+      - title: 使用SMO clone list命令
+        url: "/unix-administration/reference_the_smosmsapclone_list_command.html"
+      - title: 使用SMO Clone show命令
+        url: "/unix-administration/reference_the_smosmsapclone_show_command.html"
+      - title: 使用SMO Clone範本命令
+        url: "/unix-administration/reference_the_smosmsapclone_template_command.html"
+      - title: 使用SMO Clone update命令
+        url: "/unix-administration/reference_the_smosmsap_clone_update_command.html"
+      - title: 使用SMO Clone分割刪除命令
+        url: "/unix-administration/reference_the_smosmsap_clone_split_delete_command.html"
+      - title: 使用SMO Clone分割預估命令
+        url: "/unix-administration/reference_the_smosmsap_clone_splitestimate_command.html"
+      - title: 使用SMO Clone分割命令
+        url: "/unix-administration/reference_the_smosmsap_clone_split_command.html"
+      - title: 使用SMO Clone分割結果命令
+        url: "/unix-administration/reference_the_smosmsap_clone_split_result_command.html"
+      - title: 使用SMO clone分割停止命令
+        url: "/unix-administration/reference_the_smosmsap_clone_stopsplit_command.html"
+      - title: 使用SMO Clone分割狀態命令
+        url: "/unix-administration/reference_the_smosmsap_clone_splitstatus_command.html"
+      - title: 可使用SMO Clone detach命令
+        url: "/unix-administration/reference_the_smosmsap_clone_detach_command.html"
+      - title: 使用SMO cmd檔案命令
+        url: "/unix-administration/reference_the_smosmsapcmdfile_command.html"
+      - title: 可使用SMO認證清除命令
+        url: "/unix-administration/reference_the_smosmsapcredential_clear_command.html"
+      - title: 可使用SMO認證刪除命令
+        url: "/unix-administration/reference_the_smosmsapcredential_delete_command.html"
+      - title: 可使用SMO認證清單命令
+        url: "/unix-administration/reference_the_smosmsapcredential_list_command.html"
+      - title: 使用SMO認證集命令
+        url: "/unix-administration/reference_the_smosmsapcredential_set_command.html"
+      - title: 使用者可執行「SMO歷程記錄清單」命令
+        url: "/unix-administration/reference_the_smosmsap_history_list_command.html"
+      - title: 使用SMO history operation-show命令
+        url: "/unix-administration/reference_the_smosmsap_history_operation_show_command.html"
+      - title: 可使用SMO歷史記錄清除命令
+        url: "/unix-administration/reference_the_smosmsap_history_purge_command.html"
+      - title: 使用「SMO history remove」命令
+        url: "/unix-administration/reference_the_smosmsap_history_remove_command.html"
+      - title: 使用SMO history set命令
+        url: "/unix-administration/reference_the_smosmsap_history_set_command.html"
+      - title: 使用SMO history show命令
+        url: "/unix-administration/reference_the_smo_smsap_history_show_command.html"
+      - title: 使用SMO說明命令
+        url: "/unix-administration/reference_the_smosmsaphelp_command.html"
+      - title: 使用SMO通知remove-Summary通知命令
+        url: "/unix-administration/reference_the_smo_notification_removesummarynotification_command.html"
+      - title: 使用SMO通知update-Summary通知命令
+        url: "/unix-administration/reference_the_smosmsap_notification_updatesummarynotification_command.html"
+      - title: 使用SMO通知集命令
+        url: "/unix-administration/reference_the_smosmsap_notification_set_command.html"
+      - title: 使用SMO作業傾印命令
+        url: "/unix-administration/reference_the_smosmsapoperation_dump_command.html"
+      - title: 使用SMO作業清單命令
+        url: "/unix-administration/reference_the_smosmsapoperation_list_command.html"
+      - title: 使用SMO operation show命令
+        url: "/unix-administration/reference_the_smosmsap_operation_show_command.html"
+      - title: 使用SMO密碼重設命令
+        url: "/unix-administration/reference_the_smosmsap_password_reset_command.html"
+      - title: 使用SMO外掛檢查命令
+        url: "/unix-administration/reference_the_smosmsap_plugin_check_command.html"
+      - title: 使用「建立」命令
+        url: "/unix-administration/reference_the_smosmsapprofile_create_command.html"
+      - title: 可使用SMO設定檔刪除命令
+        url: "/unix-administration/reference_the_smosmsapprofile_delete_command.html"
+      - title: 使用「SMO設定檔銷毀」命令
+        url: "/unix-administration/reference_the_smosmsap_profile_destroy_command.html"
+      - title: 使用SMO設定檔傾印命令
+        url: "/unix-administration/reference_the_smosmsapprofile_dump_command.html"
+      - title: 使用者可執行「使用者」命令
+        url: "/unix-administration/reference_the_smosmsapprofile_list_command.html"
+      - title: 使用SMO設定檔show命令
+        url: "/unix-administration/reference_the_smosmsapprofile_show_command.html"
+      - title: 使用SMO設定檔同步命令
+        url: "/unix-administration/reference_the_smosmsapprofile_sync_command.html"
+      - title: 使用者可執行「SMO設定檔更新」命令
+        url: "/unix-administration/reference_the_smosmsapprofile_update_command.html"
+      - title: 使用「SMO設定檔驗證」命令
+        url: "/unix-administration/reference_the_smosmsapprofile_verify_command.html"
+      - title: 使用SMO protection原則命令
+        url: "/unix-administration/reference_the_smosmsapprotection_policy_command.html"
+      - title: 使用「建立儲存庫」命令
+        url: "/unix-administration/reference_the_smosmsaprepository_create_command.html"
+      - title: 使用者可執行「儲存庫刪除」命令
+        url: "/unix-administration/reference_the_smosmsaprepository_delete_command.html"
+      - title: 使用者可執行SMO儲存庫復原命令
+        url: "/unix-administration/reference_the_smosmsap_repository_rollingback_command.html"
+      - title: 使用者可在儲存庫中使用滑入升級命令
+        url: "/unix-administration/reference_the_smosmsap_repository_rollingupgrade.html"
+      - title: 使用SMO儲存庫show命令
+        url: "/unix-administration/reference_the_smosmsaprepository_show_command.html"
+      - title: 使用者可執行以下命令
+        url: "/unix-administration/reference_the_smosmsaprepository_update_command.html"
+      - title: 使用「SMO排程建立」命令
+        url: "/unix-administration/reference_the_smosmsap_schedule_create_command.html"
+      - title: 使用者可執行「SMO排程刪除」命令
+        url: "/unix-administration/reference_the_smosmsap_schedule_delete_command.html"
+      - title: 使用者可以使用「SMO排程清單」命令
+        url: "/unix-administration/reference_the_smosmsap_schedule_list_command.html"
+      - title: 使用者可執行「SMO排程恢復」命令
+        url: "/unix-administration/reference_the_smosmsap_schedule_resume_command.html"
+      - title: 使用者可執行SMO排程暫停命令
+        url: "/unix-administration/reference_the_smosmsap_schedule_suspend_command.html"
+      - title: 使用者可執行「SMO排程更新」命令
+        url: "/unix-administration/reference_the_smosmsap_schedule_update_command.html"
+      - title: 使用SMO儲存清單命令
+        url: "/unix-administration/reference_the_smosmsap_storage_list_command.html"
+      - title: 使用者可執行儲存設備重新命名命令
+        url: "/unix-administration/reference_the_smosmsap_storage_rename_command.html"
+      - title: 使用SMO系統傾印命令
+        url: "/unix-administration/reference_the_smosmsapsystem_dump_command.html"
+      - title: 使用者可在電腦上執行SMO系統確認命令
+        url: "/unix-administration/reference_the_smosmsapsystem_verify_command.html"
+      - title: 使用SMO version命令
+        url: "/unix-administration/reference_the_smosmsapversion_command.html"
+    - title: 疑難排解SnapManager
+      url: "/unix-administration/reference_troubleshooting_snapmanager.html"
+      entries:
+      - title: 傾印檔案
+        url: "/unix-administration/concept_dump_files.html"
+        entries:
+        - title: 建立作業層級的傾印檔案
+          url: "/unix-administration/task_creating_operation_level_dump_files.html"
+        - title: 正在建立設定檔層級的傾印檔案
+          url: "/unix-administration/task_creating_profile_level_dump_files.html"
+        - title: 建立系統層級的傾印檔案
+          url: "/unix-administration/task_creating_system_level_dump_files.html"
+        - title: 如何找到傾印檔案
+          url: "/unix-administration/reference_how_to_locate_dump_files.html"
+        - title: 如何收集傾印檔案
+          url: "/unix-administration/concept_how_to_collect_dump_files.html"
+        - title: 收集其他記錄資訊、以便更輕鬆地進行偵錯
+          url: "/unix-administration/concept_collecting_additional_log_information_for_easier_debugging.html"
+      - title: 疑難排解複製問題
+        url: "/unix-administration/reference_troubleshooting_clone_issues.html"
+      - title: 疑難排解圖形化使用者介面問題
+        url: "/unix-administration/reference_troubleshooting_graphical_user_interface_issues.html"
+      - title: 疑難排解SnapDrive 各種問題
+        url: "/unix-administration/reference_troubleshooting_snapdrive_issues.html"
+      - title: 疑難排解儲存系統重新命名問題
+        url: "/unix-administration/reference_troubleshooting_storage_system_renaming_issue.html"
+      - title: 疑難排解已知問題
+        url: "/unix-administration/reference_troubleshooting_known_issues.html"
+      - title: 在NFS環境中掛載FlexClone Volume失敗
+        url: "/unix-administration/reference_mounting_a_flexclone_fails_in_nfs_environment.html"
+      - title: 在不支援的情況下、執行多個平行作業會失敗SnapManager
+        url: "/unix-administration/reference_running_multiple_parallel_operations_fail_in_snapmanager.html"
+      - title: 無法從未建立設定檔的其中一個RAC節點還原RAC資料庫
+        url: "/unix-administration/reference_unable_to_restore_rac_database_from_rac_node_where_the_profile_was_not_created.html"
+      - title: 如需詳細資訊、請前往何處
+        url: "/unix-administration/reference_where_to_go_for_more_information.html"
+    - title: 錯誤訊息分類
+      url: "/unix-administration/reference_error_message_classifications.html"
+    - title: 錯誤訊息
+      url: "/unix-administration/reference_error_messages.html"
+  - title: Windows安裝與設定
+    url: "/windows/index.html"
+    entries:
+    - title: SnapManagerfor Oracle的功能
+      url: "/windows/concept_what_snapmanager_for_oraclefor_sap_is.html"
+      entries:
+      - title: Oracle的功能SnapManager
+        url: "/windows/concept_what_snapmanager_for_oraclesnapmanager_for_sap_does.html"
+      - title: 與其他NetApp應用程式和技術整合
+        url: "/windows/concept_integration_with_other_netapp_applications_and_technologies.html"
+      - title: 使用SnapManager 過程中的優勢
+        url: "/windows/concept_advantages_of_using_snapmanager.html"
+        entries:
+        - title: 使用Snapshot複本建立備份
+          url: "/windows/concept_create_backups_using_snapshot_copies.html"
+        - title: 為何您應該剪下歸檔記錄檔
+          url: "/windows/concept_why_you_should_prune_archive_log_files.html"
+        - title: 歸檔記錄整合
+          url: "/windows/concept_archive_log_consolidation.html"
+        - title: 資料庫的完整或部分還原
+          url: "/windows/concept_full_or_partial_restoration_of_the_database.html"
+        - title: 驗證備份狀態
+          url: "/windows/concept_verify_backup_status.html"
+        - title: 資料庫備份複本
+          url: "/windows/concept_clone_database_backups.html"
+        - title: 追蹤詳細資料並產生報告
+          url: "/windows/concept_track_details_and_produce_reports.html"
+      - title: Oracle架構的功能SnapManager
+        url: "/windows/concept_what_the_snapmanager_architecture_is.html"
+        entries:
+        - title: 支援SnapManager
+          url: "/windows/concept_snapmanager_host.html"
+        - title: 圖形化使用者與命令列介面SnapManager
+          url: "/windows/concept_snapmanager_graphical_user_and_command_line_interfaces.html"
+        - title: 系統儲存庫SnapManager
+          url: "/windows/concept_snapmanager_repository.html"
+        - title: 在伺服器上執行SnapDrive SnapManager
+          url: "/windows/concept_snapdrive_on_snapmanager_server.html"
+      - title: 什麼是儲存庫
+        url: "/windows/concept_what_repositories_are.html"
+      - title: 什麼是設定檔
+        url: "/windows/concept_what_profiles_are.html"
+      - title: 運作狀態為何SnapManager
+        url: "/windows/concept_what_snapmanager_operation_states_are.html"
+      - title: 如何維護安全性SnapManager
+        url: "/windows/concept_snapmanager_security.html"
+      - title: 存取及列印線上說明
+        url: "/windows/task_accessing_and_printing_online_help.html"
+    - title: 適用於Oracle部署考量SnapManager
+      url: "/windows/concept_snapmanager_for_oracle_deployment_considerations.html"
+      entries:
+      - title: 執行SnapManager 需求
+        url: "/windows/concept_requirements_for_running_snapmanager.html"
+        entries:
+        - title: 支援的主機硬體
+          url: "/windows/concept_supported_host_hardware.html"
+        - title: 支援的一般組態
+          url: "/windows/concept_supported_general_configurations.html"
+        - title: 叢集式組態
+          url: "/windows/concept_clustered_configurations.html"
+      - title: 資料庫版本支援與組態總覽
+        url: "/windows/concept_database_version_support_and_configuration_overview.html"
+        entries:
+        - title: 一般配置與組態
+          url: "/windows/concept_general_layout_and_configuration.html"
+        - title: 範例資料庫Volume配置
+          url: "/windows/reference_sample_database_volume_layouts.html"
+      - title: 使用SnapManager 不受限
+        url: "/windows/concept_limitations.html"
+      - title: Windows不支援的功能與Oracle技術SnapManager
+        url: "/windows/concept_snapmanager_features_and_oracle_technologies_not_supported_on_windows.html"
+      - title: 叢集式的不受限SnapManager Data ONTAP
+        url: "/windows/concept_snapmanger_limitations_for_clustered_data_ontap.html"
+      - title: Oracle資料庫的相關限制
+        url: "/windows/concept_limitations_related_to_oracle_database.html"
+      - title: 已過時的Oracle資料庫版本
+        url: "/windows/concept_deprecated_versions_of_oracle_database.html"
+    - title: 安裝SnapManager 適用於Oracle的支援
+      url: "/windows/concept_installing_snapmanager_for_oracle.html"
+      entries:
+      - title: 準備安裝SnapManager 適用於Oracle的支援
+        url: "/windows/concept_preparing_to_install_snapmanager_for_oracle.html"
+        entries:
+        - title: 預先安裝工作
+          url: "/windows/concept_preinstallation_tasks.html"
+        - title: 正在下載SnapManager 適用於Oracle的更新套件
+          url: "/windows/task_downloading_snapmanager_for_oracle_installation_package.html"
+      - title: 安裝SnapManager 適用於Oracle的支援
+        url: "/windows/task_installing_snapmanager_for_oracle.html"
+    - title: 升級SnapManager
+      url: "/windows/concept_upgrading_snapmanager_for_oracle.html"
+      entries:
+      - title: 準備升級SnapManager
+        url: "/windows/concept_preparing_to_upgrade_snapmanager_for_oracle.html"
+      - title: 升級SnapManager 功能主機
+        url: "/windows/task_upgrading_snapmanager_for_oracle_hosts.html"
+      - title: 升級後的工作
+        url: "/windows/concept_post_upgrade_tasks.html"
+        entries:
+        - title: 正在更新現有儲存庫
+          url: "/windows/task_updating_the_existing_repository.html"
+        - title: 修改備份保留類別
+          url: "/windows/task_modifying_the_backup_retention_class.html"
+      - title: 使用循環升級來升級SnapManager 功能
+        url: "/windows/concept_upgrading_snapmanager_hosts_by_using_rolling_upgrade.html"
+        entries:
+        - title: 執行循環升級的先決條件
+          url: "/windows/concept_prerequisites_for_performing_rolling_upgrade.html"
+        - title: 在單一主機或多部主機上執行循環升級
+          url: "/windows/task_performing_rolling_upgrade_on_a_single_host_or_multiple_hosts.html"
+        - title: 什麼是復原
+          url: "/windows/concept_what_a_rollback_is.html"
+          entries:
+          - title: 執行復原的限制
+            url: "/windows/concept_limitations_for_performing_a_rollback.html"
+          - title: 執行復原的先決條件
+            url: "/windows/concept_prerequisites_for_performing_a_rollback.html"
+          - title: 在單一主機或多個主機上執行復原
+            url: "/windows/task_performing_a_rollback_on_a_single_host_or_multiple_hosts.html"
+          - title: 復原後工作
+            url: "/windows/task_post_rollback_tasks.html"
+    - title: 設定SnapManager 功能
+      url: "/windows/concept_configuring_snapmanager_for_oraclesap.html"
+      entries:
+      - title: 組態參數SnapManager
+        url: "/windows/reference_snapmanager_configuration_parameters.html"
+        entries:
+        - title: 編輯組態參數
+          url: "/windows/task_editing_the_configuration_parameters.html"
+    - title: 正在啟動SnapManagerfor Oracle
+      url: "/windows/task_starting_snapmanager_for_oraclefor_sap.html"
+      entries:
+      - title: 識別要備份的現有資料庫
+        url: "/windows/task_identifying_an_existing_database_to_backup.html"
+      - title: 驗證Oracle偵聽器狀態
+        url: "/windows/task_verifying_the_oracle_listener_status.html"
+      - title: 為儲存庫資料庫建立Oracle使用者
+        url: "/windows/task_creating_oracle_users_for_the_repository_database.html"
+      - title: 為目標資料庫建立Oracle使用者
+        url: "/windows/task_creating_an_oracle_user_for_the_target_database.html"
+      - title: 存取SnapManager 功能
+        url: "/windows/concept_accessing_snapmanager.html"
+        entries:
+        - title: 啟動SnapManager 支援服務器
+          url: "/windows/task_starting_the_snapmanager_windows_host_server.html"
+          entries:
+          - title: 驗SnapManager 證功能不完整的主機伺服器狀態
+            url: "/windows/task_verifying_the_snapmanager_windows_host_server_status.html"
+        - title: 使用SnapManager 指令
+          url: "/windows/task_using_snapmanager_commands.html"
+        - title: 啟動SnapManager 功能圖形介面
+          url: "/windows/task_starting_the_snapmanager_graphical_user_interface.html"
+        - title: 使用Java Web Start下載及啟動圖形化使用者介面
+          url: "/windows/task_downloading_and_starting_the_graphical_user_interface_using_java_web_start_windows.html"
+      - title: 驗證環境
+        url: "/windows/task_verifying_the_environment.html"
+        entries:
+        - title: 驗SnapDrive 證Windows適用的功能
+          url: "/windows/task_verifying_snapdrive_for_windows.html"
+      - title: 正在建立儲存庫
+        url: "/windows/task_creating_repositories.html"
+        entries:
+        - title: 如何組織儲存庫
+          url: "/windows/concept_how_to_organize_repositories.html"
+      - title: 執行作業的順序
+        url: "/windows/task_order_of_performing_operations.html"
+    - title: 安全性與認證管理
+      url: "/windows/concept_managing_security_and_credentials.html"
+      entries:
+      - title: 什麼是使用者驗證
+        url: "/windows/concept_what_user_authentication_is.html"
+      - title: 儲存加密密碼以供自訂指令碼使用
+        url: "/windows/task_storing_encrypted_passwords_for_custom_scripts.html"
+      - title: 授權存取儲存庫
+        url: "/windows/task_authorizing_user_access_to_the_repository.html"
+      - title: 授權存取設定檔
+        url: "/windows/task_authorizing_user_access_to_profiles.html"
+      - title: 檢視使用者認證資料
+        url: "/windows/task_viewing_user_credentials.html"
+      - title: 清除所有主機、儲存庫和設定檔的使用者認證
+        url: "/windows/task_clearing_user_credentials_for_all_hosts_repositories_and_profiles.html"
+        entries:
+        - title: 清除認證快取後設定認證資料
+          url: "/windows/task_setting_credentials_after_clearing_credential_cache.html"
+      - title: 刪除個別資源的認證資料
+        url: "/windows/task_deleting_credentials_for_individual_resources.html"
+        entries:
+        - title: 刪除儲存庫的使用者認證
+          url: "/windows/task_deleting_user_credentials_for_repositories.html"
+        - title: 刪除主機的使用者認證
+          url: "/windows/task_deleting_user_credentials_for_hosts.html"
+        - title: 刪除設定檔的使用者認證
+          url: "/windows/task_deleting_user_credentials_for_profiles.html"
+    - title: 管理設定檔以有效備份
+      url: "/windows/concept_managing_profiles_for_efficient_backups.html"
+      entries:
+      - title: 建立設定檔
+        url: "/windows/task_creating_profiles.html"
+      - title: Snapshot複本命名
+        url: "/windows/concept_snapshot_copy_naming.html"
+      - title: 重新命名設定檔
+        url: "/windows/task_renaming_profiles.html"
+      - title: 變更設定檔密碼
+        url: "/windows/task_changing_profile_passwords.html"
+      - title: 重設設定檔密碼
+        url: "/windows/task_resetting_profile_password.html"
+      - title: 授權存取設定檔
+        url: "/windows/task_authorizing_user_access_to_profiles.html"
+      - title: 正在驗證設定檔
+        url: "/windows/task_verifying_profiles.html"
+      - title: 正在更新設定檔
+        url: "/windows/task_updating_profiles.html"
+      - title: 刪除設定檔
+        url: "/windows/task_deleting_profiles.html"
+    - title: 備份資料庫
+      url: "/windows/concept_database_backup_management.html"
+      entries:
+      - title: 什麼是資料庫備份SnapManager
+        url: "/windows/concept_what_snapmanager_database_backups_are.html"
+      - title: 什麼是完整備份和部分備份
+        url: "/windows/concept_what_full_and_partial_backups_are.html"
+        entries:
+        - title: 備份類型與Snapshot複本數量
+          url: "/windows/concept_backup_types_and_the_number_of_snapshot_copies.html"
+        - title: 完整的線上備份
+          url: "/windows/concept_full_online_backups.html"
+        - title: 部分線上備份
+          url: "/windows/concept_partial_online_backups.html"
+        - title: 備份、還原及還原作業的範例
+          url: "/windows/reference_examples_of_backup_restore_and_recover_operations.html"
+      - title: 關於控制檔和歸檔記錄檔處理
+        url: "/windows/concept_about_control_file_and_archive_log_file_handling.html"
+      - title: 什麼是資料庫備份排程
+        url: "/windows/concept_what_database_backup_scheduling_is.html"
+      - title: 建立資料庫備份
+        url: "/windows/task_creating_database_backups.html"
+        entries:
+        - title: 剪除歸檔記錄檔
+          url: "/windows/task_pruning_archive_log_files.html"
+        - title: 整合歸檔記錄備份
+          url: "/windows/task_consolidating_archive_log_backups.html"
+        - title: 排程保存檔記錄檔剪除
+          url: "/windows/task_scheduling_archive_log_file_pruning.html"
+      - title: 什麼是呢AutoSupport
+        url: "/windows/concept_what_autosupport_is.html"
+        entries:
+        - title: 將以叢集Data ONTAP 式功能運作的儲存系統新增至SnapManager 支援叢集的伺服器主機
+          url: "/windows/task_adding_storage_systems_to_the_snapmanager_server_host.html"
+        - title: 啟用AutoSupport 支援功能SnapManager
+          url: "/windows/task_enabling_autosupport_in_snapmanager.html"
+        - title: 停用AutoSupport 功能不SnapManager 只是功能
+          url: "/windows/task_disabling_autosupport_in_snapmanager.html"
+      - title: 正在驗證資料庫備份
+        url: "/windows/task_verifying_database_backups.html"
+      - title: 變更備份保留原則
+        url: "/windows/task_changing_the_backup_retention_policy.html"
+        entries:
+        - title: 永久保留備份
+          url: "/windows/task_retaining_backups_forever.html"
+        - title: 指派具有特定保留類別的備份
+          url: "/windows/task_assigning_backups_with_a_specific_retention_class.html"
+        - title: 變更保留原則預設行為
+          url: "/windows/task_changing_the_retention_policy_default_behavior.html"
+        - title: 釋出或刪除保留原則豁免備份
+          url: "/windows/task_freeing_or_deleting_retention_policy_exempt_backups.html"
+      - title: 檢視備份清單
+        url: "/windows/task_viewing_a_list_of_backups.html"
+      - title: 檢視備份詳細資料
+        url: "/windows/task_viewing_backup_details.html"
+      - title: 掛載備份
+        url: "/windows/task_mounting_backups.html"
+      - title: 卸載備份
+        url: "/windows/task_unmounting_backups.html"
+      - title: 釋放備份
+        url: "/windows/task_freeing_backups.html"
+      - title: 刪除備份
+        url: "/windows/task_deleting_backups.html"
+    - title: 排程資料庫備份
+      url: "/windows/concept_scheduling_database_backups.html"
+      entries:
+      - title: 建立備份排程
+        url: "/windows/task_creating_backup_schedules.html"
+      - title: 更新備份排程
+        url: "/windows/task_updating_a_backup_schedule.html"
+      - title: 檢視排程作業清單
+        url: "/windows/task_viewing_a_list_of_scheduled_operations.html"
+      - title: 暫停備份排程
+        url: "/windows/task_suspending_backup_schedules.html"
+      - title: 恢復備份排程
+        url: "/windows/task_resuming_backup_schedules.html"
+      - title: 刪除備份排程
+        url: "/windows/task_deleting_backup_schedules.html"
+    - title: 還原資料庫備份
+      url: "/windows/concept_restoring_database_backup.html"
+      entries:
+      - title: 什麼是資料庫還原
+        url: "/windows/concept_what_database_restore_is.html"
+        entries:
+        - title: 備份還原
+          url: "/windows/concept_backup_recovery.html"
+        - title: 還原程序所需的資料庫狀態
+          url: "/windows/concept_database_state_needed_for_restore_process.html"
+        - title: 什麼是還原預覽計畫
+          url: "/windows/concept_restore_preview_plans.html"
+      - title: 預覽備份還原資訊
+        url: "/windows/task_previewing_backup_restore_information.html"
+      - title: 還原主儲存設備上的備份
+        url: "/windows/task_restoring_backups_on_primary_storage.html"
+      - title: 使用Oracle Recovery Manager（RMAN）執行區塊層級還原
+        url: "/windows/task_performing_block_level_recovery_with_rman.html"
+      - title: 從替代位置還原檔案
+        url: "/windows/concept_restore_files_from_an_alternate_location.html"
+        entries:
+        - title: 從替代位置總覽還原備份
+          url: "/windows/concept_restore_backups_from_an_alternate_location_overview.html"
+          entries:
+          - title: 從檔案還原資料
+            url: "/windows/concept_restoration_of_the_data_from_files.html"
+          - title: 從檔案系統還原資料
+            url: "/windows/concept_restoration_of_the_data_from_file_systems.html"
+        - title: 建立還原規格
+          url: "/windows/task_creating_restore_specifications.html"
+        - title: 從替代位置還原備份
+          url: "/windows/task_restoring_backups_from_an_alternate_location.html"
+    - title: 複製資料庫備份
+      url: "/windows/concept_cloning_database_backup.html"
+      entries:
+      - title: 何謂複製
+        url: "/windows/concept_what_cloning_is.html"
+      - title: 複製方法
+        url: "/windows/concept_cloning_methods.html"
+      - title: 建立複製規格
+        url: "/windows/task_creating_clone_specifications.html"
+        entries:
+        - title: 複製資料庫並使用自訂外掛程式指令碼
+          url: "/windows/task_cloning_databases_and_using_custom_plugin_scripts.html"
+      - title: 從備份複製資料庫
+        url: "/windows/task_cloning_databases_from_backups.html"
+      - title: 正在複製目前狀態的資料庫
+        url: "/windows/task_cloning_databases_in_the_current_state.html"
+      - title: 複製資料庫備份而不重新設檔
+        url: "/windows/task_cloning_database_backups_without_resetlogs.html"
+      - title: 將資料庫複製到替代主機的考量事項
+        url: "/windows/concept_considerations_for_cloning_a_database_to_an_alternate_host.html"
+        entries:
+        - title: 將資料庫複製到替代主機
+          url: "/windows/task_cloning_a_database_to_an_alternate_host.html"
+      - title: 檢視複本清單
+        url: "/windows/task_viewing_a_list_of_clones.html"
+      - title: 檢視詳細的實體複本資訊
+        url: "/windows/task_viewing_detailed_clone_information.html"
+      - title: 刪除複本
+        url: "/windows/task_deleting_clones.html"
+    - title: 介紹資料保護功能SnapManager
+      url: "/windows/concept_introduction_to_data_protection_in_snapmanager.html"
+      entries:
+      - title: 如何在本機儲存設備上保留備份SnapManager
+        url: "/windows/concept_how_snapmanager_retains_backups_on_the_local_storage.html"
+      - title: 執行資料保護的考量
+        url: "/windows/concept_prerequisites_for_data_protection.html"
+        entries:
+        - title: 資料保護功能SnapManager 所需的授權
+          url: "/windows/concept_licenses_required_for_data_protection.html"
+      - title: 使用指令碼保護資料庫備份
+        url: "/windows/concept_protecting_database_backups_by_using_post_scripts.html"
+        entries:
+        - title: 指令碼後的範例
+          url: "/windows/reference_sample_post_scripts.html"
+        - title: 建立或更新POST指令碼
+          url: "/windows/task_creating_or_updating_post_scripts.html"
+          entries:
+          - title: 建立後處理、工作規格檔案
+            url: "/windows/task_creating_post_processing_task_specification_file.html"
+            entries:
+            - title: 使用後處理工作規格來鏡射磁碟區
+              url: "/windows/task_using_post-processing_task_specification_to_mirror_volumes.html"
+            - title: 使用後處理工作規格至保存庫qtree
+              url: "/windows/task_using_post_processing_task_specification_to_vault_qtrees.html"
+    - title: 執行管理作業
+      url: "/windows/concept_performing_management_operations.html"
+      entries:
+      - title: 檢視作業清單
+        url: "/windows/task_viewing_a_list_of_operations.html"
+      - title: 檢視作業詳細資料
+        url: "/windows/task_viewing_operation_details.html"
+      - title: 從備用主機發出命令
+        url: "/windows/task_issuing_commands_from_an_alternate_host.html"
+      - title: 正在檢查SnapManager 更新的版本
+        url: "/windows/task_checking_the_snapmanager_software_version.html"
+      - title: 停止SnapManager 支援伺服器
+        url: "/windows/task_stopping_the_snapmanager_host_server.html"
+      - title: 重新啟動SnapManager 支援主機伺服器
+        url: "/windows/task_restarting_the_snapmanager_windows_host_server.html"
+      - title: 解除安裝SnapManager
+        url: "/windows/task_uninstalling_the_software_from_a_windows_host.html"
+    - title: 設定電子郵件通知
+      url: "/windows/concept_configuring_e_mail_notification.html"
+      entries:
+      - title: 設定儲存庫的郵件伺服器
+        url: "/windows/task_configuring_mail_server_for_a_repository.html"
+      - title: 設定新設定檔的電子郵件通知
+        url: "/windows/task_configuring_e_mail_notification_for_a_new_profile.html"
+        entries:
+        - title: 自訂新設定檔的電子郵件主旨
+          url: "/windows/task_customizing_e_mail_subject_for_a_new_profile.html"
+      - title: 設定現有設定檔的電子郵件通知
+        url: "/windows/task_configuring_e_mail_notification_for_an_existing_profile.html"
+        entries:
+        - title: 自訂現有設定檔的電子郵件主旨
+          url: "/windows/task_customizing_the_email_subject_for_an_existing_profile.html"
+      - title: 設定多個設定檔的摘要電子郵件通知
+        url: "/windows/task_configuring_summary_e_mail_notification_for_multiple_profiles.html"
+      - title: 新增設定檔至摘要電子郵件通知
+        url: "/windows/task_adding_new_profile_to_summary_notification.html"
+      - title: 新增現有設定檔至摘要電子郵件通知
+        url: "/windows/task_adding_existing_profile_to_summary_notification.html"
+      - title: 停用多個設定檔的電子郵件通知
+        url: "/windows/task_disabling_email_notification_for_multiple_profiles.html"
+    - title: 建立SnapManager 工作規格檔案和指令碼、以利執行各項作業
+      url: "/windows/concept_creating_task_specification_file_and_scripts_for_snapmanager_operations.html"
+      entries:
+      - title: 建立工作前、工作後及原則指令碼
+        url: "/windows/task_creating_pretask_post_task_and_policy_scripts.html"
+        entries:
+        - title: 工作指令碼中的作業
+          url: "/windows/concept_operations_in_task_scripts.html"
+        - title: 備份作業的工作指令碼中可用的變數
+          url: "/windows/concept_variables_available_in_the_task_scripts_for_backup_operation.html"
+        - title: 可在還原作業的工作指令碼中使用的變數
+          url: "/windows/concept_variables_available_in_custom_script_for_restore_operation.html"
+        - title: 工作指令碼中可供用於複製作業的變數
+          url: "/windows/concept_variables_available_in_the_task_scripts_for_clone_operation.html"
+        - title: 自訂指令碼中的錯誤處理
+          url: "/windows/concept_error_handling_in_custom_scripts.html"
+      - title: 檢視範例外掛程式指令碼
+        url: "/windows/task_viewing_sample_plugin_scripts.html"
+      - title: 建立工作指令碼
+        url: "/windows/task_creating_task_scripts.html"
+      - title: 儲存工作指令碼
+        url: "/windows/task_storing_the_task_scripts.html"
+      - title: 驗證外掛程式指令碼的安裝
+        url: "/windows/task_verifying_installation_of_plugin_scripts.html"
+      - title: 建立工作規格檔案
+        url: "/windows/task_creating_a_task_specification_file.html"
+      - title: 使用指令碼和指令碼後執行備份、還原和複製作業
+        url: "/windows/task_performing_backup_restore_and_clone_operations_using_prescript_and_post_scripts.html"
+    - title: 更新與設定檔相關的儲存系統名稱和目標資料庫主機名稱
+      url: "/windows/concept_updating_storage_controller_name_and_database_hostname_associated_with_a_profile.html"
+      entries:
+      - title: 更新與設定檔相關的儲存系統名稱
+        url: "/windows/task_updating_storage_system_name_associated_with_a_profile.html"
+      - title: 檢視與設定檔相關的儲存系統清單
+        url: "/windows/task_viewing_a_list_of_storage_controllers_associated_with_a_profile.html"
+      - title: 更新與設定檔相關聯的目標資料庫主機名稱
+        url: "/windows/task_updating_target_database_hostname_associated_with_a_profile.html"
+    - title: 維持SnapManager 不中斷營運的歷史記錄
+      url: "/windows/concept_maintaining_history_of_snapmanager_operations.html"
+      entries:
+      - title: 設定SnapManager 歷史記錄以利執行
+        url: "/windows/task_configuring_history_for_backup_operation.html"
+      - title: 查看SnapManager 一份關於功能的清單
+        url: "/windows/task_viewing_a_list_of_snapmanager_history_operation_as_a_report.html"
+      - title: 檢視與設定檔相關之特定作業的詳細記錄
+        url: "/windows/task_viewing_the_detailed_history_of_a_specific_operation_associated_with_a_profile.html"
+      - title: 刪除SnapManager 作業系統歷史記錄
+        url: "/windows/task_purging_history_of_snapmanager_operation.html"
+      - title: 移除與單一設定檔或多個設定檔相關的記錄設定
+        url: "/windows/task_removing_history_configuration_associated_with_a_single_profile_or_multiple_profiles.html"
+      - title: 檢視SnapManager 完整的資料記錄組態詳細資料
+        url: "/windows/task_viewing_snapmanger_history_operation_details.html"
+    - title: Oracle命令參考資料SnapManager
+      url: "/windows/concept_snapmanager_for_oraclefor_sap_command_reference.html"
+      entries:
+      - title: SMo_server重新啟動命令
+        url: "/windows/reference_the_smosmsap_server_restart_command.html"
+      - title: SMo_server start命令
+        url: "/windows/reference_the_smosmsap_server_start_command.html"
+      - title: SMo_server狀態命令
+        url: "/windows/reference_the_smosmsap_server_status_command.html"
+      - title: SMo_server stop命令
+        url: "/windows/reference_the_smosmsap_server_stop_command.html"
+      - title: 使用SMO備份建立命令
+        url: "/windows/reference_the_smosmsapbackup_create_command.html"
+      - title: 使用SMO備份刪除命令
+        url: "/windows/reference_the_smosmsapbackup_delete_command.html"
+      - title: 使用免備份命令
+        url: "/windows/reference_the_smosmsapbackup_free_command.html"
+      - title: 使用SMO備份清單命令
+        url: "/windows/reference_the_smosmsapbackup_list_command.html"
+      - title: 使用SMO備份掛載命令
+        url: "/windows/reference_the_smosmsapbackup_mount_command.html"
+      - title: 使用SMO備份還原命令
+        url: "/windows/reference_the_smosmsapbackup_restore_command.html"
+      - title: 使用SMO備份show命令
+        url: "/windows/reference_the_smosmsapbackup_show_command.html"
+      - title: 使用SMO備份卸載命令
+        url: "/windows/reference_the_smosmsapbackup_unmount_command.html"
+      - title: 使用SMO備份更新命令
+        url: "/windows/reference_the_smosmsapbackup_update_command.html"
+      - title: 使用SMO備份驗證命令
+        url: "/windows/reference_the_smosmsapbackup_verify_command.html"
+      - title: 使用「建立複本」命令
+        url: "/windows/reference_the_smosmsapclone_create_command.html"
+      - title: 使用SMO Clone DELETE命令
+        url: "/windows/reference_the_smosmsapclone_delete_command.html"
+      - title: 使用SMO clone list命令
+        url: "/windows/reference_the_smosmsapclone_list_command.html"
+      - title: 使用SMO Clone show命令
+        url: "/windows/reference_the_smosmsapclone_show_command.html"
+      - title: 使用SMO Clone範本命令
+        url: "/windows/reference_the_smosmsapclone_template_command.html"
+      - title: 使用SMO Clone update命令
+        url: "/windows/reference_the_smosmsap_clone_update_command.html"
+      - title: 可使用SMO Clone detach命令
+        url: "/windows/reference_the_smosmsap_clone_detach_command.html"
+      - title: 使用SMO cmd檔案命令
+        url: "/windows/reference_the_smosmsapcmdfile_command.html"
+      - title: 可使用SMO認證清除命令
+        url: "/windows/reference_the_smosmsapcredential_clear_command.html"
+      - title: 可使用SMO認證刪除命令
+        url: "/windows/reference_the_smosmsapcredential_delete_command.html"
+      - title: 可使用SMO認證清單命令
+        url: "/windows/reference_the_smosmsapcredential_list_command.html"
+      - title: 使用SMO認證集命令
+        url: "/windows/reference_the_smosmsapcredential_set_command.html"
+      - title: 使用者可執行「SMO歷程記錄清單」命令
+        url: "/windows/reference_the_smosmsap_history_list_command.html"
+      - title: 使用SMO history operation-show命令
+        url: "/windows/reference_the_smosmsap_history_operation_show_command.html"
+      - title: 可使用SMO歷史記錄清除命令
+        url: "/windows/reference_the_smosmsap_history_purge_command.html"
+      - title: 使用「SMO history remove」命令
+        url: "/windows/reference_the_smosmsap_history_remove_command.html"
+      - title: 使用SMO history set命令
+        url: "/windows/reference_the_smosmsap_history_set_command.html"
+      - title: 使用SMO history show命令
+        url: "/windows/reference_the_smo_smsap_history_show_command.html"
+      - title: 使用SMO說明命令
+        url: "/windows/reference_the_smosmsaphelp_command.html"
+      - title: 使用SMO通知remove-Summary通知命令
+        url: "/windows/reference_the_smo_notification_removesummarynotification_command.html"
+      - title: 使用SMO通知update-Summary通知命令
+        url: "/windows/reference_the_smosmsap_notification_updatesummarynotification_command.html"
+      - title: 使用SMO通知集命令
+        url: "/windows/reference_the_smosmsap_notification_set_command.html"
+      - title: 使用SMO作業傾印命令
+        url: "/windows/reference_the_smosmsapoperation_dump_command.html"
+      - title: 使用SMO作業清單命令
+        url: "/windows/reference_the_smosmsapoperation_list_command.html"
+      - title: 使用SMO operation show命令
+        url: "/windows/reference_the_smosmsap_operation_show_command.html"
+      - title: 使用SMO密碼重設命令
+        url: "/windows/reference_the_smosmsap_password_reset_command.html"
+      - title: 使用「建立」命令
+        url: "/windows/reference_the_smosmsapprofile_create_command.html"
+      - title: 可使用SMO設定檔刪除命令
+        url: "/windows/reference_the_smosmsapprofile_delete_command.html"
+      - title: 使用SMO設定檔傾印命令
+        url: "/windows/reference_the_smosmsapprofile_dump_command.html"
+      - title: 使用者可執行「使用者」命令
+        url: "/windows/reference_the_smosmsapprofile_list_command.html"
+      - title: 使用SMO設定檔show命令
+        url: "/windows/reference_the_smosmsapprofile_show_command.html"
+      - title: 使用SMO設定檔同步命令
+        url: "/windows/reference_the_smosmsapprofile_sync_command.html"
+      - title: 使用者可執行「SMO設定檔更新」命令
+        url: "/windows/reference_the_smosmsapprofile_update_command.html"
+      - title: 使用「SMO設定檔驗證」命令
+        url: "/windows/reference_the_smosmsapprofile_verify_command.html"
+      - title: 使用「建立儲存庫」命令
+        url: "/windows/reference_the_smosmsaprepository_create_command.html"
+      - title: 使用者可執行「儲存庫刪除」命令
+        url: "/windows/reference_the_smosmsaprepository_delete_command.html"
+      - title: 使用者可執行SMO儲存庫復原命令
+        url: "/windows/reference_the_smosmsap_repository_rollingback_command.html"
+      - title: 使用者可在儲存庫中使用滑入升級命令
+        url: "/windows/reference_the_smosmsap_repository_rollingupgrade.html"
+      - title: 使用SMO儲存庫show命令
+        url: "/windows/reference_the_smosmsaprepository_show_command.html"
+      - title: 使用者可執行以下命令
+        url: "/windows/reference_the_smosmsaprepository_update_command.html"
+      - title: 使用「SMO排程建立」命令
+        url: "/windows/reference_the_smosmsap_schedule_create_command.html"
+      - title: 使用者可執行「SMO排程刪除」命令
+        url: "/windows/reference_the_smosmsap_schedule_delete_command.html"
+      - title: 使用者可以使用「SMO排程清單」命令
+        url: "/windows/reference_the_smosmsap_schedule_list_command.html"
+      - title: 使用者可執行「SMO排程恢復」命令
+        url: "/windows/reference_the_smosmsap_schedule_resume_command.html"
+      - title: 使用者可執行SMO排程暫停命令
+        url: "/windows/reference_the_smosmsap_schedule_suspend_command.html"
+      - title: 使用者可執行「SMO排程更新」命令
+        url: "/windows/reference_the_smosmsap_schedule_update_command.html"
+      - title: 使用SMO儲存清單命令
+        url: "/windows/reference_the_smosmsap_storage_list_command.html"
+      - title: 使用者可執行儲存設備重新命名命令
+        url: "/windows/reference_the_smosmsap_storage_rename_command.html"
+      - title: 使用SMO系統傾印命令
+        url: "/windows/reference_the_smosmsapsystem_dump_command.html"
+      - title: 使用者可在電腦上執行SMO系統確認命令
+        url: "/windows/reference_the_smosmsapsystem_verify_command.html"
+      - title: 使用SMO version命令
+        url: "/windows/reference_the_smosmsapversion_command.html"
+    - title: 疑難排解SnapManager
+      url: "/windows/reference_troubleshooting_snapmanager.html"
+      entries:
+      - title: 傾印檔案
+        url: "/windows/concept_dump_files.html"
+        entries:
+        - title: 建立作業層級的傾印檔案
+          url: "/windows/task_creating_operation_level_dump_files.html"
+        - title: 正在建立設定檔層級的傾印檔案
+          url: "/windows/task_creating_profile_level_dump_files.html"
+        - title: 建立系統層級的傾印檔案
+          url: "/windows/task_creating_system_level_dump_files.html"
+        - title: 如何找到傾印檔案
+          url: "/windows/reference_how_to_locate_dump_files.html"
+        - title: 如何收集傾印檔案
+          url: "/windows/concept_how_to_collect_dump_files.html"
+        - title: 收集其他記錄資訊、以便更輕鬆地進行偵錯
+          url: "/windows/concept_collecting_additional_log_information_for_easier_debugging.html"
+      - title: 疑難排解複製問題
+        url: "/windows/reference_troubleshooting_clone_issues.html"
+      - title: 疑難排解圖形化使用者介面問題
+        url: "/windows/reference_troubleshooting_graphical_user_interface_issues.html"
+      - title: 疑難排解已知問題
+        url: "/windows/reference_troubleshooting_known_issues.html"
+      - title: 在不支援的情況下、執行多個平行作業會失敗SnapManager
+        url: "/windows/reference_running_multiple_parallel_operations_fail_in_snapmanager.html"
+      - title: 無法從未建立設定檔的其中一個RAC節點還原RAC資料庫
+        url: "/windows/reference_unable_to_restore_rac_database_from_rac_node_where_the_profile_was_not_created.html"
+      - title: 如需詳細資訊、請前往何處
+        url: "/windows/reference_where_to_go_for_more_information.html"
+    - title: 錯誤訊息分類
+      url: "/windows/reference_error_message_classifications.html"
+    - title: 錯誤訊息
+      url: "/windows/reference_error_messages.html"
+  - title: 法律聲明
+    url: "/reference_legal_notices.html"

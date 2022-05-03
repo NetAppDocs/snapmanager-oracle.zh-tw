@@ -1,0 +1,19 @@
+---
+permalink: unix-administration/concept_limitations_of_using_scripts_to_support_asm_database_without_asmlib.html 
+sidebar: sidebar 
+keywords: certain, limitation, script, asm, database, asmlib, root, grid, oracle 
+summary: 您必須瞭解使用指令碼來支援不含ASMLib的ASM資料庫的特定限制。 
+---
+= 使用指令碼來支援不含ASMLib的ASM資料庫的限制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須瞭解使用指令碼來支援不含ASMLib的ASM資料庫的特定限制。
+
+* 指令碼可為任何核心版本提供替代解決方案、但僅在未安裝ASMLib時才提供。
+* 指令碼的權限必須設定為允許root、GRID、Oracle或同等使用者存取指令碼。
+* 指令碼不支援從次要位置還原。
+

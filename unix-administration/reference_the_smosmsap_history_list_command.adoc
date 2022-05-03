@@ -1,0 +1,89 @@
+---
+permalink: unix-administration/reference_the_smosmsap_history_list_command.html 
+sidebar: sidebar 
+keywords: command, enable, list, history, detail, snapmanager, operation, smo 
+summary: 此命令可讓您檢視SnapManager 有關此操作的歷史詳細資料清單。 
+---
+= 使用者可執行「SMO歷程記錄清單」命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令可讓您檢視SnapManager 有關此操作的歷史詳細資料清單。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo history list
+-profile \{-name profile_name \[profile_name1, profile_name2\] \| -all
+-repository
+-login \[-password repo_password\]
+-username repo_username
+-host repo_host
+-dbname repo_dbname
+-port repo_port}
+-operation \{-operations operation_name \[operation_name1, operation_name2\] \| -all\}
+\[-delimiter character\]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔*
++
+指定設定檔的名稱。此名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* *儲存庫*
++
+儲存庫之後的選項會指定儲存設定檔之資料庫的詳細資料。
+
+* *-dbname repo_dbname*
++
+指定儲存設定檔的資料庫名稱。使用全域名稱或SID。
+
+* *主機repo_host*
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* *登入*
++
+啟動儲存庫登入詳細資料。
+
+* *使用者名稱repo_username*
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* *連接埠repo_port*
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* 操作｛-operationsoperations_name [operation_name1、operation_name2）|-all*
++
+指定SnapManager 您設定歷程記錄的靜態作業。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+[listing]
+----
+
+          smo  history list -profile -name PROFILE1 -operation -operations backup -verbose
+----

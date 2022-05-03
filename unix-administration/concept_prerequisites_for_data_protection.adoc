@@ -1,0 +1,33 @@
+---
+permalink: unix-administration/concept_prerequisites_for_data_protection.html 
+sidebar: sidebar 
+keywords: consideration, peform, data, protection, netapp, snapdrive, post-script, support 
+summary: 執行資料保護時、您必須注意某些考量事項。 
+---
+= 執行資料保護的考量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+執行資料保護時、您必須注意某些考量事項。
+
+* 若要從次要系統執行實體複製或還原作業、您必須將目的地磁碟區掛載到命名空間中、然後正確匯出。
+* 您必須SnapDrive 將值設為「Off（關）」、以停用「Sing組態參數檢查-匯出-權限-NFS-複製」。
++
+NetApp支援網站上的適用於UNIX文件包含有關檢查-匯出-權限-NFS-複製參數的其他資訊。SnapDrive
+
+* 您必須為次要儲存系統中所要求的次要儲存磁碟區設定SnapMirror關係。
+* 您必須為SnapVault 次要儲存系統中所要求的次要儲存配額樹狀結構設定支援功能、以便Data ONTAP 在7-Mode中運作。
+* 如果您使用SnapVault 的是針對叢集Data ONTAP 式的非指令碼、則必須為使用者定義的SnapMirror標籤定義原則和規則。
++
+支援叢集式的等量資料、以及DP和XDP類型的SnapMirror關係。SnapVault Data ONTAPNetApp支援網站上的支援文件包含有關設定SnapMirror和SnapMirror的資訊。ONTAP SnapVault
+
+* 在NAS環境中、您必須使用SnapDrive 下列命令來設定主要和次要NAS資料路徑：flexconfig Set-mgmtpathmanagement、pathmanagement、pathmanagement、pathmanagement、pathdatapath_path。
++
+例如SnapDrive 、將f3050-197-91 f3050-197-91 f3050-197-91 f3050-197-91 f3050-220-220-91、其中「f3050-197-91」是管理路徑、「f3050-220-91」則是資料路徑。
+
+
+
+http://mysupport.netapp.com/["NetApp支援網站上的文件：mysupport.netapp.com"]

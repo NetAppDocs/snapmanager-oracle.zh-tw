@@ -1,0 +1,58 @@
+---
+permalink: windows/reference_the_smosmsapprofile_delete_command.html 
+sidebar: sidebar 
+keywords: run, profile, delete, command, database, smo 
+summary: 您可以執行profile DELETE命令來刪除資料庫的設定檔。 
+---
+= 可使用SMO設定檔刪除命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行profile DELETE命令來刪除資料庫的設定檔。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo profile delete
+-profile profile
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔*
++
+指定要刪除的設定檔。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列範例會刪除設定檔：
+
+[listing]
+----
+smo profile delete -profile SALES1
+Operation Id [Ncaf00af0242b3e8dba5c68a57a5ae932] succeeded.
+----
+*相關資訊*
+
+xref:task_deleting_profiles.adoc[刪除設定檔]

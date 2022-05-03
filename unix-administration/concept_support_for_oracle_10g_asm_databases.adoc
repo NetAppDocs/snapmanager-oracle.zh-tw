@@ -1,0 +1,16 @@
+---
+permalink: unix-administration/concept_support_for_oracle_10g_asm_databases.html 
+sidebar: sidebar 
+keywords: oracle, 10g, asmcmd, sql, query, disk, list, support 
+summary: 如果您使用Oracle 10g、則asmcmd命令無法列出磁碟。您可以使用SQL查詢取得磁碟清單。 
+---
+= 支援不含ASMLib的Oracle 10g ASM資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用Oracle 10g、則asmcmd命令無法列出磁碟。您可以使用SQL查詢取得磁碟清單。
+
+disk_list.sql指令碼包含在範例目錄中提供的現有指令碼中、以支援SQL查詢。執行theasmquerydisk.sh指令碼時、磁碟list.sSQL指令碼必須手動執行。範例指令碼行會在asmquerydisk.sh檔案中加入附有註解的項目。此檔案可以放在/home/Grid位置、或是您選擇的其他位置。

@@ -1,0 +1,28 @@
+---
+permalink: unix-administration/task_configuring_e_mail_notification_for_an_existing_profile.html 
+sidebar: sidebar 
+keywords: updating, profile, configure, receive, email, notification, completion, database, operation, exist, comma-seperated, list 
+summary: 當您更新設定檔時、可以設定在資料庫作業完成時接收電子郵件通知。 
+---
+= 設定現有設定檔的電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您更新設定檔時、可以設定在資料庫作業完成時接收電子郵件通知。
+
+* 您必須設定傳送警示的電子郵件地址。
+* 您必須輸入要傳送警示的單一電子郵件地址或多個電子郵件地址。
++
+您可以針對多個位址使用以逗號分隔的清單。您必須確保在逗號和下一個電子郵件地址之間沒有空格。您也可以選擇新增主旨至電子郵件。
+
++
+.. 輸入下列命令：mos profile update -profileprofile [-profile-passworthprofile_password][-database-dbnamedb_dbname-host db_host [-iddb_sid][-logoaddressedb_username-password-port db_port][{-rMAN {-controlfile |{-login-usernam_deparam_deletails[-petails[-pyour-petim_noteeps[-policy-py-py-petel][-py-py-py-py-py-policyn][-protectam_data][-protect][-address_data][-protect][-policy-policy-py-py-policy-packn][-py-py-pety-pety-py-pasteryun][-fam_en][-protect][-pety-policy-py-py-pastorn][-py-pety-petely-py-policy-policy-password_en][-protectam_
++
+您可以使用「成功」選項來接收通知、只有在資料庫作業成功時才會收到通知、而失敗選項則只會收到失敗資料庫作業的通知。
+
+
+
+

@@ -1,0 +1,91 @@
+---
+permalink: unix-administration/task_using_snapmanager_for_oracle_to_create_the_database_profile_and_assign_a_protection_policy.html 
+sidebar: sidebar 
+keywords: create, profile, snapmanager, oracle, enable, protect, client, payroll, paydb 
+summary: 您必須在SnapManager Oracle的支援範本中建立設定檔、在設定檔中啟用保護功能、並指派保護原則以建立受保護的備份。 
+---
+= 使用SnapManager 支援Oracle的支援功能來建立資料庫設定檔、並指派保護原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在SnapManager Oracle的支援範本中建立設定檔、在設定檔中啟用保護功能、並指派保護原則以建立受保護的備份。
+
+設定檔包含所管理資料庫的相關資訊、包括其認證、備份設定及備份保護設定。建立設定檔之後、您不需要在每次執行作業時指定資料庫詳細資料。設定檔只能參考一個資料庫、但多個設定檔可以參照同一個資料庫。
+
+. 前往SnapManager Oracle用戶端的支援。
+. 在儲存庫樹狀結構中、以滑鼠右鍵按一下主機、然後選取*「Create Profile*（建立設定檔*）」。
+. 在「設定檔組態資訊」頁面上、輸入設定檔詳細資料、然後按「*下一步*」。
++
+您可以輸入下列資訊：
+
++
+** 設定檔名稱：edro_prod2
+** 設定檔密碼：payrol123
+** 註解：正式作業薪資資料庫
+
+
+. 在Database Configuration Information（資料庫組態資訊）頁面上、輸入資料庫詳細資料、然後按一下* Next*（下一步*）。
++
+您可以輸入下列資訊：
+
++
+** 資料庫名稱：PAYDB
+** 資料庫SID：payrol.db
+** 資料庫主機：接受預設值。由於您是從儲存庫樹狀結構中的主機建立設定檔、SnapManager 所以顯示主機名稱。
+** 主機帳戶、代表Oracle使用者帳戶：Oracle
+** 主機群組、代表Oracle群組：DBA
+
+
+. 在Database Connection Information（資料庫連線資訊）頁面上、按一下* Use database" Authentication*（使用資料庫驗證*）、即可允許使用者使用資料庫資訊進行驗證。
+. 輸入資料庫連線詳細資料、然後按一下*下一步*。
++
+您可以輸入下列資訊：
+
++
+** Sysdba優先使用者名稱、代表具有系統管理權限的系統資料庫管理員：sys
+** 密碼（SYSDBA密碼）：Oracle
+** 連接至資料庫主機的連接埠：1521
+
+
+. 在RMAN Configuration Information（RMAN組態資訊）頁面上、按一下* Do not use RMAN*（*請勿使用RMAN *）、然後按一下* Next*（
++
+Oracle Recovery Manager（RMAN）是Oracle工具、可協助您使用區塊層級偵測功能來備份及恢復Oracle資料庫。
+
+. 在「Snapshot Naming Information」（Snapshot命名資訊）頁面上、選取變數以指定與此設定檔相關聯之Snapshot的命名慣例。
++
+SMID變數會建立唯一的Snapshot識別碼。
+
++
+請執行下列步驟：
+
++
+.. 在變數權杖清單中、選取使用者文字、然後按一下*新增*。
+.. 輸入payroll.techco.com作為主機名稱、然後按一下*確定*。
+.. 按一下「*左*號」、直到「格式」方塊中的「SMO」後面出現主機名稱。
+.. 單擊 * 下一步 * 。
+
+
++
+SMo_hostname_smosprofile_dbsid_scope_mode_SMID的Snapshot命名慣例會變成「smo_payroll.techco.com_payroll_prod2_payrolldb_f_a_x"」（其中「f」表示完整備份、「A」表示自動模式、而「x」代表唯一的SMID）。
+
+. 選擇* Protection Manager Protection Policy*。
++
+* Protection Manager Protection Policy*可讓您選取使用NetApp管理主控台設定的保護原則。
+
+. 從NetApp管理主控台擷取的保護原則中選取* TechCo Payroll Data：Backup *作為保護原則、然後按* Next*。
+. 在「Perform Operation（執行操作）」頁面上、確認資訊、然後按一下「* Creation*（建立*）」。
+. 按一下「*作業詳細資料*」以查看設定檔的相關資訊：建立作業和磁碟區型還原資格資訊。
++
+** 將NetApp管理主控台保護原則指派給資料庫設定檔、會自動建立不一致的資料集、供NetApp管理主控台操作員使用、名稱慣例為SMO _、<主機名稱>_、或在本範例中為smo_payroll.tech.com_PAYDB。
+** 如果設定檔不符合磁碟區還原的資格（也稱為「快速還原」）、則會發生下列情況：
++
+*** 「*結果*」標籤表示設定檔建立成功、而且在作業期間發生警告。
+*** 「*作業詳細資料*」標籤包含警告記錄、指出設定檔不符合快速還原的資格、並說明原因。
+
+
+
+
+

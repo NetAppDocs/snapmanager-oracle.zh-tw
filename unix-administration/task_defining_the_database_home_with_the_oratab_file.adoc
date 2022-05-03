@@ -1,0 +1,52 @@
+---
+permalink: unix-administration/task_defining_the_database_home_with_the_oratab_file.html 
+sidebar: sidebar 
+keywords: snapmanager, oratab, file, operation, determine, oracle, database, home, directory, installation 
+summary: 執行作業期間、使用oratab檔案來判斷Oracle資料庫主目錄。SnapManagerOracle資料庫的項目必須位於oratab檔案中、SnapManager 才能使之正常運作。oratab檔案是在Oracle軟體安裝期間建立的。 
+---
+= 使用oratab檔案定義資料庫主目錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+執行作業期間、使用oratab檔案來判斷Oracle資料庫主目錄。SnapManagerOracle資料庫的項目必須位於oratab檔案中、SnapManager 才能使之正常運作。oratab檔案是在Oracle軟體安裝期間建立的。
+
+oratab檔案會根據主機作業系統位於不同位置、如下表所示：
+
+|===
+| 主機作業系統 | 檔案位置 
+
+
+ a| 
+Linux
+ a| 
+/etc/oratab
+
+
+
+ a| 
+Solaris
+ a| 
+/var/opt/oracle/oratab
+
+
+
+ a| 
+IBM AIX
+ a| 
+/etc/oratab
+
+|===
+oratab檔案範例包含下列資訊：
+
+[listing]
+----
++ASM1:/u01/app/11.2.0/grid:N   # line added by Agent
+oelpro:/u01/app/11.2.0/oracle:N         # line added by Agent
+# SnapManager generated entry          (DO NOT REMOVE THIS LINE)
+smoclone:/u01/app/11.2.0/oracle:N
+----
+
+NOTE: 安裝Oracle之後、您必須確定oratab檔案位於上表中指定的位置。如果oratab檔案未位於每個作業系統的正確位置、您必須聯絡技術支援部門以取得協助。

@@ -1,0 +1,28 @@
+---
+permalink: unix-administration/task_viewing_clone_split_estimate.html 
+sidebar: sidebar 
+keywords: clone, split, estimate, help, total, free, space, available, aggregate, amount, space, share, smo 
+summary: 複本分割預估可協助您瞭解集合體上可用的總空間、複本與原始資料庫之間共享的空間量、以及複本專屬使用的空間。此外、您也可以檢視建立基礎實體複本的日期和時間、以及複本的存留期。根據此預估、您可以決定是否要分割複本。 
+---
+= 檢視複本分割預估
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+複本分割預估可協助您瞭解集合體上可用的總空間、複本與原始資料庫之間共享的空間量、以及複本專屬使用的空間。此外、您也可以檢視建立基礎實體複本的日期和時間、以及複本的存留期。根據此預估、您可以決定是否要分割複本。
+
+若要檢視複本分割預估、您必須輸入原始複本的設定檔名稱、以及複製作業的標籤或GUID。如果該實體複本位於其他主機、您可以指定主機名稱。
+
+. 若要檢視實體複本分割預估、請輸入下列命令：「mo clone sest-estEsteparate -profileprofile [-hosthostname][-labelclone-label |-idclone-id][-quiet |-verbose]」
+
+
+以下範例顯示複製分割儲存預估的命令：
+
+[listing]
+----
+smo clone split-estimate
+
+-profile p1 -label clone_test_label
+----

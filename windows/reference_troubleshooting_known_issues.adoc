@@ -1,0 +1,191 @@
+---
+permalink: windows/reference_troubleshooting_known_issues.html 
+sidebar: sidebar 
+keywords: known, issues, snapmanager, troubleshooting 
+summary: 您應該瞭解使用SnapManager 下列項目時可能發生的一些已知問題、以及如何解決這些問題。 
+---
+= 疑難排解已知問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您應該瞭解使用SnapManager 下列項目時可能發生的一些已知問題、以及如何解決這些問題。
+
+
+
+== Oracle無法識別叢集模式設定檔SnapManager
+
+如果SnapManager 叢集模式設定檔名稱未出現在Oracle安裝目錄的cmode_profile.config檔案中、可能會觸發下列錯誤訊息：
+
+請使用SnapDrive 下列功能來設定DFM伺服器：finsetconfig set -dfm user_name applet_name applet_name。
+
+此外、在升級SnapManager 適用於Oracle的支援功能時、如果您刪除/opp/NetApp/SMo/*資料夾、則具有叢集模式設定檔名稱的cmode_profile.config檔案也會遭到刪除。此問題也會觸發相同的錯誤訊息。
+
+*因應措施*
+
+更新設定檔：SMO設定檔update-profile <profile名稱>
+
+
+NOTE: 如果SnapManager 將for Oracle安裝在/opp/NetApp/SMo/路徑中、則檔案位置為/opp/NetApp/SMO/cmode_profile/cmode_profile.config。
+
+
+
+== 伺服器無法啟動
+
+啟動伺服器時、您可能會看到類似下列的錯誤訊息：
+
+SMo-01104：調用命令時發生錯誤：SMo-17107：SnapManager 由於下列錯誤、導致無法在連接埠8074上啟動伺服器：java.net.BindException:位址已在使用中
+
+這可能是因為SnapManager 另一個應用程式目前正在使用不偵聽的連接埠（預設為27214和27215）。
+
+如果SMo_server命令已經在執行中、SnapManager 但無法偵測到現有的程序、也可能發生此錯誤。
+
+*因應措施*
+
+您可以重新設定SnapManager 使用不同連接埠的功能或其他應用程式。
+
+若要重新設定SnapManager 功能、請編輯下列檔案：C:\Program Files\NetApp\SnapManager for Oracle\properties\SMo.config
+
+您可以指派下列值：
+
+* smoO Server.port=27214
+* smoO Server.rmiRegister.port=27215
+* remote.register.ocijdbc.port= 27215
++
+remote.register.ocijdbc.port必須與Server.rmiRegistry.port相同。
+
+
+
+若要啟動SnapManager 此伺服器、請執行下列步驟：
+
+. 按一下*開始*>*控制台*>*管理工具*>*服務*。
+. 您可以使用下列三種方式之一來啟動伺服器：
++
+** 在左側面板中、按一下* Start*。
+** 用滑鼠右鍵按一下SnapManager 適用於Oracle的NetApp Sfor 3.3、然後從下拉式功能表中選取* Start*。
+** 按兩SnapManager 下「NetApp Sfor Oracle」3.3、然後在開啟的「內容」視窗中、按一下「* Start*」。
+
+
+
+
+
+
+== 如果目的地名稱是其他目的地名稱的一部分、則無法管理歸檔記錄檔目的地名稱
+
+建立歸檔記錄備份時、如果使用者排除的目的地是其他目的地名稱的一部分、則其他目的地名稱也會排除在外。
+
+例如、假設有三個目的地可供排除：e:\\arch、G:\\arch和H:\\arch。建立歸檔記錄檔備份時、如果您使用命令排除E:\\arch
+
+[listing]
+----
+smo backup create -profile almsamp1 -data -online -archivelogs  -exclude-dest E:\\arch
+----
+、Oracle的支援範圍不包括以E:\\arch開頭的所有目的地。SnapManager
+
+*因應措施*
+
+* 在v$archure_dest中設定目的地之後、新增路徑分隔符號。例如、將E:\\arch\變更為E:\\arch\。
+* 建立備份時、請加入目的地、而不要排除任何目的地。
+
+
+
+
+== 儲存庫資料庫大小隨時間而成長、而非備份數量
+
+由於無法在儲存庫資料庫表格中插入或刪除架構內的資料、導致索引空間使用率偏高、因此儲存庫資料庫的大小會隨時間增加SnapManager 。
+
+*因應措施*
+
+您必須根據Oracle準則來監控及重新建置索引、以控制儲存庫架構所耗用的空間。
+
+
+
+== 無法存取此功能、且儲存庫資料庫當機時、無法執行各項功能SnapManager SnapManager
+
+無法執行作業系統、而且儲存庫資料庫當機時、您無法存取GUI。SnapManager
+
+下表列出您可能要執行的不同動作及其例外狀況：
+
+|===
+
+
+| 營運 | 例外情況 
+
+
+ a| 
+開啟關閉的儲存庫
+ a| 
+sm_g1.log中記錄下列錯誤訊息：[warn ]：SMo-01106：查詢儲存庫時發生錯誤：Closed Connection Java.sql.SQLException：Closed Connection。
+
+
+
+ a| 
+按下F5重新整理已開啟的儲存庫
+ a| 
+GUI中會顯示儲存庫例外狀況、並在sm_gui.log檔案中記錄一個NullPointerException。
+
+
+
+ a| 
+正在重新整理主機伺服器
+ a| 
+sumo_gui.log檔案中會記錄一個NullPointerException。
+
+
+
+ a| 
+建立新的設定檔
+ a| 
+「設定檔組態」視窗中會顯示一個NullPointerException。
+
+
+
+ a| 
+重新整理設定檔
+ a| 
+在sm_g1.log中記錄下列SQL例外狀況：[warn ]：SMo-01106：查詢儲存庫時發生錯誤：「Closed Connection（關閉連線）」。
+
+
+
+ a| 
+存取備份
+ a| 
+sm_g1.log中記錄下列錯誤訊息：無法以閒置方式初始化集合。
+
+
+
+ a| 
+檢視實體複本內容
+ a| 
+sm_gui.log和sumo_g1.log中會記錄下列錯誤訊息：無法以閒置方式初始化集合。
+
+|===
+*因應措施*
+
+當您想要存取GUI或執行SnapManager 任何的還原作業時、必須確保儲存庫資料庫正在執行中。
+
+
+
+== 無法為複製的資料庫建立暫存檔
+
+當目標資料庫的暫用表格空間檔案放置在與資料檔案掛載點不同的掛載點時、複製建立作業會成功、但SnapManager 無法為複製的資料庫建立暫存檔。
+
+*因應措施*
+
+您必須執行下列其中一項：
+
+* 請確定已配置目標資料庫、以便將暫存檔放置在與資料檔案相同的掛載點。
+* 在複製的資料庫中手動建立或新增暫存檔。
+
+
+
+
+== 資料保護待命資料庫備份失敗
+
+如果有任何歸檔記錄位置是以主要資料庫的服務名稱設定、則Data Guard待命資料庫的備份會失敗。
+
+*因應措施*
+
+在GUI中、您必須清除*指定與主要資料庫服務名稱相對應的外部歸檔記錄位置*。

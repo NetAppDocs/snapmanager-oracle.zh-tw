@@ -1,0 +1,43 @@
+---
+permalink: unix-administration/concept_collecting_additional_log_information_for_easier_debugging.html 
+sidebar: sidebar 
+keywords: additional, log, debug, fail, snapmanager, operation, external, environment, variable 
+summary: 如果您需要額外的記錄來偵錯失敗SnapManager 的功能、則必須設定外部環境變數server.log.level。此變數會覆寫預設的記錄層級、並傾印記錄檔中的所有記錄訊息。例如、您可以將記錄層級變更為DEBUG、以記錄其他訊息並協助偵錯問題。 
+---
+= 收集其他記錄資訊、以便更輕鬆地進行偵錯
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您需要額外的記錄來偵錯失敗SnapManager 的功能、則必須設定外部環境變數server.log.level。此變數會覆寫預設的記錄層級、並傾印記錄檔中的所有記錄訊息。例如、您可以將記錄層級變更為DEBUG、以記錄其他訊息並協助偵錯問題。
+
+您可在下列位置找到SnapManager 此資訊檔：
+
+* /var/log/SMO
+
+
+若要覆寫預設的記錄層級、您必須執行下列步驟：
+
+. 在SnapManager 安裝目錄中建立plate.override文字檔。
+. 在plate.override文字檔中新增server.log.level參數。
+. 指派值（追蹤、偵錯、資訊、警告、錯誤、 伺服器記錄層級參數的嚴重或進度。
++
+例如、若要將記錄層級變更為錯誤、請將server.log.level的值設為「錯誤」。
+
++
+SERVER.log.level =錯誤
+
+. 重新啟動SnapManager 伺服器。
+
+
+
+NOTE: 如果不需要額外的記錄資訊、您可以從platform.override文字檔中刪除server.log.level參數。
+
+根據SMo.config檔案中下列參數的使用者定義值、由哪個使用者管理伺服器記錄檔的磁碟區：SnapManager
+
+* log.max.log_files.
+* log.max.log_file_size
+* log.main_roling_operation_factory記錄
+

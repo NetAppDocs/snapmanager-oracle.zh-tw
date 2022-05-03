@@ -1,0 +1,110 @@
+---
+permalink: unix-administration/reference_the_smosmsapbackup_mount_command.html 
+sidebar: sidebar 
+keywords: run, backup, mount, command, perform, recover, operation, external, tool, smo 
+summary: 您可以執行備份掛載命令來掛載備份、以便使用外部工具執行恢復作業。 
+---
+= 使用SMO備份掛載命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行備份掛載命令來掛載備份、以便使用外部工具執行恢復作業。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo backup mount
+-profile profile_name
+[-label label \[-data \| -archivelogs\] \| \[-id id\]
+[-host  host]
+\[-from-secondary \{-copy-id id\}\]
+\[-dump\]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *設定檔設定檔名稱*
++
+指定與您要掛載的備份相關聯的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* -id guid*
++
+以指定的GUID掛載備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用SMO備份清單命令來顯示每個備份的GUID。
+
+* *標籤標籤*
++
+以指定的標籤掛載備份。
+
+* *資料*
++
+指定資料檔案。
+
+* -archivelogs*
++
+指定歸檔記錄檔。
+
+* 來源-次要-複製- ID *
++
+從次要儲存設備掛載備份。如果未指定此選項、SnapManager 則由主儲存設備掛載備份。如果備份已釋出、您可以使用此選項。
+
++
+只要指定-from輔助選項、就必須指定-copy（複製）ID選項。如果二線儲存系統上有多個備份、則可使用-Copy-id選項來指定次要儲存設備上的備份複本應用於掛載備份。
+
++
+
+NOTE: 如果您使用Data ONTAP 的是以7-Mode運作的功能、則必須為-copy -id選項指定有效值。不過、如果您使用叢集Data ONTAP 式的功能、則不需要複製ID選項。
+
+* *主機主機*
++
+指定要掛載備份的主機。
+
+* *傾印*
++
+在成功或失敗的掛載作業之後收集傾印檔。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設設定為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+NOTE: 只有在使用外部工具（例如Oracle Recovery Manager（RMAN））時、才必須使用此命令。如果您使用SMO備份還原命令來還原備份、則支援自動處理備份的安裝。SnapManager此命令會顯示清單、顯示已掛載Snapshot複本的路徑。只有在指定-verbose選項時、才會顯示此清單。
+
+
+
+== 範例
+
+下列範例裝載備份：
+
+[listing]
+----
+smo backup mount -profile SALES1 -label full_backup_sales_May -verbose
+SMO-13046 [INFO ]: Operation GUID 8abc013111b9088e0111b908a7560001 starting on Profile SALES1
+SMO-08052 [INFO ]: Beginning to connect mount(s) [/mnt/ssys1/logs, /mnt/ssys1/data] from logical snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001.
+SMO-08025 [INFO ]: Beginning to connect mount /mnt/ssys1/logs from snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001_0 of volume hs_logs.
+SMO-08027 [INFO ]: Finished connecting mount /mnt/ssys1/logs from snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001_0 of volume hs_logs.
+SMO-08025 [INFO ]: Beginning to connect mount /mnt/ssys1/data from snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001_0 of volume hs_data.
+SMO-08027 [INFO ]: Finished connecting mount /mnt/ssys1/data from snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001_0 of volume hs_data.
+SMO-08053 [INFO ]: Finished connecting mount(s) [/mnt/ssys1/logs, /mnt/ssys1/data] from logical snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001.
+SMO-13037 [INFO ]: Successfully completed operation: Backup Mount
+SMO-13048 [INFO ]: Operation Status: SUCCESS
+SMO-13049 [INFO ]: Elapsed Time: 0:01:00.981
+Operation Id [8abc013111b9088e0111b908a7560001] succeeded.
+----
+*相關資訊*
+
+xref:task_mounting_backups.adoc[掛載備份]

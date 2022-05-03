@@ -1,0 +1,32 @@
+---
+permalink: unix-administration/task_post_rollback_tasks.html 
+sidebar: sidebar 
+keywords: perform, additional, step, rollback, repository, database, downgrade, snapmanager, host, post, task, smo 
+summary: 您必須在復原儲存庫資料庫後執行一些額外步驟、並將SnapManager 該系統從SnapManager 還原3.2降級至SnapManager 還原3.0、才能檢視在舊版儲存庫資料庫中建立的排程。 
+---
+= 復原後工作
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在復原儲存庫資料庫後執行一些額外步驟、並將SnapManager 該系統從SnapManager 還原3.2降級至SnapManager 還原3.0、才能檢視在舊版儲存庫資料庫中建立的排程。
+
+. 瀏覽至CD /opp/NetApp/SMO/儲存 庫。
++
+儲存庫目錄可能包含每個儲存庫的兩個檔案。檔案名稱中有數字符號（#）是使用SnapManager 支援更新版本的版本、檔案名稱中有連字號（-）則是使用SnapManager 支援此功能的版本3.0來建立。
+
++
+檔案名稱可能如下：
+
++
+** 儲存庫#SMO300a#SMOREPO1#10.72.197.141#1521
+** 儲存庫-smo300A-smorepo1-10.72.197.141-1521
+
+
+. 以連字號（-）取代檔案名稱中的數字符號（#）。
++
+具有數字符號（#）的檔案名稱現在包含連字號（-）：reposure-SMO300A-SMOREPO1-10.72.197.141-1521。
+
+

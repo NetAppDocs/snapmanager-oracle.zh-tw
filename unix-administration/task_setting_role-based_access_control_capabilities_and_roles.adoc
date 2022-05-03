@@ -1,0 +1,272 @@
+---
+permalink: unix-administration/task_setting_role-based_access_control_capabilities_and_roles.html 
+sidebar: sidebar 
+keywords: enable, role-based, access, control, rbac, snapmanager, snapdrive, capabilities, role, smo 
+summary: 啟用角色型存取控制\（RBAC）以SnapManager 使用SnapDrive 支援功能進行支援後、您可以將RBAC功能和使用者新增至角色、以執行SnapManager 更新作業。 
+---
+= 設定角色型存取控制功能和角色
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+啟用角色型存取控制（RBAC）以SnapManager 使用SnapDrive 支援功能進行支援後、您可以將RBAC功能和使用者新增至角色以執行SnapManager 支援功能。
+
+您必須在Data Fabric Manager伺服器中建立群組、然後將群組新增至主要和次要儲存系統。執行下列命令：
+
+* DFM群組建立SMo_grp
+* DFM群組新增SMo_grpprimer_storage系統
+* DFM群組新增SMo_grpsecondary儲存系統
+
+
+您可以使用Operations Manager Web介面或Data Fabric Manager伺服器命令列介面（CLI）來修改RBAC功能和角色。
+
+下表列出執行SnapManager 資訊技術作業所需的RBAC功能：
+
+|===
+| 營運SnapManager | 未啟用資料保護時所需的RBAC功能 | 啟用資料保護時所需的RBAC功能 
+
+
+ a| 
+設定檔建立或設定檔更新
+ a| 
+SD.Storage.Read（SMo_grp）
+ a| 
+SD.Storage.Read（SMo_profile資料集）
+
+
+
+ a| 
+設定檔保護
+ a| 
+Dfm.Database.Write（SMo_grp）
+
+SD.Storage.Read（SMo_grp）
+
+SD.Config.Read（SMo_grp）
+
+SD.Config.Write（SMo_grp）
+
+SD.Config.Delete（SMo_grp）
+
+GlobalDataProtection
+ a| 
+無
+
+
+
+ a| 
+建立備份
+ a| 
+SD.Storage.Read（SMo_grp）
+
+SD.Snapshot寫入（SMo_grp）
+
+SD.Snapshot：讀取（SMo_grp）
+
+SD.Snapshot刪除（SMo_grp）
+ a| 
+SD.Storage.Read（SMo_profile資料集）
+
+SD.Snapshot寫入（SMo_profile資料集）
+
+SD.Snapshot讀取（SMo_profile資料集）
+
+SD.Snapshot：刪除（SMo_profile資料集）
+
+
+
+ a| 
+建立備份（使用DBVerify）
+ a| 
+SD.Storage.Read（SMo_grp）
+
+SD.Snapshot寫入（SMo_grp）
+
+SD.Snapshot：讀取（SMo_grp）
+
+SD.Snapshot刪除（SMo_grp）
+
+SD.snapshot複製（SMo_grp）
+ a| 
+SD.Storage.Read（SMo_profile資料集）
+
+SD.Snapshot寫入（SMo_profile資料集）
+
+SD.Snapshot讀取（SMo_profile資料集）
+
+SD.Snapshot：刪除（SMo_profile資料集）
+
+SD.snapshot複製（SMo_profile資料集）
+
+
+
+ a| 
+建立備份（使用RMAN）
+ a| 
+SD.Storage.Read（SMo_grp）
+
+SD.Snapshot寫入（SMo_grp）
+
+SD.Snapshot：讀取（SMo_grp）
+
+SD.Snapshot刪除（SMo_grp）
+
+SD.snapshot複製（SMo_grp）
+ a| 
+SD.Storage.Read（SMo_profile資料集）
+
+SD.Snapshot寫入（SMo_profile資料集）
+
+SD.Snapshot讀取（SMo_profile資料集）
+
+SD.Snapshot：刪除（SMo_profile資料集）
+
+SD.snapshot複製（SMo_profile資料集）
+
+
+
+ a| 
+備份還原
+ a| 
+SD.Storage.Read（SMo_grp）
+
+SD.Snapshot寫入（SMo_grp）
+
+SD.Snapshot：讀取（SMo_grp）
+
+SD.Snapshot刪除（SMo_grp）
+
+SD.snapshot複製（SMo_grp）
+
+SD.Snapshot：還原（SMo_grp）
+ a| 
+SD.Storage.Read（SMo_profile資料集）
+
+SD.Snapshot寫入（SMo_profile資料集）
+
+SD.Snapshot讀取（SMo_profile資料集）
+
+SD.Snapshot：刪除（SMo_profile資料集）
+
+SD.snapshot複製（SMo_profile資料集）
+
+SD.Snapshot：還原（SMo_profile資料集）
+
+
+
+ a| 
+刪除備份
+ a| 
+SD.Snapshot刪除（SMo_grp）
+ a| 
+SD.Snapshot：刪除（SMo_profile資料集）
+
+
+
+ a| 
+備份驗證
+ a| 
+SD.Storage.Read（SMo_grp）
+
+SD.Snapshot：讀取（SMo_grp）
+
+SD.Snapshot：Clone（SMo_grp）
+ a| 
+SD.Storage.Read（SMo_profile資料集）
+
+SD.Snapshot讀取（SMo_profile資料集）
+
+SD.Snapshot：Clone（SMo_profile資料集）
+
+
+
+ a| 
+備份掛載
+ a| 
+SD.Storage.Read（SMo_grp）
+
+SD.Snapshot：讀取（SMo_grp）
+
+SD.Snapshot：Clone（SMo_grp）
+ a| 
+SD.Storage.Read（SMo_profile資料集）
+
+SD.Snapshot讀取（SMo_profile資料集）
+
+SD.Snapshot：Clone（SMo_profile資料集）
+
+
+
+ a| 
+備份卸載
+ a| 
+SD.Snapshot：Clone（SMo_grp）
+ a| 
+SD.Snapshot：Clone（SMo_profile資料集）
+
+
+
+ a| 
+建立實體複本
+ a| 
+SD.Storage.Read（SMo_grp）
+
+SD.Snapshot：讀取（SMo_grp）
+
+SD.snapshot複製（SMo_grp）
+ a| 
+SD.Storage.Read（SMo_profile資料集）
+
+SD.Snapshot讀取（SMo_profile資料集）
+
+SD.snapshot複製（SMo_profile資料集）
+
+
+
+ a| 
+刪除實體複本
+ a| 
+SD.Snapshot：Clone（SMo_grp）
+ a| 
+SD.Snapshot：Clone（SMo_profile資料集）
+
+
+
+ a| 
+實體複本分割
+ a| 
+SD.Storage.Read（SMo_grp）
+
+SD.Snapshot：讀取（SMo_grp）
+
+SD.snapshot複製（SMo_grp）
+
+SD.Snapshot刪除（SMo_grp）
+
+SD.Storage.Write（SMo_grp）
+ a| 
+SD.Storage.Read（SMo_profile資料集）
+
+SD.Snapshot讀取（SMo_profile資料集）
+
+SD.snapshot複製（SMo_profile資料集）
+
+SD.Snapshot：刪除（SMo_profile資料集）
+
+SD.Storage.Write（SMo_profile資料集）
+
+|===
+如需定義RBAC功能的詳細資訊、請參閱《_ OnCommand 關於Unified Manager Operations Manager管理指南_》。
+
+. 存取Operations Manager主控台。
+. 從「設定」功能表中、選取*角色*。
+. 選取現有的角色或建立新的角色。
+. 若要將作業指派給資料庫儲存資源、請按一下*「Add Capabilities」（新增功能）*。
+. 在「編輯角色設定」頁面上、按一下「*更新*」以儲存您對角色所做的變更。
+
+
+*相關資訊*
+
+http://support.netapp.com/documentation/productsatoz/index.html["_OnCommand Unified Manager Operations Manager Administration Guide_: [mysupport.netapp.com/documentation/productsatoz/index.html\](https://mysupport.netapp.com/documentation/productsatoz/index.html)"]

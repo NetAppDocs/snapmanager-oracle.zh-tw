@@ -1,0 +1,85 @@
+---
+permalink: unix-administration/reference_the_smosmsapbackup_free_command.html 
+sidebar: sidebar 
+keywords: run, backup, free, command, snapshot, copies, metadata, smo 
+summary: 您可以執行備份free命令來釋放備份的Snapshot複本、而不需從儲存庫移除備份中繼資料。 
+---
+= 使用免備份命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行備份free命令來釋放備份的Snapshot複本、而不需從儲存庫移除備份中繼資料。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo backup free
+-profile profile_name
+[-label label \[-data \| -archivelogs\] \| \[-id guid \| -all\]
+-force
+\[-dump\]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔名稱*
++
+指定與您要釋出的備份相關聯的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* -id guid*
++
+使用指定的Guid指定備份資源。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用SMO備份清單命令來顯示每個備份的GUID。包含-verbose選項以顯示備份ID。
+
+* *標籤標籤*
++
+指定具有指定標籤的備份。
+
+* *資料*
++
+指定資料檔案。
+
+* -archivelogs*
++
+指定歸檔記錄檔。
+
+* *全*
++
+指定所有備份。若要改為刪除指定的備份、請使用-id或-label選項。
+
+* *力*
++
+強制移除Snapshot複本。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列範例可釋出備份：
+
+[listing]
+----
+smo backup free -profile SALES1 -label full_backup_sales_May
+Operation Id [8abc01ec0e79004b010e79006da60001] succeeded.
+----
+*相關資訊*
+
+xref:task_freeing_backups.adoc[釋放備份]

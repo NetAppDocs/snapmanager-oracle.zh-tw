@@ -1,0 +1,31 @@
+---
+permalink: unix-administration/concept_support_for_asmlib.html 
+sidebar: sidebar 
+keywords: snapmanager, asmlib, support 
+summary: 雖然搭配ASMLib使用時必須考量多項因素、但支援不同版本的ASMLib。SnapManager SnapManager 
+---
+= 支援ASMLib
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+雖然搭配ASMLib使用時必須考量多項因素、但支援不同版本的ASMLib。SnapManager SnapManager
+
+支援ASMLib 2.1.4、2.1.4和2.1-8。SnapManager所有SnapManager 的功能均可透過ASMLib 2.1.4、2.1.4和2.1-8來執行。
+
+如果您已從ASMLib 2.1.4升級至ASM 2.2.7、則可使用與ASMLib 2.1.4相同的設定檔和備份、來還原備份並建立複本。
+
+搭配ASMLib使用SnapManager 時、必須考量下列事項：
+
+* 不支援ASMLib 2.1.6。SnapManager
++
+支援ASMLib 2.1.4、2.1.4及2.1-8的更新版本。SnapManager
+
+* 執行SnapManager 完從Syns3.1到3.2的循環升級之後、使用ASMLib 2.1.7建立的備份只有在儲存庫回復SnapManager 到版本不超過32時才會運作、而ASMLib 2.1.7則會降級到ASMLib 2.1.4。
+* 執行SnapManager 完從VMware 3.1到3.2的循環升級之後、如果儲存庫SnapManager 使用ASMLib 2.1.7回復到VMware 3.1、則使用ASMLib 2.1.7建立的備份將無法運作。
++
+復原成功、但無法使用設定檔和備份。
+
+

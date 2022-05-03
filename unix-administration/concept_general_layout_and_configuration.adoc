@@ -1,0 +1,40 @@
+---
+permalink: unix-administration/concept_general_layout_and_configuration.html 
+sidebar: sidebar 
+keywords: recommend, general, database, layout, storage, configuration, avoid, issue, disk, group, file, lun 
+summary: 瞭解建議的一般資料庫配置和儲存組態、有助於避免與磁碟群組、檔案類型和表格空間有關的問題。 
+---
+= 建議的一般資料庫配置和儲存組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解建議的一般資料庫配置和儲存組態、有助於避免與磁碟群組、檔案類型和表格空間有關的問題。
+
+* 請勿在資料庫中包含來自多種SAN檔案系統或Volume Manager的檔案。
++
+組成資料庫的所有檔案都必須位於相同類型的檔案系統上。
+
+* 需要多個4K區塊大小。SnapManager
+* 在oratab檔案中包含資料庫系統識別碼。
++
+在oratab檔案中包含要管理之每個資料庫的項目。依賴oratab檔案來判斷要使用哪個Oracle主目錄。SnapManager
+
+* 如果您想要向SnapManager Oracle Recovery Manager（RMAN）登錄支援還原的備份、則必須建立啟用RMAN的設定檔。
+
+
+如果您想要使用新的磁碟區型還原或完整磁碟群組還原、請考慮下列與檔案系統和磁碟群組相關的準則：
+
+* 多個資料庫無法共用相同的自動儲存管理（ASM）磁碟群組。
+* 包含資料檔案的磁碟群組不能包含其他類型的檔案。
+* 資料檔案磁碟群組的邏輯單元編號（LUN）必須是儲存磁碟區中唯一的物件。
+
+
+以下是一些Volume區隔準則：
+
+* 磁碟區中只能有一個資料庫的資料檔案。
+* 您必須針對下列每個檔案分類使用不同的磁碟區：資料庫二進位檔、資料檔案、線上重作記錄檔、歸檔的重作記錄檔和控制檔。
+* 您不需要為暫用資料庫檔案建立個別的Volume、因為SnapManager 無法備份暫用資料庫檔案。
+

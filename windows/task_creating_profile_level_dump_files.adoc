@@ -1,0 +1,29 @@
+---
+permalink: windows/task_creating_profile_level_dump_files.html 
+sidebar: sidebar 
+keywords: find, log, information, particular, profile, smo, dump, command, name, profile-level, dump, file, creating 
+summary: 您可以使用具有設定檔名稱的SMO設定檔傾印命令、尋找特定設定檔的記錄資訊。 
+---
+= 正在建立設定檔層級的傾印檔案
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用具有設定檔名稱的SMO設定檔傾印命令、尋找特定設定檔的記錄資訊。
+
+. 輸入下列命令：SMO profile dump -profile profile_name
++
+傾印檔案位置：
+
++
+[listing]
+----
+Path:\<user-home>\Application Data\NetApp\smo\3.3.0\smo_dump_8abc01c814649ebd0114649ec69d0001.jar
+----
++
+
+NOTE: 如果在建立設定檔時遇到錯誤、請使用smossystem dump命令。成功建立設定檔之後、請使用smooperationdump和smosprofile dump命令。
+
+

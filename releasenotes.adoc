@@ -1,0 +1,13 @@
+---
+permalink: releasenotes.html 
+sidebar: sidebar 
+keywords: release, notes, new, features, fixed, issues, known, limitations, snapmanager, oracle 
+summary: 說明新功能、升級附註、修正問題、已知限制及已知問題。 
+---
+= Oracle發行說明適用的部分SnapManager
+:allow-uri-read: 
+
+
+。 link:https://library.netapp.com/ecm/ecm_get_file/ECMLP2849192["Oracle發行說明適用的部分SnapManager"] 說明新功能、升級附註、修正問題、已知限制及已知問題。
+
+您必須登入NetApp支援網站、才能存取版本資訊。

@@ -1,0 +1,32 @@
+---
+permalink: unix-administration/concept_support_for_asm_databases_without_asmlib.html 
+sidebar: sidebar 
+keywords: snapmanager, asm, asmlib, requirement, asm, disk, group, primary, storage, vbsr, secondary 
+summary: 根據預設、支援不含ASMLib的ASM。SnapManager基本需求是必須分割用於ASM磁碟群組的裝置。 
+---
+= 支援不含ASMLib的ASM資料庫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+根據預設、支援不含ASMLib的ASM。SnapManager基本需求是必須分割用於ASM磁碟群組的裝置。
+
+如果未安裝ASMLib、當您執行下列作業時、與ASM磁碟群組相關的裝置權限會變更為root:disk：
+
+* 重新啟動主機
+* 使用Volume Based SnapRestore 功能（VBRSR）從主要儲存設備還原資料庫
+* 從次要儲存設備還原資料庫
+
+
+您可以在SMo.conf中將true指派給oracleasm.support.ino.asmlib組態變數、以設定適當的裝置權限每當從主機新增或移除新裝置時、就會從initasmdisks檔案中新增或移除與ASM磁碟群組相關的裝置。initasmdisks檔案位於/etc/initasmdisks。
+
+例如、如果您設定oracleasm.support.without．asmlib=true、然後執行備份掛載、則會將新裝置新增至initasmdisks。重新啟動主機時、裝置權限和擁有權會由啟動指令碼維護。
+
+
+NOTE: oracleasm.support.without．asmLib的預設值為假。
+
+*相關資訊*
+
+xref:reference_supported_partition_devices.adoc[支援的分割裝置]

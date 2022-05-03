@@ -1,0 +1,96 @@
+---
+permalink: unix-administration/task_customizing_e_mail_subject_for_a_new_profile.html 
+sidebar: sidebar 
+keywords: customize, email, subject, new, profile, create 
+summary: 您可以在建立新設定檔時、針對其自訂電子郵件主旨。 
+---
+= 自訂新設定檔的電子郵件主旨
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在建立新設定檔時、針對其自訂電子郵件主旨。
+
+您可以使用「｛profile｝_\｛operation-name｝_\｛db-sID｝_\｛db-host｝_\｛start-date｝_\｛end-date｝_\｛STATUS｝模式來自訂電子郵件主旨、或輸入您自己的文字。
+
+|===
+| 變數名稱 | 說明 | 範例值 
+
+
+ a| 
+設定檔
+ a| 
+用於資料庫作業的設定檔名稱
+ a| 
+PROF1
+
+
+
+ a| 
+作業名稱
+ a| 
+資料庫作業名稱
+ a| 
+備份、資料備份、資料與歸檔記錄備份
+
+
+
+ a| 
+DB-SID
+ a| 
+資料庫的SID
+ a| 
+DB1
+
+
+
+ a| 
+DB-主機
+ a| 
+主機伺服器名稱
+ a| 
+主機A
+
+
+
+ a| 
+開始日期
+ a| 
+以mmdd:hhh：s yyyy格式執行資料庫作業的開始時間
+ a| 
+2012年4月27日21：00：45（太平洋標準時間2012年）
+
+
+
+ a| 
+結束日期
+ a| 
+以mmdd:hhh：s yyyy格式結束資料庫作業時間
+ a| 
+2012年4月27日21：10：45（太平洋標準時間2012年）
+
+
+
+ a| 
+狀態
+ a| 
+資料庫作業狀態
+ a| 
+成功
+
+|===
+如果您未提供任何變數值、SnapManager 則Sing會顯示下列錯誤訊息：Missing Value（s）-Subject。
+
+. 輸入下列命令：mos profile create -profileprofile [-profile-password-countprofile_password]-reposite-dbnamerepo_service_name-hotrepo_host-portrepo_log-usernamerepo_username-database-dbnamedb_db_dbamproblemdb_host [-suredstepolicy-py-py-policy_depnsthy-policy_depnstampuser-nstepn[ controllun][-profiledsthour-policy-policy-policyn_pass-profile-passm_susernam[-pdn_profiled][-profile-pass_profile-hour][-profiledsthour][-profiledstampusernam_profilelm_suser-prototprofile-profiled][-profiled][-profiledn][-sepn][-sepam_profiledsty-py-policy-policy-policy-policy-policy-policy
+
+
+以下是顯示電子郵件主旨模式的範例：
+
+[listing]
+----
+
+smo profile create -profile sales1 -profile-password admin1 -repository -dbname repo2 -host 10.72.197.133 -port 1521 -login -username admin2 -database -dbname DB1 -host 10.72.197.142 -sid DB1
+-osaccount oracle -osgroup dba -profile-notification -success -email admin@org.com -subject {profile}_{operation-name}_{db-sid}_{db-host}_{start-date}_{end-date}_{status}
+----

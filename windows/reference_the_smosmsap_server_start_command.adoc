@@ -1,0 +1,50 @@
+---
+permalink: windows/reference_the_smosmsap_server_start_command.html 
+sidebar: sidebar 
+keywords: command, host, server, run, oracle, software, smo 
+summary: 此命令會啟動執行SnapManager Oracle for Software的主機伺服器。 
+---
+= SMo_server start命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會啟動執行SnapManager Oracle for Software的主機伺服器。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo_server start
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *-無聲*
++
+指定主控台僅顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+指定錯誤、警告和資訊訊息會顯示在主控台上。
+
+
+
+
+
+== 命令範例
+
+下列範例會啟動主機伺服器。
+
+[listing]
+----
+smo_server start
+SMO-17100: SnapManager Server started on secure port 25204 with PID 11250
+----

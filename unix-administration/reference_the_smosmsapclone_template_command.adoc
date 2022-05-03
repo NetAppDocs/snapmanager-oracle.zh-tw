@@ -1,0 +1,69 @@
+---
+permalink: unix-administration/reference_the_smosmsapclone_template_command.html 
+sidebar: sidebar 
+keywords: command, create, clone, specification, template, smo 
+summary: 此命令可讓您建立複製規格範本。 
+---
+= 使用SMO Clone範本命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令可讓您建立複製規格範本。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo clone template
+-profile name
+\[-backup-id guid  \| -backup-label backup_name\]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔名稱*
++
+指定要建立複本規格的資料庫。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *備份ID guid*
++
+使用指定的GUID從備份建立複製規格。當SnapManager 您建立備份時、會產生由支援所產生的GUID。使用SMO備份清單命令來顯示每個備份的GUID。
+
+* *備份標籤backup_label_name*
++
+使用指定的備份標籤、從備份建立複本規格。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+下列範例使用標籤Full_backup_sales_May從備份建立複製規格範本。一旦完成了「SMO Clone範本」命令、即會完成實體複本規格範本。
+
+[listing]
+----
+smo clone template -profile SALES1 -backup-label full_backup_sales_May
+Operation Id [8abc01ec0e79004b010e79006da60001] succeeded.
+----
+*相關資訊*
+
+xref:task_creating_clone_specifications.adoc[建立複製規格]
+
+xref:task_cloning_databases_from_backups.adoc[從備份複製資料庫]

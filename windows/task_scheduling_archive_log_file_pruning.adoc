@@ -1,0 +1,71 @@
+---
+permalink: windows/task_scheduling_archive_log_file_pruning.html 
+sidebar: sidebar 
+keywords: create, backup, schedule, pruning, prune, archive, log, file, scheduling 
+summary: 建立備份時、您可以排定在指定時間剪除保存記錄檔。 
+---
+= 排程保存檔記錄檔剪除
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立備份時、您可以排定在指定時間剪除保存記錄檔。
+
+利用此功能、您可以定期從作用中的檔案系統中剪除歸檔記錄檔。SnapManager
+
+. 輸入下列命令： SMO排程建立-profile profile profile_name｛[-full｛-online |-offline |-auto｝[-hourly |-ditly |-fleyly |-月刊|-onvunimal][-vuticl]|[-data [-filesfiles/files/]|[-tabl空間 表空間[-tabl空間]｛-online |-offline |-offline |-auto-auto-auto-commentingleyour-testpath1 [每週註釋][-sthour-testpath][-sthour-testpath1 |[-sthour-testpath1 ][-sthourly [-station][-staintap][-staintap][-staint [-prunelogs｛-all |-untilscnuntilscn |-therate｛-dateyey-mm-dd hh：mss |-monthsmonts |-weeksweeks |-daysdays |-hourshours｝-prune-destprun_dest1、verbose une_dest2）-schedule-name-name-hour-timour-timour-timour-timour-timour-time-se-ched_clay-time-s-time-sor-time-sore-time-se-start-timyour-timyour-timyour-time-s-time-se-se-se-se-se-sstart-timeed'前面｛-按小時間隔
++
+|===
+
+
+| 如果您想要... | 然後... 
+
+
+ a| 
+*排程保存記錄檔的剪除*
+ a| 
+指定下列選項：
+
+** -prunelogs來排程保存檔記錄檔的剪除
+** 從歸檔記錄目的地剪除歸檔記錄檔檔案的目的地
+
+
+
+
+ a| 
+*加入排程名稱*
+ a| 
+指定-schedule-name選項。
+
+
+
+ a| 
+*排程在特定時間間隔內剪除歸檔記錄檔*
+ a| 
+指定時間間隔選項、並指出是否應根據下列時間間隔類別來剪除歸檔記錄檔：
+
+** -每小時
+** 每日
+** 每週
+** 每月
+** 僅限一次
+
+
+
+
+ a| 
+*新增有關排程作業的留言*
+ a| 
+指定-schedule-comment選項、後面接著說明字串。
+
+
+
+ a| 
+*指定排程作業的開始時間*
+ a| 
+以yyyy-mm-dd hh：mm格式指定-start-tTime選項。
+
+|===
+

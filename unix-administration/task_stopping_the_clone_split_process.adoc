@@ -1,0 +1,24 @@
+---
+permalink: unix-administration/task_stopping_the_clone_split_process.html 
+sidebar: sidebar 
+keywords: stop, run, clone, split, process, smo 
+summary: 您可以停止執行中的複本分割程序。 
+---
+= 停止實體複本分割程序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以停止執行中的複本分割程序。
+
+停止分割程序之後、您將無法繼續進行。
+
+. 若要停止實體複本分割作業、請輸入下列命令：「mo clone separ-stop -profileprofile [-hosthostname][-labelsepar-label |-idseper-id][-quiet |-verbose]」
+
+
+[listing]
+----
+smo clone split-stop -profile p1 -id 8abc01ec0e78f3e2010e78f3fdd00001
+----

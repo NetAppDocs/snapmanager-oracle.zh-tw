@@ -1,0 +1,101 @@
+---
+permalink: windows/reference_the_smosmsaprepository_delete_command.html 
+sidebar: sidebar 
+keywords: command, delete, repository, store, database, associate, credential, delete, smo 
+summary: 此命令會刪除用來儲存資料庫設定檔和相關認證的儲存庫。只有在儲存庫中沒有設定檔時、您才能刪除儲存庫。 
+---
+= 使用者可執行「儲存庫刪除」命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會刪除用來儲存資料庫設定檔和相關認證的儲存庫。只有在儲存庫中沒有設定檔時、您才能刪除儲存庫。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo repository delete
+-repository
+-port repo_port
+-dbname repo_service_name
+-host repo_host
+-login -username repo_username
+[-force] [-noprompt]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *儲存庫*
++
+儲存庫後面的選項會指定儲存庫的資料庫詳細資料。
+
+* *連接埠repo_port*
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* *-dbname repo_service_name*
++
+指定儲存庫的資料庫名稱。使用全域名稱或SID。
+
+* *主機repo_host*
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* *登入*
++
+啟動儲存庫登入詳細資料。
+
+* *使用者名稱repo_username*
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* *力*
++
+即使作業不完整、仍會嘗試強制刪除儲存庫。如果作業不完整、系統會發出提示、詢問您是否確定要刪除儲存庫。SnapManager
+
+* *節點提示*
++
+在刪除儲存庫之前不會提示您。使用-noprompt選項可確保不會出現提示、讓您更容易使用指令碼刪除儲存庫。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+下列範例會刪除SALESDB資料庫中的儲存庫。
+
+[listing]
+----
+smo repository delete -repository -port 1521 -dbname smorep
+-host nila -login -username smofresno -force -verbose
+This command will delete repository "smofresno@smorep/nila".
+Any resources maintained by the repository must be cleaned up manually.
+This may include snapshots, mounted backups, and clones.
+Are you sure you wish to proceed (Y/N)?Y
+[ INFO] SMO-09201: Dropping existing schema as smofresno
+  on jdbc:oracle:thin:@//nila:1521/smorep.
+[ INFO] SMO-13048: Repository Delete Operation Status: SUCCESS
+[ INFO] SMO-13049: Elapsed Time: 0:00:06.372
+[ INFO] SMO-20010: Synchronizing mapping for profiles in
+   repository "smofresno@smorep/nila:1521".
+[ WARN] SMO-20029: No repository schema exists in "smofresno@smorep/nila:1521".
+ Deleting all profile mappings for this repository.
+[ INFO] SMO-20012: Deleted stale mapping for profile "TESTPASS".
+----

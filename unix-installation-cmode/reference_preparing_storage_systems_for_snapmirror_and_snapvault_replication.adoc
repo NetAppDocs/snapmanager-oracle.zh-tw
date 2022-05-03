@@ -1,0 +1,25 @@
+---
+permalink: unix-installation-cmode/reference_preparing_storage_systems_for_snapmirror_and_snapvault_replication.html 
+sidebar: sidebar 
+keywords: snapmanager, data, ontap, snapmirror, technology, mirror, copies, create, bakup, volume, initialize, relationship 
+summary: 您可以使用SnapManager 支援Data ONTAP SnapMirror技術的功能來在另一個Volume上建立備份集的鏡射複本、Data ONTAP SnapVault 並使用支援此技術將備份有效歸檔到磁碟。在SnapManager 執行這些功能之前、您必須先設定來源與目的地磁碟區之間的資料保護關係、然後初始化關係。 
+---
+= 準備儲存系統以進行SnapMirror和SnapVault 資訊複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用SnapManager 支援Data ONTAP SnapMirror技術的功能來在另一個Volume上建立備份集的鏡射複本、Data ONTAP SnapVault 並使用支援此技術將備份有效歸檔到磁碟。在SnapManager 執行這些功能之前、您必須先設定來源與目的地磁碟區之間的資料保護關係、然後初始化關係。
+
+
+NOTE: 您無法在SnapVault 同一個叢集Data ONTAP 式的SnapMirror來源磁碟區上同時設定SnapMirror關係和不支援的關係。您必須在不同的來源磁碟區上設定這些關係。
+
+*相關資訊*
+
+xref:concept_understanding_the_differences_between_snapmirror_and_snapvault.adoc[瞭解SnapMirror與SnapVault SnapMirror之間的差異]
+
+xref:task_preparing_storage_systems_for_snapmirror_replication.adoc[準備儲存系統以進行SnapMirror複寫]
+
+xref:task_preparing_storage_systems_for_snapvault_replication.adoc[準備儲存系統SnapVault 以進行資訊複寫]

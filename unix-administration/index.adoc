@@ -1,0 +1,14 @@
+---
+permalink: unix-administration/index.html 
+sidebar: sidebar 
+keywords: administration, guide, unix, 3.4.2 
+summary: 適用於UNIX®的Oracle 3.4.2系統管理指南SnapManager 
+---
+= UNIX®系統管理指南
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本指南說明如何在SnapManager 部署完成後、在UNIX環境中管理適用於Oracle的支援功能、包括如何設定、升級及解除安裝產品、如何備份、還原及複製資料庫。

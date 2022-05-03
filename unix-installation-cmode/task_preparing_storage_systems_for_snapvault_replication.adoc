@@ -1,0 +1,109 @@
+---
+permalink: unix-installation-cmode/task_preparing_storage_systems_for_snapvault_replication.html 
+sidebar: sidebar 
+keywords: snapmanager, integrated, snapvault, technology, archive, snapshot, copies, disk, configure, data-portection, source, volume, relationship, initialization, snapshot 
+summary: 在使用SnapManager的整合SnapVault 式功能將Snapshot複本歸檔到磁碟之前、您必須先設定來源與目的地磁碟區之間的資料保護關係、然後初始化關係。初始化時SnapVault 、功能區會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。 
+---
+= 準備儲存系統SnapVault 以進行資訊複寫
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在您使用SnapManager的整合SnapVault 式支援技術將Snapshot複本歸檔至磁碟之前、您必須先設定來源與目的地磁碟區之間的資料保護關係、然後初始化關係。初始化時SnapVault 、功能區會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。
+
+* 您必須使用輔助儲存虛擬機器（SVM）、在連接叢集中建立來源和目的地磁碟區。如需更多資訊、請參閱_叢集Data ONTAP 式的《叢集式物件叢集對等快速指南》_。
+* 您必須是叢集管理員。
+
+
+您可以使用Data ONTAP 無法使用的指令行介面（CLI）或OnCommand 無法使用的功能來建立SnapVault 彼此之間的不一致關係。下列程序假設您使用的是CLI。如需如何SnapVault 使用OnCommand 《SURF系 管理程式》建立「SURFISTRY」關係的相關資訊、請參閱_使用Data ONTAP 《SURFY Express指南》建立「叢集式SURFVolume備份SnapVault 」。
+
+下圖顯示初始化SnapVault 不實關係的程序：
+
+image::../media/snapvault_steps_clustered.gif[此圖顯示初始化SnapVault 「相互關聯」的程序：識別目的地叢集,creating a destination volume,creating a policy]
+
+. 識別目的地叢集。
+. 在目的地叢集上、使用Volume create命令搭配-typDP選項、建立SnapVault 一個與來源Volume大小相同或更大的目的地Volume。
++
+
+IMPORTANT: 目的地Volume的語言設定必須符合來源Volume的語言設定。
+
++
+下列命令會在Aggregate node01_aggr上的SVM2中建立名為dstvolB的2-GB目的地Volume：
+
++
+[listing]
+----
+cluster2::> volume create -vserver SVM2 -volume dstvolB -aggregate node01_aggr -type DP
+-size 2GB
+----
+. 在目的地SVM上、使用SnapMirror原則create命令來建立SnapVault 一套功能不規則。
++
+下列命令會建立SVM整體原則SVM1-vVault：
+
++
+[listing]
+----
+SVM2::> snapmirror policy create -vserver SVM2 -policy SVM1-vault
+----
++
+
+NOTE: 請勿針對SnapVault 彼此之間的關係、定義cron排程或Snapshot複製原則。當您建立備份排程時、支援此功能。SnapManager
+
+. 使用SnapMirror原則附加規則命令、將定義下列Snapshot複本標籤和每個標籤保留原則的規則新增至原則：
++
+** 每日
+** 每週
+** 每月
+** 每小時
+** 無限*重要：*標籤區分大小寫。
+
+
++
+這些是SnapManager 固定的標籤、可供使用。當您歸檔備份時、請選取下列其中一個選項。您必須針對要新增的每個規則執行此命令一次。
+
++
++下列命令會在SVM1-vault原則中新增規則、定義「每日」標籤、並指定應在保存庫中保留30個符合標籤的Snapshot複本：
+
++
++
+
++
+[listing]
+----
+SVM2::> snapmirror policy add-rule -vserver SVM2 -policy SVM1-vault
+-snapmirror-label Daily -keep 30
+----
+. 使用SnapMirror create命令搭配-type XDP參數和-policy參數、建立SnapVault 一個彼此的關係、並指派一個保存原則。
++
+XDP類型將關係定義為SnapVault 彼此之間的相互關係。
+
++
+下列命令可在SnapVault SVM1上的來源Volume srcvolA與SVM2上的目的地Volume dstvolB之間建立一個「不穩定」關係。它會指派名為SVM1-vVault的原則：
+
++
+[listing]
+----
+SVM2::> snapmirror create -source-path SVM1:srcvolA -destination-path SVM2:dstvolB
+-type XDP -policy SVM1-vault
+----
+. 使用SnapMirror初始化命令來初始化關係。
++
+初始化程序會執行基準線傳輸至目的地Volume。SnapMirror會製作來源Volume的Snapshot複本、然後將複本及其參照的所有資料區塊傳輸到目的地Volume。
+
++
+下列命令可初始化SVM1上的來源Volume srcvolA與SVM2上的目的地Volume dstvolB之間的關係：
+
++
+[listing]
+----
+SVM2::> snapmirror initialize -destination-path SVM2:dstvolB
+----
+
+
+*相關資訊*
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1547469["叢集Data ONTAP 式《叢集式的Data Express指南》（叢集式《Data Data"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1653496["叢集Data ONTAP 式《使用SnapVault 《不含資料的Express指南》進行的《不含資料的更新"]

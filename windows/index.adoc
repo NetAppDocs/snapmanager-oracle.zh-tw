@@ -1,0 +1,14 @@
+---
+permalink: windows/index.html 
+sidebar: sidebar 
+keywords: install, installation, administer, administration, guide, document 
+summary: 適用於Oracle 3.4.2安裝與管理指南SnapManager 
+---
+= 安裝與管理指南
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本指南說明如何在SnapManager Windows環境中安裝及管理適用於Oracle的支援功能、包括如何安裝、升級、解除安裝及設定產品、如何備份、還原及複製資料庫。

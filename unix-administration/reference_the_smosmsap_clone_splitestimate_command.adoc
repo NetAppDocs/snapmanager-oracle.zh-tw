@@ -1,0 +1,57 @@
+---
+permalink: unix-administration/reference_the_smosmsap_clone_splitestimate_command.html 
+sidebar: sidebar 
+keywords: command, enable, clone, split, amount, storage, consume, estimate 
+summary: 此命令可讓您檢視複製的已用儲存設備預估數量分割。 
+---
+= 使用SMO Clone分割預估命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令可讓您檢視複製的已用儲存設備預估數量分割。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo clone split-estimate
+-profile profile
+\[-host hostname\]
+\[-label clone-label | -id clone-id\]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔*
++
+指定實體複本的設定檔名稱。
+
+* *主機名稱*
++
+指定複本所在的主機名稱。
+
+* *標籤實體複製標籤*
++
+指定由複製程序產生的標籤名稱。
+
+* -id clone：id*
++
+指定由複製程序產生的唯一ID。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+

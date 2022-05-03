@@ -1,0 +1,23 @@
+---
+permalink: unix-administration/task_using_snapmanager_for_oracle_to_confirm_backup_protection.html 
+sidebar: sidebar 
+keywords: snapmanager, oracle, backup, associate, profile, determine, protection 
+summary: 使用適用於Oracle的支援功能、您可以檢視與設定檔相關的備份清單、判斷備份是否已啟用保護功能、以及檢視保留類別（本範例中為每日或每週）SnapManager 。 
+---
+= 使用SnapManager 支援Oracle的支援功能來確認備份保護
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用適用於Oracle的功能、您可以檢視與設定檔相關的備份清單、判斷備份是否已啟用保護功能、以及檢視保留類別（本例中為每日或每週）SnapManager 。
+
+本範例中的新備份一開始會顯示為已排程保護、但尚未受到保護（在SnapManager 「支援」圖形化使用者介面和「備份顯示」命令輸出中）。儲存管理員確保備份已複製到二線儲存設備之後SnapManager 、在圖形使用者介面和備份清單命令中、將備份保護狀態從「未受保護」變更為「受保護」。
+
+. 前往SnapManager Oracle用戶端的支援。
+. 在「還原儲存庫」樹狀結構中、展開設定檔以顯示其備份。SnapManager
+. 單擊*備份/克隆*選項卡。
+. 在「報告」窗格中、選取*備份詳細資料*。
+. 檢視Protection（保護）欄、並確定狀態為「受保護」。
+

@@ -1,0 +1,51 @@
+---
+permalink: unix-administration/concept_requirements_for_using_asm_databases_with_snapmanager.html 
+sidebar: sidebar 
+keywords: automatic, storage, management, asm, snapmanager, database, snapmanager, 
+summary: 您必須瞭解搭配SnapManager 使用自動儲存管理（ASM）資料庫的需求。瞭解這些需求有助於避免ASMLib、分割區和複製規格等問題。 
+---
+= 搭配SnapManager 使用ASM資料庫的需求
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須瞭解搭配SnapManager 使用自動儲存管理（ASM）資料庫的需求。瞭解這些需求有助於避免ASMLib、分割區和複製規格等問題。
+
+* 例如、使用Oracle 11gR2提供的新Sysasm權限（3.0.3或更新版本）、而非使用Sysdba權限來管理Oracle ASM執行個體。SnapManager
++
+如果您使用Sysdba權限在ASM執行個體上執行管理命令、則會顯示錯誤訊息。資料庫會使用Sysdba權限來存取磁碟群組。如果您使用Sysasm權限連線至ASM執行個體、則可以完整存取所有可用的Oracle ASM磁碟群組和管理功能。
+
++
+
+NOTE: 如果您使用的是Oracle 10gR2和11gR1、則必須繼續使用Sysdba權限。
+
+* 當磁碟群組也包含自動叢集檔案系統（ACFS）磁碟區時、支援直接儲存在ASM磁碟群組中的資料庫（3.0.3或更新版本）SnapManager 。
++
+這些檔案間接受到SnapManager 支援、可能會以ASM磁碟群組的其餘內容還原、SnapManager 但不支援ACFS（3.0.3或更新版本）。
+
++
+
+NOTE: ACFS是Oracle 11gR2提供的多平台、可擴充檔案系統儲存管理技術。ACFS擴充了ASM功能、以支援在Oracle資料庫外部維護的客戶檔案。
+
+* 當磁碟群組也包含Oracle叢集登錄（OCR）檔案或投票磁碟檔案時、支援儲存在ASM磁碟群組中的檔案備份（3.0.3或更新版本）；不過、還原作業需要較慢、以主機為基礎或部分檔案的快照還原（PFSR）方法。SnapManager
++
+最好在不包含資料庫檔案的磁碟群組上使用OCR,並使用投票磁碟。
+
+* ASM使用的每個磁碟只能包含一個分割區。
+* 主控ASM資料的分割區必須正確對齊、以避免嚴重的效能問題。
++
+這表示LUN必須為正確類型、而且分割區必須具有4K位元組的倍數偏移。
+
++
+
+NOTE: 如需如何建立與4K一致的分割區的詳細資訊、請參閱知識庫文章1010717。
+
+* 未將ASM組態指定為複製規格的一部分。
++
+在將SnapManager 主機升級SnapManager 至支援（2.2或更新版本）之前、您必須手動移除使用支援功能2.1建立的複製規格中的ASM組態資訊。
+
+* 支援ASMLib 2.1.4的支援來源包括：3.1、3.1p1及3.2或更新版本。SnapManager
+* 支援ASMLib 2.1.4、2.1.4及2.1-8的更新版本。SnapManager
+

@@ -1,0 +1,10 @@
+---
+permalink: index.html 
+sidebar: sidebar 
+---
+= Oracle適用的支援SnapManager
+:allow-uri-read: 
+
+
+[role="lead"]
+歡迎使用SnapManager 適用於Oracle資訊庫的支援功能。您可在此找SnapManager 到Oracle適用的資訊、包括如何設定、管理及設定適用於叢集Data ONTAP 式VMware的軟體、Data ONTAP 以及如何在7-mode中運作。

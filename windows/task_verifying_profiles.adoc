@@ -1,0 +1,21 @@
+---
+permalink: windows/task_verifying_profiles.html 
+sidebar: sidebar 
+keywords: verify, exist, profile, correct, snapmanager, environment 
+summary: 您可以驗證現有的設定檔是否設定正確。驗證設定檔時SnapManager 、此功能會檢查您指定的設定檔環境、並驗證設定檔是否已設定、以及此設定檔中的資料庫是否可供存取。 
+---
+= 正在驗證設定檔
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以驗證現有的設定檔是否設定正確。驗證設定檔時SnapManager 、此功能會檢查您指定的設定檔環境、並驗證設定檔是否已設定、以及此設定檔中的資料庫是否可供存取。
+
+. 若要驗證設定檔是否設定正確、請輸入以下命令：SMO設定檔VERIFY -profile profile profile _name
+
+
+*相關資訊*
+
+xref:reference_the_smosmsapprofile_verify_command.adoc[使用「SMO設定檔驗證」命令]

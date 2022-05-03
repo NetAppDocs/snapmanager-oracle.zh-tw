@@ -1,0 +1,22 @@
+---
+permalink: windows/task_verifying_the_oracle_listener_status.html 
+sidebar: sidebar 
+keywords: verify, oracle, listener, status, lsnrctl, command 
+summary: 您可以使用lsnrctl STATUS命令來驗證Oracle偵聽器狀態。 
+---
+= 驗證Oracle偵聽器狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用lsnrctl STATUS命令來驗證Oracle偵聽器狀態。
+
+* 您必須連線至資料庫。
+
+
+標準Oracle安裝會將資料庫上的接聽程式連接埠設為1521。
+
+. 在命令提示字元中、輸入命令：lsnrctl STATUS
+

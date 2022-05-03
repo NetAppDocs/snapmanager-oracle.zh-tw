@@ -1,0 +1,71 @@
+---
+permalink: unix-administration/reference_the_smo_notification_removesummarynotification_command.html 
+sidebar: sidebar 
+keywords: command, disable, summary, notification, multiple, profile, database, remove 
+summary: 此命令會停用儲存庫資料庫上多個設定檔的摘要通知。 
+---
+= 使用SMO通知remove-Summary通知命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會停用儲存庫資料庫上多個設定檔的摘要通知。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo notification remove-summary-notification
+-repository
+-dbname repo_service_name
+-port repo_port
+-host repo_host
+-login -username repo_username
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *儲存庫*
++
+儲存庫後面的選項會指定儲存庫的資料庫詳細資料。
+
+* *連接埠repo_port*
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* *-dbname repo_service_name*
++
+指定儲存庫的資料庫名稱。使用全域名稱或SID。
+
+* *主機repo_host*
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* *登入repo_username*
++
+指定存取儲存庫資料庫所需的登入名稱。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+下列範例停用儲存庫資料庫上多個設定檔的摘要通知。
+
+[listing]
+----
+
+smo notification remove-summary-notification –repository –port 1521 –dbname repo2 –host 10.72.197.133 –login -username oba5
+----

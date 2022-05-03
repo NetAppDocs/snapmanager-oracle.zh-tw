@@ -1,0 +1,21 @@
+---
+permalink: unix-administration/task_viewing_a_list_of_backups.html 
+sidebar: sidebar 
+keywords: check, backup, create, profile, state, smo, list, command 
+summary: 您可以使用SMO備份清單命令、檢查為設定檔建立的備份和備份狀態。對於每個設定檔、命令會先顯示最近一次備份的相關資訊、然後繼續顯示所有備份的資訊。 
+---
+= 檢視備份清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用SMO備份清單命令、檢查為設定檔建立的備份和備份狀態。對於每個設定檔、命令會先顯示最近一次備份的相關資訊、然後繼續顯示所有備份的資訊。
+
+. 輸入下列命令：「mo備份清單-profileprofileprofile_name [-delimitercharacter][data |-archivelogs][-quiet |-verbose]」
+
+
+*相關資訊*
+
+xref:reference_the_smosmsapbackup_list_command.adoc[使用SMO備份清單命令]

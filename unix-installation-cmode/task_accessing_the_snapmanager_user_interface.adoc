@@ -1,0 +1,40 @@
+---
+permalink: unix-installation-cmode/task_accessing_the_snapmanager_user_interface.html 
+sidebar: sidebar 
+keywords: acess, snapmanager, user, interface, ui, remote, web, browser, system, operating, system, smogui 
+summary: 您可以SnapManager 從SnapManager 任何執行於支援的作業系統上的系統、使用網頁瀏覽器、從遠端存取功能不完整的使用者介面（UI）。您也SnapManager 可以執行smogui命令、從目標資料庫主機存取flexfUI。 
+---
+= 存取SnapManager 功能不一樣的使用者介面
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以SnapManager 從SnapManager 執行於支援的作業系統上的任何系統、使用網頁瀏覽器從遠端存取功能支援的使用者介面（UI）。您也SnapManager 可以執行smogui命令、從目標資料庫主機存取flexfUI。
+
+* 您必須確保SnapManager 執行的是功能不正常的。
+* 您必須確保要存取SnapManager 此UI的系統上已安裝支援的作業系統和Java。
++
+如需支援的作業系統和Java的相關資訊、請參閱互通性對照表工具。
+
++
+.. 在Web瀏覽器視窗中、輸入下列命令：https://server_name.domain.com:port_number
++
+*** Server_name是SnapManager 安裝了此功能的目標資料庫主機名稱。
++
+您也可以輸入目標資料庫主機的IP位址。
+
+*** port_number是SnapManager 執行此功能的連接埠。
++
+預設值為27214.
+
+
+
+.. 單擊* Launch SnapManager Sfor Oracle*鏈接。
++
+畫面會顯示適用於Oracle UI的支援功能。SnapManager
+
+
+
+

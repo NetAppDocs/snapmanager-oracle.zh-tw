@@ -1,0 +1,17 @@
+---
+permalink: unix-administration/task_updating_a_backup_schedule.html 
+sidebar: sidebar 
+keywords: list, schedule, operation, update, scheduling, frequency, cronstring, expression, smo 
+summary: 您可以檢視排程作業清單、並視需要更新。您可以更新排程頻率、排程的開始時間、cronstring運算式、以及排程備份的使用者。 
+---
+= 更新備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視排程作業清單、並視需要更新。您可以更新排程頻率、排程的開始時間、cronstring運算式、以及排程備份的使用者。
+
+. 若要更新備份排程、請輸入以下命令：「mo schedule update -profile profile profile profile名稱-schedule-namesschedule enamountName（-schedule-comment-tschedule註釋）」-interride-hour-time-cronstring_usrunasuser[-quiet |-verbose]
+

@@ -1,0 +1,88 @@
+---
+permalink: unix-administration/task_deploying_and_running_the_scripts.html 
+sidebar: sidebar 
+keywords: deploy, run, asmmain.sh, asmquerydisk.sh, script, support, asm, database, asmlib, disk, group, oracleasm 
+summary: 您可以部署及執行asmmain.sh和asmquerydisk.sh指令碼、以支援不含ASMLib的ASM資料庫。 
+---
+= 部署及執行指令碼
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以部署及執行asmmain.sh和asmquerydisk.sh指令碼、以支援不含ASMLib的ASM資料庫。
+
+這些指令碼不遵循指令碼前或指令碼後的語法、啟用intitasmdisks時會呼叫工作流程。您可以在指令碼中變更任何與組態設定相關的項目。建議您執行快速乾燥執行、以確認指令碼中的所有內容是否如預期運作。
+
+
+NOTE: 這些指令碼不會對系統造成故障、也不會影響系統。執行這些指令碼以更新ASM相關磁碟、使其擁有適當的權限和所有權、使磁碟永遠由ASM執行個體控制。
+
+. 使用分割磁碟建立ASM磁碟群組。
+. 在磁碟群組上建立Oracle資料庫。
+. 停止SnapManager Oracle伺服器的支援。
++
+
+NOTE: 在RAC環境中、您需要在所有RAC節點上執行此步驟。
+
+. 修改SMo.conf以包含下列參數：
++
+.. oracleasm.support.without．asmLib = true
+.. oracleasm.support.without．asmlib.所有權= true
+.. oracleasm.support.without.asmlib.username = ASM執行個體環境的使用者名稱
+.. oracleasm.support.without.asmlib.groupname = ASM執行個體環境的群組名稱
+
+
++
+這些修改只會設定絕對路徑的權限、也就是說、權限只會設定為dm-*裝置、而非分割裝置。
+
+. 修改在/opp/NetApp/SMO/plugins/exages/nosmLib中可用的外掛程式指令碼、將組態設定納入指令碼中。
+. 在SnapManager 主機上啟動Oracle伺服器的支援功能之前、請先將指令碼複製到/opp/NetApp/SMO/plugins/nosmLib。
+. 瀏覽至/opp/NetApp/SMO目錄、然後執行下列指令碼執行乾燥執行：sh plugins/nosmlib/asmmain.sh
++
+將會建立etc/initasmdisks檔案、這是使用的主要檔案。
+
++
+您可以確認etc/initasmdisks檔案是否包含與已設定的ASM資料庫相關的所有裝置、例如：
+
++
+[listing]
+----
+chown -R grid:oinstall /dev/mapper/360a98000316b61396c3f394645776863p1
+	     chmod 777 /dev/mapper/360a98000316b61396c3f394645776863p1
+	     chown -R grid:oinstall /dev/mapper/360a980003754322f7a2b433469714239p1
+	     chmod 777 /dev/mapper/360a980003754322f7a2b433469714239p1
+	     chown -R grid:oinstall /dev/mapper/360a980003754322f7a2b433469714241p1
+	     chmod 777 /dev/mapper/360a980003754322f7a2b433469714241p1
+	     chown -R grid:oinstall /dev/mapper/360a980003754322f7a2b433469714243p1
+	     chmod 777 /dev/mapper/360a980003754322f7a2b433469714243p1
+----
+. 啟動SnapManager Oracle伺服器的支援功能。
+. 將SnapDrive 下列項目新增至SnapDrive．conffile.disconnect-LUNs-bite-vbsr=on、即可設定適用於UNIX的功能
+. 重新啟動SnapDrive UNIX伺服器的功能。
++
+
+NOTE: 在RAC環境中、您需要針對所有RAC節點執行步驟3至步驟10。
+
+
+
+所建立的/etc/initasmdisks檔案、必須從其中一個啟動指令碼或是從rc3.d中新定義的指令碼執行/etc/initasmdisks檔案應一律在oracleha服務啟動之前執行。
+
+範例
+
+[listing]
+----
+# ls -ltr *ohasd*
+	      lrwxrwxrwx 1 root root 17 Aug  7 02:34 S96ohasd -> /etc/init.d/ohasd
+    	  lrwxrwxrwx 1 root root 17 Aug  7 02:34 K15ohasd -> /etc/init.d/ohasd
+----
+在下列範例中、sh -x/etc/initasmdisks預設無法使用、您需要在指令碼中附加它作為函數「state_stack（）」的第一行：
+
+[listing]
+----
+start_stack()
+{
+sh -x /etc/initasmdisks
+# see init.ohasd.sbs for a full rationale case $PLATFORM in Linux
+}
+----

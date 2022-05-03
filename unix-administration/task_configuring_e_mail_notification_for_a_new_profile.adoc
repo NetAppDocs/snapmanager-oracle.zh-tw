@@ -1,0 +1,60 @@
+---
+permalink: unix-administration/task_configuring_e_mail_notification_for_a_new_profile.html 
+sidebar: sidebar 
+keywords: creating, new, profile, configure, receive, email, notification, completeion, database, operation, comma-seperated, list, multiple, address 
+summary: 建立新設定檔時、您可以設定在資料庫作業完成時接收電子郵件通知。 
+---
+= 設定新設定檔的電子郵件通知
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立新設定檔時、您可以設定在資料庫作業完成時接收電子郵件通知。
+
+* 您必須設定傳送警示的電子郵件地址。
+* 您必須針對多個電子郵件地址使用以逗號分隔的清單。
++
+您必須確保在逗號和下一個電子郵件地址之間沒有空格。
+
++
+.. 輸入下列命令：mos profile create -profileprofile [-profile-password-countprofile_password]-reposite-dbnamerepo_service_name-hotrepo_host-portrepo_log-usernamerepo_username-database-dbnamedb_db_dbamproblemdb_host [-suredstepolicy-py-py-policy_depnsthy-policy_depnstampuser-n[-prox][-profiledsthour-policy-policy-policy-policynsthy-policy-policy-policy[-pdnstampusernam_pass_profilen_depn][-profilen_depnstampsprofile-profile-profilelam_sthour][-profile-profilen_dep[ controllam_profilelm_sepn][-profiled][-profile-profiled][-profile-user-n][-profiledsthour][-profile-
++
+此命令的其他選項如下：
+
++
+[力]
+
++
+
+NOTE: 支援最多1000個字元的電子郵件地址。SnapManager
+
++
+當您使用設定檔（建立個別的歸檔記錄備份）一起建立資料檔案和歸檔記錄檔備份、而且資料檔案備份建立失敗時、電子郵件通知會以作業名稱的形式傳送資料備份、而非以資料備份和歸檔記錄備份的形式傳送。當資料檔案和歸檔記錄檔備份作業成功時、您會看到下列輸出：
+
++
+[listing]
+----
+
+Profile Name    : PROF_31
+Operation Name 	: Data Backup and Archive Logs Backup
+Database SID   	: TENDB1
+Database Host 	 : repo1.rtp.org.com
+Start Date 	    : Fri Sep 23 13:37:21 EDT 2011
+End Date 	      : Fri Sep 23 13:45:24 EDT 2011
+Status 	        : SUCCESS
+Error messages 	:
+----
+
+
+
+
+下列範例顯示建立新設定檔時所設定的電子郵件通知：
+
+[listing]
+----
+
+smo profile create -profile sales1 -profile-password sales1 -repository -dbname repo2 -host 10.72.197.133 -port 1521 -login -username oba5 -database -dbname DB1 -host 10.72.197.142 -sid DB1 -osaccount oracle
+-osgroup dba -notification -success -email admin1@org.com -subject {profile}_{operation-name}_{db-sid}_{db-host}_{start-date}_{end-date}_{status}
+----

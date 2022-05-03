@@ -1,0 +1,74 @@
+---
+permalink: unix-administration/task_ensuring_that_asm_discovers_imported_disks.html 
+sidebar: sidebar 
+keywords: automatic, storage, management, asm, nfs, environment, install, snapmanager, discover, import, disk, snapmanager 
+summary: 如果您在NFS環境中使用自動儲存管理（ASM）、則安裝SnapManager 完畢後、必須確保ASM能夠探索SnapManager 由Sure匯入的磁碟。您可以將ASM目錄路徑新增至ASM_DISKSTRING參數、以完成此作業。 
+---
+= 確保ASM發現匯入的磁碟
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您在NFS環境中使用自動儲存管理（ASM）、安裝SnapManager 完介紹之後、必須確保ASM能夠探索SnapManager 由Sure匯入的磁碟。您可以將ASM目錄路徑新增至ASM_DISKSTRING參數、以完成此作業。
+
+您可以使用Oracle工具編輯ASM_DISKSTRING參數。如需編輯ASM_DISKSTRING的相關資訊、請參閱Oracle文件。
+
+必須將ASM磁碟路徑/opt/NetApp/SMO/mnt/*/磁碟*新增至ASM_DISKSTRING參數中定義的現有路徑。例如、如果ASM_DISKSTRING中定義的路徑是/mnt/my-asm-disks/dir1/disks*、在新增ASM磁碟路徑之後、更新路徑將是「/mnt/my-asm-disks/dir1/disks*、/opt/NetApp/SMO/mnt/*/磁碟*」。
+
+
+NOTE: ASM_DISKSTRING參數必須僅符合ASM磁碟檔案、而非任何其他檔案。
+
+* 第一個星號（*）表示SnapManager 由Sfor the root mount Point所產生的名稱。
+* 第二個*表示掛載點內的目錄。
+* 第三個*代表NFS檔案的名稱。
+
+
+如果將磁碟掛載到/opt/NetApp/SMO/mnt/<SMO產生的名稱>/下的目錄中、則必須確保*符合NFS檔案系統的拓撲。
+
+. 如果您在網路附加儲存設備（NAS）環境中使用ASM磁碟搭配NFS、請編輯ASM_DISKSTRING參數、使其指向目前的ASM目錄路徑。
++
+如果ASM磁碟掛載點為/mnt/my-asm-disks/*/ disks*、在編輯ASM_DISKSTRING之後、更新路徑為/opp/NetApp/SMO/mnt/my-as-disks-200810/disk1.NFS。ASM_DISKSTRING參數的格式為/opp/NetApp/SMO/mnt/*/disk*。
+
++
+** 第一個*符合my-as-disks-200810-12。
+** 磁碟*符合disk1.NFS。編輯ASM_DISKSTRING參數之後、ASM發現SnapManager 由效益分析所匯入磁碟的結果如下：
+** NFS磁碟1上的ASM複製作業為/opt/NetApp/SMO/mnt/-mnt-my-asm-disks-200810/dir1/disk1.nfs。
+** NFS磁碟2上的ASM複製作業為/opt/NetApp/SMO/mnt/-mnt-my-asm-disks-200810/dir1/disk2.NFS。ASM_DISKSTRING參數的格式為/opp/NetApp/SMO/mnt/*/磁碟*。
+** 第一個*符合-mnt-my-asm-disks-200810-12。
+** 第二個*符合dir1。
+** 第三個*符合disk1.NFS和disk2.NFS。
+
+
+. 如果您在儲存區域網路（SAN）環境中使用ASM磁碟、請視環境而定、執行下列其中一項：
++
+|===
+| 如果您使用的是ASM磁碟... | 然後... 
+
+
+ a| 
+ASMLib（基於Linux上的FCP和iSCSI）
+ a| 
+只使用字元裝置、即可變更Oracle軟體擁有者和使用者主要群組的權限。ASM_DISKSTRING路徑必須是ASM DISKSTRING = ORCL:*。
+
+
+
+ a| 
+AIX上的FCP和iSCSI
+ a| 
+新增ASM_DISKSTRING參數的路徑名稱、直到ASM目錄路徑為止。ASM_DISKSTRING路徑必須是ASM DISKSTRING =/dev/hdsk/*、其中*表示ASM磁碟名稱。
+
+
+
+ a| 
+適用於Solaris的FCP與iSCSI
+ a| 
+新增ASM_DISKSTRING參數的路徑名稱、直到ASM目錄路徑為止。ASM_DISKSTRING路徑必須是ASM DISKSTRING =/dev/rdsk/*、其中*表示ASM磁碟名稱。
+
++
+
+|===
+
+
+http://www.oracle.com/technetwork/indexes/documentation/index.html["Oracle文件：www.oracle.com/technetwork/indexes/documentation/index.html"]

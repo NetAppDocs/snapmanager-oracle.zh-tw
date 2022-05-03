@@ -1,0 +1,57 @@
+---
+permalink: unix-administration/reference_troubleshooting_storage_system_renaming_issue.html 
+sidebar: sidebar 
+keywords: face, issue, renaming, storage, system, succesful, rename, storage, system, troubleshoot 
+summary: 在重新命名儲存系統或成功重新命名儲存系統之後、您可能會遇到問題。 
+---
+= 疑難排解儲存系統重新命名問題
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在重新命名儲存系統或成功重新命名儲存系統之後、您可能會遇到問題。
+
+當您嘗試重新命名儲存系統時、作業可能會失敗、並顯示下列錯誤訊息：SMO -05085找不到與設定檔相關聯的儲存控制器「FAS3020-rp07New」
+
+您必須輸入在執行SMO儲存清單命令時所列出的儲存系統IP位址或名稱。
+
+重新命名儲存系統之後、SnapManager 如果SnapManager 無法辨識儲存系統、則可能無法執行各項功能。您必須在DataFabric Manager伺服器主機和SnapManager 支援服務器主機中執行一些其他步驟、才能解決此問題。
+
+在DataFabric Manager伺服器主機中執行下列步驟：
+
+. 刪除位於DataFabric Manager伺服器主機/etc/hosts的主機檔案中、較早儲存系統的IP位址和主機。
+. 將新儲存系統的新IP位址和主機新增至位於DataFabric Manager伺服器主機/etc/hosts的主機檔案中。
+. 輸入下列命令以變更儲存主機名稱：DFM主機rame -A old_host_namenew_host_name
+. 輸入下列命令、在主機中設定新的IP位址：DFM主機設定old_host_name_or_objid hostPrimaryAddress = new_storage _controller_ip_address
++
+
+NOTE: 只有在將IP位址指定為新的儲存系統名稱時、才必須執行此步驟。
+
+. 輸入下列命令、更新DataFabric Manager伺服器主機中的新儲存系統名稱：DFM主機診斷old_storage名稱
++
+您可以輸入下列命令、確認先前的儲存控制器名稱已被新的儲存控制器名稱取代：DFM主機探索new_storage名稱
+
+
+
+以root使用者身分在SnapManager 伺服器主機上執行下列步驟。
+
+
+NOTE: 輸入新的儲存控制器名稱時、請確定您使用的是系統別名、而非完整網域名稱（FQDN）。
+
+. 輸入下列命令刪除較早的儲存系統名稱SnapDrive ：fisconfig刪除old_storage名稱
++
+
+NOTE: 如果您沒有刪除先前的儲存系統名稱、SnapManager 則所有的動作都會失敗。
+
+. 刪除位於目標資料庫主機etc/hosts的主機檔案中、較早儲存系統的IP位址和主機。
+. 將新儲存系統的新IP位址和主機新增到位於目標資料庫主機/etc/hosts的主機檔案中。
+. 輸入下列命令以新增儲存系統名稱SnapDrive ：fisconfig set root new_storage名稱
+. 輸入下列命令來對應較早及較新的儲存系統名稱SnapDrive ：《Efconfig migrate set old_storage _namenew_storage name（《更新版本的儲存系統名稱
+. 輸入下列命令刪除舊版儲存系統的管理路徑：SnapDrive config DELETE -mgmtpath old_store_name
+. 輸入下列命令、新增新儲存系統的管理路徑：SnapDrive fisconfig set -mgmtpath new_store_name
+. 輸入下列命令、以更新資料檔案和歸檔記錄檔的資料集：SnapDrive 效益資料集變更主機名稱-dndata_name-oldnameold_storage名稱-newnamenew_storage名稱
+. 輸入下列命令以更新新儲存系統名稱的設定檔：SMO storage rame -profileprofileprofile_name-oldnameold_storage名稱-newnamenew_storage名稱
+. 輸入下列命令、驗證與設定檔相關聯的儲存系統：SMO儲存清單-profileprofile_name
+

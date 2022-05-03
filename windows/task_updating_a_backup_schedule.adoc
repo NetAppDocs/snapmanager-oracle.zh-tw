@@ -1,0 +1,17 @@
+---
+permalink: windows/task_updating_a_backup_schedule.html 
+sidebar: sidebar 
+keywords: view, list, schedule, operation, update, scheduling, backup, updating 
+summary: 您可以檢視排程作業清單、並視需要更新。您可以更新排程頻率、排程的開始時間、cronstring運算式、以及排程備份的使用者。 
+---
+= 更新備份排程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以檢視排程作業清單、並視需要更新。您可以更新排程頻率、排程的開始時間、cronstring運算式、以及排程備份的使用者。
+
+. 若要更新備份排程、請輸入以下命令：SMO排程更新-profile profile_name-schedule-namesschedulName排程名稱[-schedule-commentschedule評註]-interrtime｛- hourly |-destly |- bourly |-ontimestarttime-croncronstring_usrunasuser[-quide"|-verbos]
+

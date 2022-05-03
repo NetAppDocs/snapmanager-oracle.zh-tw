@@ -1,0 +1,48 @@
+---
+permalink: windows/reference_the_smosmsapcmdfile_command.html 
+sidebar: sidebar 
+keywords: cmdfile, command, run, host, limit, smo 
+summary: 如果主機上的Shell限制了命令列上可顯示的字元數、您可以使用cmd檔案命令來執行任何命令。 
+---
+= 使用SMO cmd檔案命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果主機上的Shell限制了命令列上可顯示的字元數、您可以使用cmd檔案命令來執行任何命令。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo cmdfile
+-file file_name
+\[-quiet \| -verbose\]
+----
+您可以將命令包含在文字檔中、然後使用SMO cmd檔案命令來執行命令。您只能在文字檔中新增一個命令。您不得在命令語法中包含SMO。
+
+
+NOTE: 使用SMO cmd檔案命令取代了SMO pfile命令。SMO cmd檔案與SMO pfile命令不相容。
+
+
+
+== 參數
+
+* *檔案file_name*
++
+指定包含您要執行之命令的文字檔路徑。
+
+* *-無聲*
++
+指定主控台僅顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+指定錯誤、警告和資訊訊息會顯示在主控台中。
+
+

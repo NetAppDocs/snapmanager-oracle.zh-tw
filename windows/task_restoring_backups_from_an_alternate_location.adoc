@@ -1,0 +1,26 @@
+---
+permalink: windows/task_restoring_backups_from_an_alternate_location.html 
+sidebar: sidebar 
+keywords: restore, alternate, location, data, file, intermediate, system, active, restoring, backup 
+summary: 您可以從替代位置還原資料檔案、將資料檔案從中繼檔案系統還原至作用中檔案系統。 
+---
+= 從替代位置還原備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從替代位置還原資料檔案、將資料檔案從中繼檔案系統還原至作用中檔案系統。
+
+* 建立還原規格XML檔案、並指定您要使用的還原方法類型。
+
+
+您可以使用SMO備份還原命令、並指定您建立的還原規格XML檔案、以便從替代位置還原備份。
+
+. 輸入下列命令：mus備份還原-profileprofile-labellabel-完整-alllogs/restorecrestoresec
+
+
+*相關資訊*
+
+xref:reference_the_smosmsapbackup_restore_command.adoc[使用SMO備份還原命令]

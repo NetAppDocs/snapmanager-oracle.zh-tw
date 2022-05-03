@@ -1,0 +1,81 @@
+---
+permalink: unix-administration/reference_the_smosmsap_schedule_update_command.html 
+sidebar: sidebar 
+keywords: command, update, schedule, backup, profile 
+summary: 此命令會更新備份排程。 
+---
+= 使用者可執行「SMO排程更新」命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+此命令會更新備份排程。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo schedule update
+-profile profile_name
+-schedule-name schedule_name
+\[-schedule-comment schedule_comment\]
+-interval \{-hourly \| -daily \| -weekly \| -monthly \| -onetimeonly\}
+-cronstring cron_string
+-start-time \{start_time <yyyy-MM-dd HH:mm\>\}
+-runasuser runasuser
+\[-taskspec taskspec\]
+-force
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔名稱*
++
+指定與您要排程備份之資料庫相關的設定檔名稱。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* *排程名稱schedule_name*
++
+指定您為排程提供的名稱。
+
+* *排程附註schedule_comment *
++
+指定可選的註釋來說明如何排程備份。
+
+* *間隔｛-每小時|-每日|-每週|-每月|-僅限一次時間｝*
++
+指出建立備份的時間間隔。您可以排程每小時、每日、每週、每月或僅一次備份。
+
+* -cronstring_stron*
++
+指定使用cronstring排程備份。cron運算式用於設定CronTrigger的執行個體。cron運算式是實際由七個子運算式組成的字串：
+
++
+** 1指秒
+** 2指分鐘
+** 3指小時
+** 4指一個月內的一天
+** 5指的是月份
+** 6指一週中的一天
+** 7指年度（選用）
+
+
+* -start-time（開始時間）：ymm-dd hh：mm*
++
+指定排程作業的開始時間。排程開始時間應以yyyy-mm-dd hh：mm的格式包含在內。
+
+* RunasUser Runasuser*
++
+指定在排程備份時變更排程備份作業的使用者。
+
+* 工作規格taskspec*
++
+指定可用於備份作業的預先處理活動或後處理活動的工作規格XML檔案。應提供XML檔案的完整路徑、以提供-taskspec選項。
+
+

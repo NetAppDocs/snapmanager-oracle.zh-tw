@@ -1,0 +1,200 @@
+---
+permalink: unix-administration/concept_variables_available_in_custom_script_for_restore_operation.html 
+sidebar: sidebar 
+keywords: snapmanager, context, information, environment, variable, restore, operation 
+summary: 提供環境變數形式的內容資訊、這些環境變數與正在執行的還原作業有關。SnapManager例如、您的指令碼可以擷取原始主機的名稱、以及還原的備份標籤。 
+---
+= 可在還原作業的工作指令碼中使用的變數
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+提供環境變數形式的內容資訊、這些環境變數與正在執行的還原作業有關。SnapManager例如、您的指令碼可以擷取原始主機的名稱、以及還原的備份標籤。
+
+下表列出可在指令碼中使用的環境變數：
+
+|===
+| 變數 | 說明 | 格式 
+
+
+ a| 
+SM_operation_ID
+ a| 
+指定目前作業的ID
+ a| 
+字串
+
+
+
+ a| 
+SM_profile名稱
+ a| 
+指定所使用的設定檔名稱
+ a| 
+字串
+
+
+
+ a| 
+SM_host
+ a| 
+指定資料庫的主機名稱
+ a| 
+字串
+
+
+
+ a| 
+SM_OS_USER
+ a| 
+指定資料庫的作業系統（OS）擁有者
+ a| 
+字串
+
+
+
+ a| 
+SM_OS_group
+ a| 
+指定資料庫的OS群組
+ a| 
+字串
+
+
+
+ a| 
+SM_備用 類型
+ a| 
+指定備份類型（線上、離線或自動）
+ a| 
+字串
+
+
+
+ a| 
+SM_備用 標籤
+ a| 
+指定備份標籤
+ a| 
+字串
+
+
+
+ a| 
+SM_backup_ID
+ a| 
+指定備份ID
+ a| 
+字串
+
+
+
+ a| 
+SM_backup_profile
+ a| 
+指定用於備份的設定檔
+ a| 
+字串
+
+
+
+ a| 
+SM_recovery類型
+ a| 
+指定恢復組態資訊
+ a| 
+字串
+
+
+
+ a| 
+SM_volume（磁碟區）_restore（還原）模式
+ a| 
+指定Volume還原組態
+ a| 
+字串
+
+
+
+ a| 
+SM_Target檔案管理器名稱
+ a| 
+指定目標儲存系統名稱*注意：*如果使用多個儲存系統、則儲存系統名稱必須以逗號分隔。
+ a| 
+字串
+
+
+
+ a| 
+SM_Target磁碟區名稱
+ a| 
+指定目標Volume名稱*注意：*目標Volume名稱必須以儲存設備名稱為前置位、例如SM_target檔案管理器名稱/SM_target Volume名稱。
+ a| 
+字串
+
+
+
+ a| 
+SM_host_file_system
+ a| 
+指定主機檔案系統
+ a| 
+字串
+
+
+
+ a| 
+SM_snapshot名稱
+ a| 
+指定Snapshot清單*注意：* Snapshot複本的名稱必須以儲存系統名稱和Volume名稱為前置位。Snapshot複本的名稱以逗號分隔。
+ a| 
+字串陣列
+
+
+
+ a| 
+SM_ASM_disk_Groups
+ a| 
+指定ASM磁碟群組清單
+ a| 
+字串陣列
+
+
+
+ a| 
+SM_archive記錄檔目錄
+ a| 
+指定歸檔日誌目錄*注意：*如果歸檔日誌位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+ a| 
+字串陣列
+
+
+
+ a| 
+SM_REDO_LOGS目錄
+ a| 
+指定重作記錄目錄*注意：*如果重作記錄位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+ a| 
+字串陣列
+
+
+
+ a| 
+SM_control_fils_directory
+ a| 
+指定控制檔目錄*注意：*如果控制檔位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+ a| 
+字串陣列
+
+
+
+ a| 
+SM_data_fils_directory
+ a| 
+指定資料檔案目錄*注意：*如果資料檔案位於多個目錄中、則這些目錄的名稱會以逗號分隔。
+ a| 
+字串陣列
+
+|===

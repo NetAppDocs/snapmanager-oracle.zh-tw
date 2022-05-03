@@ -1,0 +1,95 @@
+---
+permalink: windows/reference_the_smosmsaprepository_create_command.html 
+sidebar: sidebar 
+keywords: smo, repository, data, profile, block, size, smo 
+summary: 此命令會建立儲存庫、以儲存資料庫設定檔和相關認證。此命令也會檢查區塊大小是否足夠。 
+---
+= 使用「建立儲存庫」命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== 語法
+
+此命令會建立儲存庫、以儲存資料庫設定檔和相關認證。此命令也會檢查區塊大小是否足夠。
+
+[listing]
+----
+
+        smo repository create
+-repository
+-port repo_port
+-dbname repo_service_name
+-host repo_host
+-login -username repo_username
+[-force] [-noprompt]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *儲存庫*
++
+儲存庫後面的選項會指定儲存庫的資料庫詳細資料
+
+* *連接埠repo_port*
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* *-dbname repo_service_name*
++
+指定儲存庫的資料庫名稱。使用全域名稱或SID。
+
+* *主機repo_host*
++
+指定執行儲存庫資料庫的主機電腦名稱或IP位址。
+
+* *登入*
++
+啟動儲存庫登入詳細資料。
+
+* *使用者名稱repo_username*
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* *力*
++
+嘗試強制建立儲存庫。使用此選項會SnapManager 導致在建立儲存庫之前提示您備份儲存庫。
+
+* *節點提示*
++
+如果您使用-force選項、在建立儲存庫之前不會顯示備份儲存庫的提示。使用-noprompt選項可確保不會出現提示、讓您更容易使用指令碼建立儲存庫。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台上顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+下列範例會在主機Hotspur的資料庫SMOREPO中建立儲存庫。
+
+[listing]
+----
+smo repository create -repository -port 1521 -dbname SMOREPO -host hotspur -login -username grabal21 -verbose
+SMO-09202 [INFO ]: Creating new schema as grabal21 on jdbc:oracle:thin:@//hotspur:1521/SMOREPO.
+SMO-09205 [INFO ]: Schema generation complete.
+SMO-09209 [INFO ]: Performing repository version INSERT.
+SMO-09210 [INFO ]: Repository created with version: 30
+SMO-13037 [INFO ]: Successfully completed operation: Repository Create
+SMO-13049 [INFO ]: Elapsed Time: 0:00:08.844
+----
+*相關資訊*
+
+xref:task_creating_repositories.adoc[正在建立儲存庫]

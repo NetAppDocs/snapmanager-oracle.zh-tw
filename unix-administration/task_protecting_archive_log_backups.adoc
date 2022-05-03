@@ -1,0 +1,33 @@
+---
+permalink: unix-administration/task_protecting_archive_log_backups.html 
+sidebar: sidebar 
+keywords: creating, profile, enable, protection, archive, log, backup, base, policy 
+summary: 在建立設定檔時、您可以根據歸檔記錄保護原則來啟用歸檔記錄備份的保護。 
+---
+= 保護歸檔記錄備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在建立設定檔時、您可以根據歸檔記錄保護原則來啟用歸檔記錄備份的保護。
+
+. 輸入下列命令： msmo profile create -profileprofile [-profile-passworfprofile _password] countreposite-dbnamerepo_dbname-hop_host-portrepo_port-login-usernamerepo_username-database-dbnamedb_dbname-hostdb_protection [-steparam_depolicy-policy_de[-edsthour-policynsthour][-pdnstampsnsthour_notic_depnstamps[ nsthour][-policy-policy-policynsthour][-premotnoty-premotnotification [-notic_depsproposnsty_dep_stampuser-notic][ nstampuser-notification [ nstampuser-nsthour][-policy-policy-policy-policy-policy-policy-policy-policy-policy-policy-prem][-policy[控制[控制[控制[控制[控制[ n_noty-policy-prem_noty
++
+|===
+| 如果... | 然後... 
+
+
+ a| 
+*您想要分開備份歸檔記錄備份、並保護歸檔記錄檔*
+ a| 
+指定下列選項：
+
+** 使用分隔-archivelog-Backups可以將歸檔日誌文件與數據文件分開。
+** -Protect會為歸檔記錄歸檔記錄備份指派個別的保護原則。
+** protection原則會指派歸檔記錄備份的保護原則。
+
+
+|===
+

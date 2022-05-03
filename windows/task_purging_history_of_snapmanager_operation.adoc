@@ -1,0 +1,17 @@
+---
+permalink: windows/task_purging_history_of_snapmanager_operation.html 
+sidebar: sidebar 
+keywords: delete, history, snapmanager, operation, detail, deleting 
+summary: 如果不再需要歷程詳細資料、您可以刪除SnapManager 此動作的歷程記錄。 
+---
+= 刪除SnapManager 作業系統歷史記錄
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果不再需要歷程詳細資料、您可以刪除SnapManager 此動作的歷程記錄。
+
+. 若要刪除SnapManager 此動作的歷程記錄、請輸入下列命令：SMO history Purge -profile｛-name、profile_nameprofile 1、profile_name2 ]| all-repose-login[-passwordbrepo_password]-usernamerepo_username-dbnamerepo_dbname-dbname-hospo_host-portrepo_port}-op_operations｛-op_name -operations1、｛-op_op_op_quete操作｛-oproque_opy 1、｛-opy 1、｛-oproquate操作[操作名稱
+

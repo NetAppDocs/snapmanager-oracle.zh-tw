@@ -1,0 +1,28 @@
+---
+permalink: unix-installation-7mode/task_starting_the_snapmanager_server.html 
+sidebar: sidebar 
+keywords: snapmanager, target, database, host 
+summary: 您必須SnapManager 從目標資料庫主機啟動此伺服器。 
+---
+= 啟動SnapManager 伺服器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須SnapManager 從目標資料庫主機啟動此伺服器。
+
+. 登入目標資料庫主機、然後啟動SnapManager 支援服務器：
++
+畫面會顯示下列訊息：SnapManager 「以PID_Number在安全連接埠連接埠編號上啟動伺服器。」
+
++
+
+NOTE: 預設連接埠為27214.
+
+
+
+您可以驗SnapManager 證此功能是否正常運作：
+
+畫面會顯示下列訊息：「operation ID operation_ID_Number sinessed（作業ID operation_ID_Number成功）」。

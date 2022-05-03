@@ -1,0 +1,22 @@
+---
+permalink: unix-administration/task_deleting_a_clone_split_operation_cycle_from_a_repository_database.html 
+sidebar: sidebar 
+keywords: delete, clone, split, operation, cycle, entry, repository, database 
+summary: 您可以從儲存庫資料庫刪除複本分割作業週期項目。 
+---
+= 從儲存庫資料庫刪除實體複本分割作業週期
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以從儲存庫資料庫刪除複本分割作業週期項目。
+
+. 若要從儲存庫資料庫刪除實體複本分割作業週期項目、請輸入下列命令：SMO Clone分割刪除-profileprofile [-hosthostname][-label分割 標籤|-ids分割-id][-quiet |-verbos]
+
+
+[listing]
+----
+smo clone split-delete -profile p1 -id 8abc01ec0e78f3e2010e78f3fdd00001
+----

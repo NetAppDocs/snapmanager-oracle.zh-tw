@@ -1,0 +1,288 @@
+---
+permalink: unix-administration/reference_snapmanager_configuration_parameters.html 
+sidebar: sidebar 
+keywords: snapmanager, configuration, parameters, requirement, retain, hourly, monthly, count, duration 
+summary: 提供組態參數清單、您可以根據需求進行編輯。SnapManager組態參數儲存在SMo.config檔案中。不過、SMo.config檔案可能不包含所有支援的組態參數。您可以視需求新增組態參數。 
+---
+= 組態參數SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+提供組態參數清單、您可以根據需求進行編輯。SnapManager組態參數儲存在SMo.config檔案中。不過、SMo.config檔案可能不包含所有支援的組態參數。您可以視需求新增組態參數。
+
+下表列出所有支援SnapManager 的支援的邊區組態參數、並說明何時使用這些參數：
+
+|===
+
+
+| 參數 | 說明 
+
+
+ a| 
+* Retain。每小時數
+* 保有。每小時。持續時間
+* Retain。每月數
+* 保有。每月。持續時間
+
+ a| 
+這些參數會在您建立設定檔時設定保留原則。例如、您可以指派下列值：hede.hour.count=12
+
+保有。每小時。持續時間= 2
+
+Retain。每月數= 2
+
+保有。每月。持續時間= 6
+
+
+
+ a| 
+restore.secondaryAccessPolicy
+ a| 
+此參數可定義SnapManager 當無法使用Protection Manager直接還原資料時、哪些方面的資料可供由功能不實存取。存取二線儲存設備資料的不同方式如下：
+
+* Direct（預設）
++
+當restore.secondaryAccessPolicy設定為Direct時、SnapManager 將資料複製到二線儲存設備上、將複製的資料從二線儲存設備掛載到主機、然後將資料從複本複製到作用中環境。
+
+* 間接
++
+如果您將間接指派給restore.secondaryAccessPolicy、SnapManager 則會將資料複製到一線儲存設備上的暫用磁碟區、將資料從暫用磁碟區掛載到主機、然後將資料從暫用磁碟區複製到作用中環境。
+
++
+只有當主機無法直接存取次要儲存系統時、才必須使用間接方法。這種方法所需時間是直接方法的兩倍、因為會製作兩份資料複本。
+
+
+
+
+NOTE: 在以網路檔案系統（NFS）作為傳輸協定的儲存區域網路（SAN）中SnapManager 、不需要直接連線至次要儲存設備來執行還原。
+
+
+
+ a| 
+Restore：暫時Volume名稱
+ a| 
+此參數會將名稱指派給暫用Volume。當使用間接方法從二線儲存設備還原資料時、需要在一線儲存設備上使用暫存磁碟區來保留暫存資料複本、直到資料複製到資料庫檔案中並恢復資料庫為止。SnapManager沒有預設值。如果未指定值、則必須在使用間接方法的還原命令中輸入名稱。例如、您可以指派下列值：還原。暫時磁碟區名稱= SMo_temp_volume
+
+
+
+ a| 
+Retain、alwaysFreeDiredBackups
+ a| 
+此參數可在SnapManager 備份過期或執行快速還原時釋放備份、即使未設定資料保護亦然。此參數可釋放已過期的受保護備份、並刪除已過期的未受保護備份。您可以指派的可能值如下：
+
+* 是的
++
+如果指派true保留.alwaysFreeDiredBackups、SnapManager 則無論備份是否受到保護、均可釋出過期的備份。
+
++
+當備份未受保護或二線儲存設備上的受保護複本也已過期時、備份便會刪除。
+
+* 錯
++
+如果您將假指派給hestate.alwaysFreeDiredBackups、SnapManager 則由它釋放受保護的過期備份。
+
+
+
+
+
+ a| 
+host.in資格 認證。持續
+ a| 
+此參數可SnapManager 讓支援資料不再儲存主機認證資料。根據預設、不會儲存主機認證資料。不過、如果您有在遠端實體複本上執行的自訂指令碼、且需要存取遠端伺服器、則需要儲存主機認證資料。您可以將true指派給host.instaite.stist、以啟用儲存主機認證資料。可加密並儲存主機認證資料。SnapManager
+
+
+
+ a| 
+重新播放平面最大檔案已播放
+ a| 
+此參數可讓您定義要在還原預覽中顯示的檔案數量上限。SnapManager 根據預設、還原預覽最多可顯示20個檔案。不過、您可以變更為大於0的值。例如、您可以指派下列值：
+
+* 重述平面最大檔案已播放= 30
+
+
+
+NOTE: 如果您指定無效值、則會顯示預設的檔案數目。
+
+
+
+ a| 
+snapshot .list.timeout.min
+ a| 
+此參數可讓您定義SnapManager 當執行SnapManager 任何的動作時、必須等待Snaplist命令執行的時間（以分鐘為單位）。根據預設SnapManager 、等候30分鐘。不過、您可以變更為大於0的值。例如、您可以指派下列值：
+
+* snapshot .list.timeout.min = 40
+
+
+
+NOTE: 如果您指定無效值、則會使用預設值。
+
+對於SnapManager 任何的動作、如果snap清單命令執行時間超過指派給snapshot .list.timeout.min的值、則作業會失敗並顯示逾時錯誤訊息。
+
+
+
+ a| 
+剪除IfFileExistsInOther目的地
+ a| 
+此剪除參數可讓您定義歸檔記錄檔的目的地。歸檔記錄檔會儲存在多個目的地中。在剪除歸檔記錄檔時、SnapManager 由於需要知道歸檔記錄檔的目的地、因此您可以指派的可能值如下：
+
+* 當您想從指定目的地剪除歸檔記錄檔時、必須將假指派給剪除IfFileExistsInOther目的地。
+* 當您想要從外部目的地剪除歸檔記錄檔時、必須將true指派給剪除IfFileExistsInOther目的地。
+
+
+
+
+ a| 
+prune.archivelogs.backedup.from.otherdestination
+ a| 
+此剪除參數可讓您剪除從指定的歸檔記錄目的地備份或從外部歸檔記錄目的地備份的歸檔記錄檔。您可以指派的可能值如下：
+
+* 當您想要從指定目的地剪除歸檔記錄檔時、如果使用-prune-dest從指定目的地備份歸檔記錄檔、則必須將假指派給prune.archivelogs.backedup.from.otherdestination。
+* 當您想要從指定目的地剪除歸檔記錄檔時、如果至少從任何其他目的地備份一次歸檔記錄檔、則必須將true指派給prune.archivelogs.backedup.from.otherdestination。
+
+
+
+
+ a| 
+最大.archivelog.files.toprune.atatatatime
+ a| 
+此剪除參數可讓您定義指定時間可剪除的最大歸檔記錄檔數。例如、您可以指派下列值：最大.archivelog.files.toprune.atatatatime = 998
+
+
+NOTE: 可指派給最大.archivelog.files.toprune.atatime的值必須小於1000。
+
+
+
+ a| 
+archivelogs.sinog.合併
+ a| 
+如果SnapManager 您將true指派給archivelogs.splin舉、此參數可讓SFC釋放重複的歸檔記錄備份。
+
+
+
+ a| 
+字尾.backup.label.with .logs
+ a| 
+此參數可讓您指定要新增的尾碼、以區分資料備份和歸檔記錄備份的標籤名稱。例如、當您將記錄指派給suffix備份標記時、_logs會新增為歸檔記錄備份標籤的尾碼。然後歸檔記錄備份標籤會是arch_logs。
+
+
+
+ a| 
+backup.archivelogs.beyond.missingfiles
+ a| 
+此參數允許SnapManager 將遺失的歸檔記錄檔包含在備份中。不存在於作用中檔案系統中的歸檔記錄檔不會包含在備份中。如果您想要包含所有歸檔記錄檔、即使是使用中檔案系統中不存在的記錄檔、也必須將true指派給backup.archivelogs.beyond.missingfiles。
+
+您可以指派假以忽略遺失的歸檔記錄檔。
+
+
+
+ a| 
+srvctl.timeout
+ a| 
+此參數可讓您定義srvctl命令的逾時值。*附註：*伺服器控制（服務器控制）是管理RAC執行個體的公用程式。
+
+當執行srvctl命令所需的時間超過超時值時、此錯誤訊息會導致執行此動作失敗：錯誤：執行命令時發生逾時：srvctl狀態。SnapManager SnapManager
+
+
+
+ a| 
+SnapShot：Restore：storageNameCheck
+ a| 
+此參數可讓SnapManager VMware執行Snapshot複本還原作業、這些複本是在從Data ONTAP 以7-Mode運作的VMware移轉至叢集式Data ONTAP之前建立的。指派給此參數的預設值為假。如果Data ONTAP 您已從以7-Mode運作的VMware移轉至叢集Data ONTAP 式的VMware、但想要使用移轉前建立的Snapshot複本、請設定snapshot .還原.storageNameCheck = true。
+
+
+
+ a| 
+services.common.disableAbort
+ a| 
+此參數會在長時間執行的作業失敗時停用清除功能。您可以設定services.common.disableAbort=true.For範例、如果執行的實體複本作業執行時間過長、但由於Oracle錯誤而失敗、則可能不想清除實體複本。如果您設定services.common.disableAbort=true、則不會刪除複本。您可以修正Oracle問題、並從故障點重新啟動複製作業。
+
+
+
+ a| 
+* backup.sleep.dnfs.layout
+* backup.sleep.dnfs.secs
+
+ a| 
+這些參數會在Direct NFS（DNFS）配置中啟動睡眠機制。使用DNFS或網路檔案系統（NFS）建立控制檔的備份之後SnapManager 、支援程式會嘗試讀取控制檔、但可能找不到這些檔案。若要啟用睡眠機制、請確定備份、sleep.dnfs.layout=true。預設值為true。
+
+啟用睡眠機制時、您必須將睡眠時間指派給backup.sleep.dnfs.secs。指派的睡眠時間以秒為單位、值取決於您的環境。預設值為5秒。
+
+例如：
+
+* backup.sleep.dnfs.layout=true
+* backup.sleep.dnfs.secs=2
+
+
+
+
+ a| 
+* override.default.backup.pattern
+* new.default.backup.pattern
+
+ a| 
+如果您未指定備份標籤、SnapManager 則會建立預設的備份標籤。這些SnapManager 支援區參數可讓您自訂預設的備份標籤。若要自訂備份標籤、請確定override.default.backup.pattern的值設為true。預設值為假。
+
+若要指派新的備份標籤模式、您可以將資料庫名稱、設定檔名稱、範圍、模式和主機名稱等關鍵字指派給new.default.backup.pattern。關鍵字應以底線分隔。例如new.default.backup.pattern=dbname_profile_hostname_scope_mode。
+
+
+NOTE: 時間戳記會自動包含在產生的標籤結尾。
+
+
+
+ a| 
+allow.underscore.in.clone.sid
+ a| 
+Oracle支援在Oracle 11gR2的複製SID中使用底線。此支援使用者可在實體複製的SID名稱中加入底線。若要在實體複製的SID名稱中加入底線、請確定allow.underscore.in.clone.sid的值設定為true。SnapManager預設值為true。
+
+如果您使用的Oracle版本早於Oracle 11gR2、或是不想在複製的SID名稱中加入底線、請將值設為假。
+
+
+
+ a| 
+oracle.parameters.with.comma
+ a| 
+此參數可讓您指定所有以逗號（、）做為值的Oracle參數。執行任何操作SnapManager 時、使用oracle.parameters.with.comma檢查所有的Oracle參數、並跳過值分割。
+
+例如、如果NLS_numeric字元=的值、請指定oracle.parameters.with.comma=nls_numeric_characters。如果有多個Oracle參數以逗號作為值、您必須在oracle.parameters.with.comma中指定所有參數。
+
+
+
+ a| 
+* archivedLogs.exclude
+* archivedLogs.exclude檔案類似
+* .db-unique-name>.archivedLogs.exclude檔案類似
+
+ a| 
+如果SnapManager 資料庫不在啟用Snapshot複製的儲存系統上、而且您想SnapManager 要在該儲存系統上執行還原作業、則這些參數可讓您從設定檔和備份中排除歸檔記錄檔。*注意：*您必須先在組態檔中加入排除參數、才能建立 設定檔：
+
+指派給這些參數的值可以是最上層目錄、或是保存檔記錄檔所在的掛載點、或是子目錄。如果指定了頂層目錄或掛載點、且主機上的設定檔已啟用資料保護、則該掛載點或目錄不會包含在Protection Manager中建立的資料集內。當有多個歸檔記錄檔要從主機中排除時、您必須使用逗號分隔歸檔記錄檔路徑。
+
+若要排除歸檔記錄檔不包含在設定檔中並進行備份、您必須包含下列其中一個參數：
+
+* archivedLogs.exclude可指定規則運算式、以便從所有設定檔或備份中排除歸檔記錄檔。
++
+符合規則運算式的歸檔記錄檔會從所有設定檔和備份中排除。
+
++
+例如、您可以設定archivedLogs.exclude =/arch/logs/on / local/disk1/.*、/arch/logs/on / local/disk2/.*。對於ASM資料庫、您可以設定archivedLogs.exclude =\+KHDB_Arch_dest/kdb/archivelog/.*、\+KHDB_NONNAARCHTWO / kdb/archivelog/.*。
+
+* archivedLogs.exclude。檔案類似於指定SQL運算式、以便從所有設定檔或備份中排除歸檔記錄檔。
++
+符合SQL運算式的歸檔記錄檔會從所有設定檔和備份中排除。
+
++
+例如、您可以設定archivedLogs.exclude檔案、例如=/arch/logs/on / local/disk1/%、/arch/logs/on / local/disk2/%。
+
+* .db-unique-name>.archivedLogs.excle.filessoes：指定SQL運算式、僅從設定檔中排除歸檔記錄檔、或使用指定db-unique-name為資料庫建立備份。
++
+符合SQL運算式的歸檔記錄檔會從設定檔和備份中排除。
+
++
+例如、您可以設定mydb.archivedLogs.exclude檔案、例如=/arch/logs/on / local/disk1/%、/arch/logs/on / local/disk2/%。
+
+
+
+|===

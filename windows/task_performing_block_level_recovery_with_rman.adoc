@@ -1,0 +1,169 @@
+---
+permalink: windows/task_performing_block_level_recovery_with_rman.html 
+sidebar: sidebar 
+keywords: configure, snapmanager, catalog, backup, recovery, manager, rman, oracle, tool, perform, block-level 
+summary: 您可以在SnapManager Oracle工具Recovery Manager（RMAN）中設定、將其備份編錄為目錄、以便使用RMAN執行區塊層級的還原。RMAN可以使用資料庫的控制檔或個別的恢復目錄資料庫做為儲存庫。 
+---
+= 使用Oracle Recovery Manager（RMAN）執行區塊層級還原
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在SnapManager Oracle工具Recovery Manager（RMAN）中設定、將其備份編錄為目錄、以便使用RMAN執行區塊層級的還原。RMAN可以使用資料庫的控制檔或個別的恢復目錄資料庫做為儲存庫。
+
+. 若要使用SnapManager 支援功能執行完整的離線備份、請輸入下列命令：
++
+SMO備份會建立離線完整設定檔設定檔PROM_name-labelbackup_label_name-verbose
+
++
+其中：
+
++
+** 設定檔名稱是與備份相關聯的設定檔名稱
+** 備份標籤的名稱是：Backup label_name
+
+
+
+
+[source]
+----
+smo backup create -offline -full -profile profile_monthly
+-label full_backup -verbose
+
++
+SMO-07109 [INFO ]: Cataloguing all files in backup set with RMAN
+TAG=SMC_full_backup_1158773581857, RMAN=ES0/controlfile.
+...
+SMO-13037 [INFO ]: Successfully completed operation: Backup
+SMO-13048 [INFO ]: Operation Status: SUCCESS
+SMO-13049 [INFO ]: Elapsed Time: 0:02:20.506
+Operation Id [ff8080810dcc47e3010dcc47eb7a0001] succeeded.
++
+----
+. 若要驗證備份是否以RMAN目錄、請從資料庫主機在RMAN提示字元中輸入下列命令：
++
+列出資料安全複製標記tag_name；
+
+. 若要驗證資料庫並判斷是否有任何區塊毀損、請輸入下列命令：
++
+DBV file=user01.dbf
+
++
+下列輸出顯示兩個頁面毀損：
+
++
+[listing]
+----
+DBVERIFY: Release 10.2.0.1.0 - Production on Wed Sep 20 13:35:44 2006
+Copyright (c) 1982, 2005, Oracle. All rights reserved.
+DBVERIFY - Verification starting : FILE = user01.dbf
+Page 625 is marked corrupt
+Corrupt block relative dba: 0x01400271 (file 5, block 625)
+Bad header found during dbv:
+Data in bad block:
+type: 240 format: 6 rdba: 0xed323b81
+last change scn: 0x6f07.faa74628 seq: 0x87 flg: 0x02
+spare1: 0x60 spare2: 0x5 spare3: 0xef7d
+consistency value in tail: 0xa210fe71
+check value in block header: 0x13c7
+block checksum disabled...
+Page 627 is marked corrupt
+Corrupt block relative dba: 0x01400273 (file 5, block 627)
+Bad header found during dbv:
+Data in bad block:
+type: 158 format: 7 rdba: 0x2101e16d
+last change scn: 0xe828.42414628 seq: 0xb4 flg: 0xff
+spare1: 0xcc spare2: 0x81 spare3: 0x8665
+consistency value in tail: 0x46d20601
+check value in block header: 0x1a84
+computed block checksum: 0x6c30
+DBVERIFY - Verification complete
+Total Pages Examined : 1280
+Total Pages Processed (Data) : 1123
+Total Pages Failing (Data) : 0
+Total Pages Processed (Index): 0
+Total Pages Failing (Index): 0
+Total Pages Processed (Other): 34
+Total Pages Processed (Seg) : 0
+Total Pages Failing (Seg) : 0
+Total Pages Empty : 120
+Total Pages Marked Corrupt: 2
+Total Pages Influx : 0
+Highest block SCN : 1337349 (0.1337349)
+----
+. 若要讓備份中的檔案可在主機上存取、並存取RMAN、請使用下列命令掛載備份：
++
+mosO備份掛載-profileprofile_name-label-verbose
+
++
+[listing]
+----
+smo backup mount -profile SALES1 -label full_backup -verbose
+
+SMO-13046 [INFO ]: Operation GUID 8abc013111b9088e0111b908a7560001 starting on Profile SALES1
+SMO-08052 [INFO ]: Beginning to connect mount(s) [E:\logs,F:\data] from logical snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001.
+SMO-08025 [INFO ]: Beginning to connect mount E:\logs from snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001_0 of volume hs_logs.
+SMO-08027 [INFO ]: Finished connecting mount E:\logs from snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001_0 of volume hs_logs.
+SMO-08025 [INFO ]: Beginning to connect mount F:\data from snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001_0 of volume hs_data.
+SMO-08027 [INFO ]: Finished connecting mount F:\data from snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001_0 of volume hs_data.
+SMO-08053 [INFO ]: Finished connecting mount(s) [E:\logs,F:\data] from logical snapshot SMO_SALES1_hsdb1_F_C_1_8abc013111a450480111a45066210001.
+SMO-13037 [INFO ]: Successfully completed operation: Backup Mount
+SMO-13048 [INFO ]: Operation Status: SUCCESS
+SMO-13049 [INFO ]: Elapsed Time: 0:01:00.981
+Operation Id [8abc013111b9088e0111b908a7560001] succeeded.
+----
+. 若要恢復區塊、請在RMAN中輸入下列命令：
++
+區塊從tag backup_RMAN標記中恢復資料檔案'E：\path\file.dbf'區塊block_id
+
++
+[listing]
+----
+RMAN> blockrecover datafile
+‘E:\sys\file01.dbf’ block 625, 626, 627
+from tag SMO_full_backup_1158773581857;
+
+Starting blockrecover at 20-SEP-08 using target database control file instead of recovery catalog
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: sid=153 devtype=DISK
+channel ORA_DISK_1: restoring block(s) from datafile copy
+ C:\myfs\user01.dbf
+starting media recovery
+media recovery complete, elapsed time: 00:00:01
+Finished blockrecover at 20-SEP-08
+----
+. 若要驗證區塊是否已修復、請使用下列命令：
++
+dBV file=file.dbf
+
++
+下列輸出顯示沒有頁面毀損：
+
++
+[listing]
+----
+dbv FILE=user01.dbf
+
+DBVERIFY: Release 10.2.0.1.0 - Production on Wed Sep 20 13:40:01 2008
+Copyright (c) 1982, 2008, Oracle. All rights reserved.
+DBVERIFY - Verification starting : FILE = user01.dbf
+DBVERIFY - Verification complete
+Total Pages Examined : 1280
+Total Pages Processed (Data) : 1126
+Total Pages Failing (Data) : 0
+Total Pages Processed (Index): 0
+Total Pages Failing (Index): 0
+Total Pages Processed (Other): 34
+Total Pages Processed (Seg) : 0
+Total Pages Failing (Seg) : 0
+Total Pages Empty : 120
+Total Pages Marked Corrupt : 0
+Total Pages Influx : 0
+Highest block SCN : 1337349 (0.1337349)
+----
++
+所有毀損的區塊均已修復及還原。
+
+

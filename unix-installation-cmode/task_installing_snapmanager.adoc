@@ -1,0 +1,57 @@
+---
+permalink: unix-installation-cmode/task_installing_snapmanager.html 
+sidebar: sidebar 
+keywords: install, snapmanager, host, database, backup, running 
+summary: 您必須在SnapManager 執行備份的資料庫所在的每個主機上安裝支援功能。 
+---
+= 安裝SnapManager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在SnapManager 執行備份的資料庫所在的每個主機上安裝支援功能。
+
+您必須在SnapDrive 資料庫主機上安裝適用於UNIX的功能、並建立與儲存系統的連線。
+
+如需瞭解如何安裝SnapDrive 及建立與儲存系統的連線、請參閱SnapDrive 適用於UNIX的文件。
+
+您必須在SnapManager 每個資料庫主機上安裝一個實體執行個體。如果您使用Real Application Cluster（RAC）資料庫並想要備份RAC資料庫、則必須在SnapManager RAC資料庫的所有主機上安裝更新程式。
+
+. 從SnapManager NetApp Support網站下載適用於UNIX的Oracle安裝套件、然後複製到主機系統。
++
+http://mysupport.netapp.com/NOW/cgi-bin/software["NetApp下載：軟體"]
+
+. 以root使用者身分登入資料庫主機。
+. 在命令提示字元中、瀏覽至複製安裝套件的目錄。
+. 將安裝套件設為可執行檔：chmod 755install_package.bin
+. 安裝SnapManager ：./install_package.bin
+. 按Enter繼續。
+. 請執行下列步驟：
++
+.. 按Enter接受作業系統使用者的預設值。
++
+使用者的預設值為Oracle。
+
+.. 按Enter接受作業系統群組的預設值。
++
+群組的預設值為dba。
+
+.. 按Enter接受啟動類型的預設值。
+
+
++
+隨即顯示組態摘要。
+
+. 檢閱組態摘要、然後按Enter繼續。
++
+適用於Solaris的/opt/NTAPsmo安裝、適用於所有其他UNIX主機的/opp/NetApp/安裝。SnapManager
+
+
+
+*相關資訊*
+
+xref:task_setting_up_snapmanager.adoc[設定SnapManager 功能]
+
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30050["NetApp文件：SnapDrive 適用於UNIX的解決方案"]

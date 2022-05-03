@@ -1,0 +1,81 @@
+---
+permalink: unix-administration/reference_the_smosmsapbackup_verify_command.html 
+sidebar: sidebar 
+keywords: run, backup, verify, command, format, oracle, valid, smo 
+summary: 您可以執行備份驗證命令、查看備份是否為Oracle的有效格式。 
+---
+= 使用SMO備份驗證命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行備份驗證命令、查看備份是否為Oracle的有效格式。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo backup verify
+-profile profile_name
+[-label backup_name \| \[-id guid\]
+\[-retain \{-hourly \| -daily \| -weekly \| -monthly \| -unlimited\}\]
+\[-force\]
+\[-dump\]
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *設定檔設定檔名稱*
++
+指定您要驗證備份的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* -id guid*
++
+使用指定的Guid驗證備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用SMO備份清單命令來顯示每個備份的GUID。
+
+* *標籤label_name*
++
+使用指定的標籤來驗證備份。
+
+* *傾印*
++
+在成功或失敗的備份驗證作業之後收集傾印檔。
+
+* *力*
++
+強制資料庫進入必要狀態以執行驗證作業。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+以下是驗證備份的範例：
+
+[listing]
+----
+smo backup verify -profile SALES1 -label full_backup_sales_May -quiet
+----
+[listing]
+----
+DBVERIFY - Verification starting : FILE = +SMO_1_1161675083835/smo/datafile/data.277.582482539 ...
+----
+*相關資訊*
+
+xref:task_verifying_database_backups.adoc[正在驗證資料庫備份]

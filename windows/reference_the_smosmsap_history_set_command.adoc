@@ -1,0 +1,96 @@
+---
+permalink: windows/reference_the_smosmsap_history_set_command.html 
+sidebar: sidebar 
+keywords: history, run, set, command, configure, operation, history, smo 
+summary: 您可以執行history set命令來設定要檢視其歷程記錄的作業。 
+---
+= 使用SMO history set命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行history set命令來設定要檢視其歷程記錄的作業。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo history set
+-profile \{-name profile_name \[profile_name1, profile_name2\] \| -all
+-repository
+-login \[password repo_password\]
+-username repo_username
+-host repo_host
+-dbname repo_dbname
+-port repo_port}
+-operation \{-operations operation_name \[operation_name1, operation_name2\] \| -all\}
+-retain
+{-count retain_count \| -daily daily_count \| -monthly monthly_count \| -weekly weekly_count}
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *設定檔設定檔*
++
+指定設定檔的名稱。名稱最長可達30個字元、且在主機內必須是唯一的。
+
+* *儲存庫*
++
+指定儲存設定檔的資料庫詳細資料。
+
+* *-dbname repo_dbname*
++
+指定儲存設定檔的資料庫名稱。您可以使用全域名稱或系統識別碼。
+
+* *主機repo_host*
++
+指定儲存庫資料庫所在主機的名稱或IP位址。
+
+* *登入*
++
+指定儲存庫登入詳細資料。
+
+* *使用者名稱repo_username*
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* *連接埠repo_port*
++
+指定用於存取儲存庫資料庫的傳輸控制傳輸協定（TCP）連接埠號碼。
+
+* 操作｛-operationsoperations_name [operation_name1、operation_name2）|-all*
++
+指定SnapManager 您要設定歷程記錄的不執行作業。
+
+* *保留｛-countform_count|-dim出dly_count|-bonweek-bonweek_count|-weeklyweekly_count*
++
+指定建立備份、驗證備份、還原與還原、以及建立複製作業的保留類別。保留類別是根據作業數、天數、週數或月數來設定。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 命令範例
+
+下列範例顯示有關備份作業的資訊：
+
+[listing]
+----
+smo history set -profile -name PROFILE1 -operation -operations backup -retain -daily 6
+ -verbose
+----

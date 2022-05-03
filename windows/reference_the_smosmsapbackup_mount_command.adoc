@@ -1,0 +1,102 @@
+---
+permalink: windows/reference_the_smosmsapbackup_mount_command.html 
+sidebar: sidebar 
+keywords: run, backup, mount, command, recover, operation, external 
+summary: 您可以執行備份掛載命令來掛載備份、以便使用外部工具執行恢復作業。 
+---
+= 使用SMO備份掛載命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行備份掛載命令來掛載備份、以便使用外部工具執行恢復作業。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo backup mount
+-profile profile_name
+[-label label \[-data \| -archivelogs\] \| \[-id id\]
+[-host  host]
+
+\[-dump\]
+[-quiet | -verbose]
+----
+
+
+== 參數
+
+* *設定檔設定檔名稱*
++
+指定與您要掛載的備份相關聯的設定檔。設定檔包含資料庫和其他資料庫資訊的識別碼。
+
+* -id guid*
++
+以指定的GUID掛載備份。當SnapManager 您建立備份時、會產生由支援所產生的GUID。您可以使用SMO備份清單命令來顯示每個備份的GUID。
+
+* *標籤標籤*
++
+以指定的標籤掛載備份。
+
+* *資料*
++
+指定資料檔案。
+
+* -archivelogs*
++
+指定歸檔記錄檔。
+
+* *主機主機*
++
+指定要掛載備份的主機。
+
+* *傾印*
++
+在成功或失敗的掛載作業之後收集傾印檔。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設設定為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+NOTE: 只有在使用外部工具（例如Oracle Recovery Manager（RMAN））時、才必須使用此命令。如果您使用SMO備份還原命令來還原備份、則支援自動處理備份的安裝。SnapManager此命令會顯示清單、顯示已掛載Snapshot複本的路徑。只有在指定-verbose選項時、才會顯示此清單。
+
+
+
+== 範例
+
+下列範例裝載備份：
+
+[listing]
+----
+smo backup mount -profile SALES1 -label full_backup_sales_May -verbose
+[INFO ]: SMO-13051: Process PID=6852
+[INFO ]: SMO-13036: Starting operation Backup Mount on host hadley.domain.private
+[INFO ]: SMO-13036: Starting operation Backup Mount on host hadley.domain.private
+[INFO ]: SMO-13046: Operation GUID 8abc01573883daf0013883daf5ac0001 starting on Profile FAS_P1
+[INFO ]: SD-00025: Beginning to connect filesystem(s) [I:\] from snapshot smo_fas_p1_fasdb_d_h_2_8abc0157388344bc01388344c2d50001_0.
+[INFO ]: SD-00016: Discovering storage resources for C:\SnapManager_auto_mounts\I-2012071400592328_0.
+[INFO ]: SD-00017: Finished storage discovery for C:\SnapManager_auto_mounts\I-2012071400592328_0
+[INFO ]: SD-00026: Finished connecting filesystem(s) [I:\] from snapshot smo_fas_p1_fasdb_d_h_2_8abc0157388344bc01388344c2d50001_0.
+[INFO ]: SD-00025: Beginning to connect filesystem(s) [H:\] from snapshot smo_fas_p1_fasdb_d_h_1_8abc0157388344bc01388344c2d50001_0.
+[INFO ]: SD-00016: Discovering storage resources for C:\SnapManager_auto_mounts\H-2012071400592312_0.
+[INFO ]: SD-00017: Finished storage discovery for C:\SnapManager_auto_mounts\H-2012071400592312_0.
+[INFO ]: SD-00026: Finished connecting filesystem(s) [H:\] from snapshot smo_fas_p1_fasdb_d_h_1_8abc0157388344bc01388344c2d50001_0.
+[INFO ]: SMO-13048: Backup Mount Operation Status: SUCCESS
+[INFO ]: SMO-13049: Elapsed Time: 0:19:05.620
+----
+*相關資訊*
+
+xref:task_mounting_backups.adoc[掛載備份]

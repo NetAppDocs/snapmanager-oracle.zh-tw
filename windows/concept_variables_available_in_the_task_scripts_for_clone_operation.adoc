@@ -1,0 +1,121 @@
+---
+permalink: windows/concept_variables_available_in_the_task_scripts_for_clone_operation.html 
+sidebar: sidebar 
+keywords: provide, context, information, environment, variable, relate, clone, operation, perform, host 
+summary: 提供環境變數形式的內容資訊、這些環境變數與正在執行的複製作業有關。SnapManager例如、指令碼可以擷取原始主機的名稱、複製資料庫的名稱、以及備份的標籤。 
+---
+= 工作指令碼中可供用於複製作業的變數
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+提供環境變數形式的內容資訊、這些環境變數與正在執行的複製作業有關。SnapManager例如、指令碼可以擷取原始主機的名稱、複製資料庫的名稱、以及備份的標籤。
+
+下表列出可在指令碼中使用的環境變數：
+
+|===
+
+
+| 變數 | 說明 | 格式 
+
+
+ a| 
+SM_ORIGINAL_SID
+ a| 
+原始資料庫的SID
+ a| 
+字串
+
+
+
+ a| 
+SM_ORIGINAL_主機
+ a| 
+與原始資料庫相關聯的主機名稱
+ a| 
+字串
+
+
+
+ a| 
+SM_ORIGIN_OS_USER
+ a| 
+原始資料庫的OS擁有者
+ a| 
+字串
+
+
+
+ a| 
+SM_ORIGINAL_OS_group
+ a| 
+原始資料庫的OS群組
+ a| 
+字串
+
+
+
+ a| 
+SM_target _sID
+ a| 
+實體複本資料庫的SID
+ a| 
+字串
+
+
+
+ a| 
+SM_target主機
+ a| 
+與複製資料庫相關聯的主機名稱
+ a| 
+字串
+
+
+
+ a| 
+SM_target作業系統使用者
+ a| 
+實體複本資料庫的OS擁有者
+ a| 
+字串
+
+
+
+ a| 
+SM_target作業系統群組
+ a| 
+實體複本資料庫的OS群組
+ a| 
+字串
+
+
+
+ a| 
+SM_target資料庫連接埠
+ a| 
+目標資料庫的連接埠
+ a| 
+整數
+
+
+
+ a| 
+SM_Target全域_DB_name
+ a| 
+目標資料庫的全域資料庫名稱
+ a| 
+字串
+
+
+
+ a| 
+SM_備用 標籤
+ a| 
+用於複製的備份標籤
+ a| 
+字串
+
+|===

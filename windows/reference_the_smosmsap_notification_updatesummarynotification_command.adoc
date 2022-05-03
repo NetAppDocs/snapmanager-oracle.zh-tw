@@ -1,0 +1,108 @@
+---
+permalink: windows/reference_the_smosmsap_notification_updatesummarynotification_command.html 
+sidebar: sidebar 
+keywords: run, notification, update-summary-notification, command, enable, summary, repository, database, smo 
+summary: 您可以執行notification update-Summary通知命令、為儲存庫資料庫啟用摘要通知。 
+---
+= 使用SMO通知update-Summary通知命令
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以執行notification update-Summary通知命令、為儲存庫資料庫啟用摘要通知。
+
+
+
+== 語法
+
+[listing]
+----
+
+        smo notification update-summary-notification
+-repository
+-port repo_port
+-dbname  repo_service_name
+-host repo_host
+-login -username repo_username
+-email email-address1,email-address2
+-subject subject-pattern
+-frequency
+[-daily –time daily_time \|
+-hourly –time hourly_time \|
+-monthly –time monthly_time -date \[1\|2\|3\|...\|31\] \|
+-weekly  –time weekly_time -day \[1\|2\|3\|4\|5\|6\|7\]\]
+-profiles profile1,profile2
+-notification-host notification-host
+\[-quiet \| -verbose\]
+----
+
+
+== 參數
+
+* *儲存庫*
++
+指定儲存庫資料庫的詳細資料。
+
+* *連接埠repo_port*
++
+指定用於存取儲存庫資料庫的TCP連接埠號碼。
+
+* *-dbname repo_service_name*
++
+指定儲存庫資料庫的名稱。您可以使用全域名稱或系統識別碼。
+
+* *主機repo_host*
++
+指定儲存庫資料庫所在主機的名稱或IP位址。
+
+* *登入*
++
+指定儲存庫登入詳細資料。這是選用的。如果未指定SnapManager 、則無法使用作業系統驗證連線模式。
+
+* *使用者名稱repo_username*
++
+指定存取儲存庫資料庫所需的使用者名稱。
+
+* 電子郵件地址1、電子郵件地址2 *
++
+指定收件者的電子郵件地址。
+
+* 主題模式*
++
+指定電子郵件主旨模式。
+
+* *頻率｛-每日-時間DAY_TIME |-每小時-每小時時間|-每月-每月時間-每月時間-日期｛1 | 2 | 3 ...| 31｝|-每週-每週時間_時間-第｛1 | 2 | 3 | 4 | 5 | 6 | 7｝*
++
+指定您想要電子郵件通知的排程類型和排程時間。
+
+* *設定檔設定檔1、設定檔2 *
++
+指定需要電子郵件通知的設定檔名稱。
+
+* 通知主機通知主機*
++
+指定SnapManager 將摘要通知電子郵件傳送給收件者的伺服器主機。您可以提供通知主機的主機名稱或IP位址。您也可以更新主機IP或主機名稱。
+
+* *-無聲*
++
+僅在主控台顯示錯誤訊息。預設為顯示錯誤和警告訊息。
+
+* *-詳細*
++
+在主控台顯示錯誤、警告和資訊訊息。
+
+
+
+
+
+== 範例
+
+下列範例可啟用儲存庫資料庫的摘要通知：
+
+[listing]
+----
+
+smo notification update-summary-notification –repository –port 1521 –dbname repo2 –host 10.72.197.133 –login –username oba5 –email admin@org.com –subject success –frequency -daily -time 19:30:45 –profiles sales1
+----

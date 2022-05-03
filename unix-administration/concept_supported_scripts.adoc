@@ -1,0 +1,20 @@
+---
+permalink: unix-administration/concept_supported_scripts.html 
+sidebar: sidebar 
+keywords: asmmain.sh, asmquerydisk.sh, script, grid, group, user 
+summary: asmmain.sh和asmquerydisk.sh指令碼可讓您變更網格使用者、群組和使用者、所有這些都可用於查詢ASM磁碟。指令碼必須永遠從根執行。 
+---
+= 支援的指令碼
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+asmmain.sh和asmquerydisk.sh指令碼可讓您變更網格使用者、群組和使用者、所有這些都可用於查詢ASM磁碟。指令碼必須永遠從根執行。
+
+asmmain.sh是從任何新增或刪除裝置的作業中呼叫的主要指令碼檔案。asmmain.sh指令碼會在內部呼叫另一個指令碼、需要從擁有Oracle網格認證的根執行。此指令碼會查詢ASM磁碟群組的裝置、然後在具有裝置權限和擁有權的情況下、將這些項目新增到initasmdisk檔案中。您可以根據環境和僅用於對應/開發/繪圖器/* P1的regex模式、來變更此檔案的權限和擁有權。
+
+asmquerydisk.sh指令碼用於查詢磁碟清單、以建立ASM磁碟群組。您必須根據組態、將值指派給Oracle_base、oracle_homeand oracle_sID。
+
+指令碼位於/opp/NetApp/SMO/plugins/exages/nosmLib。不過、在SnapManager 主機上啟動Oracle伺服器的支援功能之前、必須先將這些指令碼移至/opp/NetApp/SMO/plugins/noasmLib。

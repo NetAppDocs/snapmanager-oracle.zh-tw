@@ -1,0 +1,30 @@
+---
+permalink: windows/task_configuring_history_for_backup_operation.html 
+sidebar: sidebar 
+keywords: snapmanager, oracle, cli, gui, history, configuring, history, operation, report 
+summary: 適用於Oracle的支援功能可讓您從CLI或GUI維護有關功能的歷史記錄。SnapManager SnapManager SnapManager您可以SnapManager 將整個過程的歷史記錄當作報告來檢視。 
+---
+= 設定SnapManager 歷史記錄以利執行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+適用於Oracle的支援功能可讓您從CLI或GUI維護有關功能的歷史記錄。SnapManager SnapManager SnapManager您可以SnapManager 將整個過程的歷史記錄當作報告來檢視。
+
+. 若要設定SnapManager Singfop_host-portrepo_port的歷程記錄、請輸入下列命令：moso history set -profile｛-name、profile_name [profile名稱1、profile_name]|-all-repos儲存 庫登入[-passwordbrepo_password]-usernamerepo_username-dbnamerepo_dbname_stepose_styeepation_operations｛-styeeptyeepstep_step_styeep_stepnevery_stepalse-op_operation_stepstepstepstep_stepalse-step_deep_deep_deep_deep_deep_deep_deate
+
+
+[listing]
+----
+
+        smo
+history set -profile -name PROFILE1 -operation -operations backup -retain -daily 6 -verbose
+----
+[listing]
+----
+
+        smo
+history set -profile -name PROFILE1 -operation -all -retain -weekly 3 -verbose
+----

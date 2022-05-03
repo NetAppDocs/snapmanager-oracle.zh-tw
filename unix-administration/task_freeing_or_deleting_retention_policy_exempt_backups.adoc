@@ -1,0 +1,27 @@
+---
+permalink: unix-administration/task_freeing_or_deleting_retention_policy_exempt_backups.html 
+sidebar: sidebar 
+keywords: backup, retention, class, unlimited, delete, free, directly, policy, exempt, smo 
+summary: 無法直接刪除或釋出保留類別為「無限」的備份。若要刪除或釋出這些備份、您必須先指派另一個保留類別、例如每小時、每日、每週或每月。若要刪除或釋出免除保留原則的備份、您必須先更新備份、使其符合刪除或釋出保留原則的資格。 
+---
+= 釋出或刪除保留原則豁免備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+無法直接刪除或釋出保留類別為「無限」的備份。若要刪除或釋出這些備份、您必須先指派另一個保留類別、例如每小時、每日、每週或每月。若要刪除或釋出免除保留原則的備份、您必須先更新備份、使其符合刪除或釋出保留原則的資格。
+
+. 若要更新備份、使其符合保留原則刪除的資格、請輸入下列命令：「mo backup update -profileprofileprofile _name｛-labelLabel [data |-archivelogs]|-ido｝-retect [- hourly |-deried|-favourly |-fourly |-mourly |-monthly ]」
+. 更新備份以符合刪除資格之後、您可以刪除備份或免費備份資源。
++
+** 若要刪除備份、請輸入以下命令：mos備份刪除-profileprofileprofile_name｛-labelLabel [data |-archivelogs]|-ido |-all｝
+** 若要釋出備份資源、而非刪除備份、請輸入以下命令：mos備份可用-profileprofileprofile_name｛-labelLabel [data |-archivelogs]|-ided |-all｝[-force][-dump ][-quiet | verbos]
+
+
+
+
+*相關資訊*
+
+xref:reference_the_smosmsapbackup_update_command.adoc[使用SMO備份更新命令]
