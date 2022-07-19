@@ -76,14 +76,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/concept_backing_up_and_verifying_your_databases.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/concept_backing_up_and_verifying_your_databases.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/concept_backing_up_and_verifying_your_databases.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/concept_backing_up_and_verifying_your_databases.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -300,14 +300,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/concept_defining_a_backup_strategy.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/concept_defining_a_backup_strategy.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/concept_defining_a_backup_strategy.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/concept_defining_a_backup_strategy.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -881,14 +881,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/concept_snapmanager_backup_overview.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/concept_snapmanager_backup_overview.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/concept_snapmanager_backup_overview.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/concept_snapmanager_backup_overview.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1406,20 +1406,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/delete_concept_how_to_send_comments_about_documentation_and_receiv.html</loc>
-      
-      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/delete_concept_how_to_send_comments_about_documentation_and_receiv.html</loc>
-      
-      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/windows/delete_concept_how_to_send_comments_about_documentation_and_receiv.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
@@ -1434,14 +1420,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/delete_reference_copyright.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/delete_concept_how_to_send_comments_about_documentation_and_receiv.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/delete_reference_copyright.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/delete_concept_how_to_send_comments_about_documentation_and_receiv.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1462,14 +1448,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/delete_reference_trademark.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/delete_reference_copyright.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/delete_reference_trademark.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/delete_reference_copyright.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1490,14 +1476,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/delete_reference_trademark.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/delete_reference_trademark.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1518,6 +1504,20 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/</loc>
+      
+      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/</loc>
+      
+      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
@@ -1525,14 +1525,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_deployment_workflow.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_deployment_workflow.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_deployment_workflow.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_deployment_workflow.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1581,14 +1581,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_host_requirements.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_host_requirements.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_host_requirements.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_host_requirements.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1630,7 +1630,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_product_overview.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-administration/reference_product_overview.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1644,7 +1644,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-administration/reference_product_overview.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_product_overview.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1693,14 +1693,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_snapmanager_architecture.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_snapmanager_architecture.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_snapmanager_architecture.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_snapmanager_architecture.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1721,13 +1721,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_snapmanager_licensing.html</loc>
-      
-      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_snapmanager_licensing.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
@@ -1735,7 +1728,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_supported_configurations.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_snapmanager_licensing.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -1749,6 +1742,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_supported_configurations.html</loc>
+      
+      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-administration/reference_supported_partition_devices.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
@@ -1756,14 +1756,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_supported_storage_types.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_supported_storage_types.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_supported_storage_types.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_supported_storage_types.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -2841,14 +2841,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_where_to_go_next.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_where_to_go_next.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/reference_where_to_go_next.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/reference_where_to_go_next.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -2864,7 +2864,7 @@
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle//search.html</loc>
       
-      <lastmod>2022-05-03T11:11:06+00:00</lastmod>
+      <lastmod>2022-07-19T15:12:41+00:00</lastmod>
       
     </url>
   
@@ -2883,14 +2883,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_accessing_the_snapmanager_user_interface.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_accessing_the_snapmanager_user_interface.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_accessing_the_snapmanager_user_interface.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_accessing_the_snapmanager_user_interface.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -2981,14 +2981,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_backing_up_your_database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_backing_up_your_database.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_backing_up_your_database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_backing_up_your_database.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -3149,14 +3149,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_configuring_databases.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_configuring_databases.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_configuring_databases.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_configuring_databases.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -3261,13 +3261,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_configuring_the_snapmanager_repository.html</loc>
-      
-      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_configuring_the_snapmanager_repository.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
@@ -3275,7 +3268,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_configuring_the_target_database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_configuring_the_snapmanager_repository.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -3283,6 +3276,13 @@
   
     <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_configuring_the_target_database.html</loc>
+      
+      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_configuring_the_target_database.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -3303,14 +3303,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_creating_a_profile_for_your_database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_creating_a_profile_for_your_database.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_creating_a_profile_for_your_database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_creating_a_profile_for_your_database.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -3331,13 +3331,6 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_creating_an_oracle_user_for_the_repository_database_instance.html</loc>
-      
-      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_creating_an_oracle_user_for_the_repository_database_instance.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
@@ -3345,7 +3338,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_creating_an_oracle_user_for_the_target_database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_creating_an_oracle_user_for_the_repository_database_instance.html</loc>
+      
+      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/windows/task_creating_an_oracle_user_for_the_target_database.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -3359,7 +3359,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/windows/task_creating_an_oracle_user_for_the_target_database.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_creating_an_oracle_user_for_the_target_database.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -3534,14 +3534,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_creating_the_repository_database_instance.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_creating_the_repository_database_instance.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_creating_the_repository_database_instance.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_creating_the_repository_database_instance.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -3849,14 +3849,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_installing_snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_installing_snapmanager.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_installing_snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_installing_snapmanager.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -3989,14 +3989,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_preparing_for_deployment.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_preparing_for_deployment.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_preparing_for_deployment.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_preparing_for_deployment.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -4227,14 +4227,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_scheduling_recurring_backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_scheduling_recurring_backups.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_scheduling_recurring_backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_scheduling_recurring_backups.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -4262,14 +4262,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_setting_up_snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_setting_up_snapmanager.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_setting_up_snapmanager.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_setting_up_snapmanager.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -4297,14 +4297,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_starting_the_snapmanager_server.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_starting_the_snapmanager_server.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_starting_the_snapmanager_server.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_starting_the_snapmanager_server.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -4584,7 +4584,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_verifying_database_backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/windows/task_verifying_database_backups.html</loc>
+      
+      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-administration/task_verifying_database_backups.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -4598,14 +4605,7 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/windows/task_verifying_database_backups.html</loc>
-      
-      <lastmod>2022-05-03T11:10:48+00:00</lastmod>
-      
-    </url>
-  
-    <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-administration/task_verifying_database_backups.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_verifying_database_backups.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
@@ -4654,14 +4654,14 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_verifying_the_oracle_listener_configuration.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_verifying_the_oracle_listener_configuration.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-cmode/task_verifying_the_oracle_listener_configuration.html</loc>
+      <loc>https://docs.netapp.com/zh-tw/snapmanager-oracle/unix-installation-7mode/task_verifying_the_oracle_listener_configuration.html</loc>
       
       <lastmod>2022-05-03T11:10:48+00:00</lastmod>
       
