@@ -30,7 +30,7 @@ image::../media/smo_architecture.gif[此圖顯示SnapManager 了這個架構。]
 您可以使用安裝SnapManager 了Oracle的資料庫主機上的命令列介面（CLI）或UI。您也可以SnapManager 從SnapManager 執行於支援的作業系統上的任何系統、使用網頁瀏覽器、從遠端使用此功能。
 
 
-NOTE: 支援的JRE版本為1.5、1.6和1.7。
+NOTE: 支援的JRE版本為1.5、1.6、1.7及1.8。
 
 
 
